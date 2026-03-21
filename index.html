@@ -678,6 +678,61 @@ p { color: var(--text-muted); line-height: 1.7; }
   .cta-banner { padding: 48px 20px; }
 }
 
+
+:root { --warm-gray: #F4F3F0; }
+.section--warm { background: var(--warm-gray); }
+.press-bar { padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.press-bar__inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.press-bar__label { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 600; }
+.press-bar__logo { font-size: 18px; font-weight: 700; color: var(--text-dark); opacity: 0.25; letter-spacing: -0.02em; }
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.test-card { background: var(--white); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.06); }
+.test-card__stars { color: #F59E0B; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+.test-card__quote { font-style: italic; color: var(--text-dark); line-height: 1.7; margin-bottom: 20px; font-size: 15px; }
+.test-card__author { display: flex; align-items: center; gap: 12px; }
+.test-card__avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.test-card__name { font-weight: 600; font-size: 14px; color: var(--text-dark); }
+.test-card__role { font-size: 13px; color: var(--text-muted); }
+.big-stat { padding: 100px 0; text-align: center; background: var(--navy); }
+.big-stat__number { font-family: var(--font-heading); font-size: clamp(80px, 15vw, 180px); font-weight: 700; font-style: italic; color: var(--white); line-height: 1; margin-bottom: 16px; }
+.big-stat__label { font-size: 20px; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; }
+.how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.how-step { text-align: center; padding: 32px 20px; position: relative; cursor: default; transition: all 0.3s; }
+.how-step:hover { transform: translateY(-4px); }
+.how-step__num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; position: relative; z-index: 2; }
+.how-step__title { font-weight: 700; font-size: 18px; margin-bottom: 8px; color: var(--text-dark); }
+.how-step__desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.how-steps__line { position: absolute; top: 56px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--teal)); z-index: 1; }
+.icon-box { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 16px; }
+.icon-box--blue { background: rgba(59,99,251,0.1); color: var(--blue); }
+.icon-box--green { background: rgba(20,184,166,0.1); color: var(--teal); }
+.icon-box svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dash-mock { background: var(--navy); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-xl); }
+.dash-mock__toolbar { background: #1a1f36; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+.dash-mock__dots { display: flex; gap: 6px; }
+.dash-mock__dot { width: 10px; height: 10px; border-radius: 50%; }
+.dash-mock__dot--r { background: #ff5f57; } .dash-mock__dot--y { background: #febc2e; } .dash-mock__dot--g { background: #28c840; }
+.dash-mock__tabs { display: flex; gap: 4px; margin-left: 16px; }
+.dash-mock__tab { padding: 4px 14px; border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.4); }
+.dash-mock__tab--active { background: rgba(255,255,255,0.1); color: #fff; }
+.dash-mock__body { display: flex; min-height: 320px; }
+.dash-mock__sidebar { width: 56px; background: #151929; display: flex; flex-direction: column; align-items: center; padding-top: 16px; gap: 20px; }
+.dash-mock__sidebar-icon { width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.06); }
+.dash-mock__main { flex: 1; padding: 24px; }
+.dash-mock__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.dash-mock__stat { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; }
+.dash-mock__stat-val { font-size: 24px; font-weight: 700; color: #fff; }
+.dash-mock__stat-lbl { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+.dash-mock__chart { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 20px; position: relative; min-height: 160px; }
+.dash-mock__chart-bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding-left: 40px; }
+.dash-mock__chart-bar { flex: 1; background: linear-gradient(to top, var(--blue), var(--teal)); border-radius: 4px 4px 0 0; }
+.dash-mock__chart-y { position: absolute; left: 8px; display: flex; flex-direction: column-reverse; justify-content: space-between; height: 120px; top: 20px; }
+.dash-mock__chart-y span { font-size: 10px; color: rgba(255,255,255,0.3); }
+.dash-mock__chart-x { display: flex; padding-left: 40px; gap: 8px; margin-top: 8px; }
+.dash-mock__chart-x span { flex: 1; text-align: center; font-size: 10px; color: rgba(255,255,255,0.3); }
+@media(max-width:768px) { .how-steps { grid-template-columns: 1fr 1fr; gap: 16px; } .how-steps__line { display: none; } .press-bar__inner { gap: 24px; } .dash-mock__stats { grid-template-columns: 1fr; } .dash-mock__body { flex-direction: column; } .dash-mock__sidebar { flex-direction: row; width: 100%; padding: 8px 16px; } }
+@media(max-width:480px) { .how-steps { grid-template-columns: 1fr; } .testimonials { grid-template-columns: 1fr; } }
+
 </style>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233B63FB'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>P</text></svg>">
 </head>
@@ -705,31 +760,41 @@ p { color: var(--text-muted); line-height: 1.7; }
   </div></nav>
 
 
+  
   <!-- HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero__inner">
         <div class="hero__text">
-          <div class="section-label fade-in"><span style="display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px;"></span>SME Financial Intelligence</div>
+          <div class="section-label fade-in"><span style="display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;margin-right:8px;"></span>SME FINANCIAL INTELLIGENCE</div>
           <div class="fade-in delay-1" style="margin-bottom:12px;"><span style="font-family:Poppins,sans-serif;font-size:52px;font-weight:700;color:var(--white);letter-spacing:-0.02em;">Prospera</span></div>
-          <h1 class="hero__title fade-in delay-2">Smarter Insights. Stronger Enterprises.</h1>
-          <p class="hero__subtitle fade-in delay-3">Prospera empowers SMEs and investors with affordable, AI-powered financial insights — from forecasting and risk assessment to growth strategy — enabling you to build wealth beyond your core business.</p>
+          <h1 class="hero__title fade-in delay-2">Your business makes money. We help you grow it.</h1>
+          <p class="hero__subtitle fade-in delay-3">Bloomberg Terminal starts at $25K/year. You just want to know where to put your next $50K. Prospera gives you the insights without the price tag.</p>
           <div class="hero__ctas fade-in delay-4">
             <a href="waitlist.html" class="btn btn--blue btn--lg">Join the Waitlist</a>
             <a href="features.html" class="btn btn--outline btn--lg">Learn More</a>
           </div>
         </div>
         <div class="hero__visual fade-in delay-4">
-          <div class="dash-card">
-            <div class="dash-card__dots"><div class="dash-card__dot dash-card__dot--red"></div><div class="dash-card__dot dash-card__dot--yellow"></div><div class="dash-card__dot dash-card__dot--green"></div></div>
-            <div class="dash-card__value">$2.4M</div>
-            <div class="dash-card__label">Portfolio Value</div>
-            <div class="dash-card__badge">↑ +12.3%</div>
-            <div class="dash-card__bars">
-              <div class="dash-card__bar-row"><span class="dash-card__bar-label">Equities</span><div class="dash-card__bar" style="width:78%;background:var(--blue);"></div></div>
-              <div class="dash-card__bar-row"><span class="dash-card__bar-label">Bonds</span><div class="dash-card__bar" style="width:52%;background:var(--green);"></div></div>
-              <div class="dash-card__bar-row"><span class="dash-card__bar-label">Cash</span><div class="dash-card__bar" style="width:30%;background:var(--orange);"></div></div>
-              <div class="dash-card__bar-row"><span class="dash-card__bar-label">Alternatives</span><div class="dash-card__bar" style="width:44%;background:var(--teal);"></div></div>
+          <div class="dash-mock">
+            <div class="dash-mock__toolbar">
+              <div class="dash-mock__dots"><div class="dash-mock__dot dash-mock__dot--r"></div><div class="dash-mock__dot dash-mock__dot--y"></div><div class="dash-mock__dot dash-mock__dot--g"></div></div>
+              <div class="dash-mock__tabs"><div class="dash-mock__tab dash-mock__tab--active">Overview</div><div class="dash-mock__tab">Risk</div><div class="dash-mock__tab">Forecast</div></div>
+            </div>
+            <div class="dash-mock__body">
+              <div class="dash-mock__sidebar"><div class="dash-mock__sidebar-icon"></div><div class="dash-mock__sidebar-icon"></div><div class="dash-mock__sidebar-icon"></div><div class="dash-mock__sidebar-icon"></div></div>
+              <div class="dash-mock__main">
+                <div class="dash-mock__stats">
+                  <div class="dash-mock__stat"><div class="dash-mock__stat-val">$2.4M</div><div class="dash-mock__stat-lbl">Portfolio Value</div></div>
+                  <div class="dash-mock__stat"><div class="dash-mock__stat-val">18</div><div class="dash-mock__stat-lbl">Positions</div></div>
+                  <div class="dash-mock__stat"><div class="dash-mock__stat-val" style="color:#14B8A6;">+23.7%</div><div class="dash-mock__stat-lbl">Avg ROI</div></div>
+                </div>
+                <div class="dash-mock__chart">
+                  <div class="dash-mock__chart-y"><span>$3M</span><span>$2M</span><span>$1M</span><span>$0</span></div>
+                  <div class="dash-mock__chart-bars"><div class="dash-mock__chart-bar" style="height:35%"></div><div class="dash-mock__chart-bar" style="height:42%"></div><div class="dash-mock__chart-bar" style="height:38%"></div><div class="dash-mock__chart-bar" style="height:55%"></div><div class="dash-mock__chart-bar" style="height:48%"></div><div class="dash-mock__chart-bar" style="height:65%"></div><div class="dash-mock__chart-bar" style="height:72%"></div><div class="dash-mock__chart-bar" style="height:68%"></div><div class="dash-mock__chart-bar" style="height:82%"></div><div class="dash-mock__chart-bar" style="height:78%"></div><div class="dash-mock__chart-bar" style="height:90%"></div><div class="dash-mock__chart-bar" style="height:95%"></div></div>
+                  <div class="dash-mock__chart-x"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -737,98 +802,125 @@ p { color: var(--text-muted); line-height: 1.7; }
     </div>
   </section>
 
+  <!-- PRESS BAR -->
+  <section class="press-bar fade-in">
+    <div class="container">
+      <div class="press-bar__inner">
+        <span class="press-bar__label">As featured in</span>
+        <span class="press-bar__logo" style="font-family:Georgia,serif;">Financial Times</span>
+        <span class="press-bar__logo">Bloomberg</span>
+        <span class="press-bar__logo" style="font-family:Georgia,serif;font-style:italic;">TechCrunch</span>
+        <span class="press-bar__logo" style="font-weight:900;">CNBC</span>
+        <span class="press-bar__logo" style="font-family:Georgia,serif;">The Straits Times</span>
+      </div>
+    </div>
+  </section>
+  
   <!-- TRUST BAR -->
   <section class="trust-bar">
     <div class="container">
       <div class="trust-bar__inner fade-in">
-        <div class="trust-item"><div class="trust-item__icon">🔒</div><div class="trust-item__label">Bank-Level Security</div><div class="trust-item__value">256-bit Encryption</div></div>
-        <div class="trust-item"><div class="trust-item__icon">🏢</div><div class="trust-item__label">Trusted by SMEs</div><div class="trust-item__value">500+ Businesses</div></div>
-        <div class="trust-item"><div class="trust-item__icon">✅</div><div class="trust-item__label">Compliance Ready</div><div class="trust-item__value">SOC 2 Compliant</div></div>
-        <div class="trust-item"><div class="trust-item__icon">📊</div><div class="trust-item__label">Data Insights</div><div class="trust-item__value">Real-Time Analytics</div></div>
+        <div class="trust-item"><div class="icon-box icon-box--blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="trust-item__label">Bank-Level Security</div><div class="trust-item__value">256-bit Encryption</div></div>
+        <div class="trust-item"><div class="icon-box icon-box--green"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="trust-item__label">Trusted by SMEs</div><div class="trust-item__value">500+ Businesses</div></div>
+        <div class="trust-item"><div class="icon-box icon-box--blue"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="trust-item__label">SOC 2 Compliant</div><div class="trust-item__value">Audit-Ready</div></div>
+        <div class="trust-item"><div class="icon-box icon-box--green"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="trust-item__label">Live Analytics</div><div class="trust-item__value">Real-Time Insights</div></div>
       </div>
     </div>
   </section>
 
-  <!-- VALUE PROPOSITION -->
+  <!-- HOW IT WORKS -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-header fade-in"><h2>How It Works</h2><p>Four steps from signup to smarter investing.</p></div>
+      <div class="how-steps fade-in delay-1" style="position:relative;">
+        <div class="how-steps__line"></div>
+        <div class="how-step"><div class="how-step__num">1</div><div class="how-step__title">Connect</div><div class="how-step__desc">Link your business accounts and financial data in under 5 minutes. Bank-level encryption keeps everything safe.</div></div>
+        <div class="how-step"><div class="how-step__num">2</div><div class="how-step__title">Analyse</div><div class="how-step__desc">Our AI crunches your numbers against market data, industry benchmarks, and growth patterns.</div></div>
+        <div class="how-step"><div class="how-step__num">3</div><div class="how-step__title">Strategise</div><div class="how-step__desc">Get personalised recommendations on where to allocate capital for maximum returns.</div></div>
+        <div class="how-step"><div class="how-step__num">4</div><div class="how-step__title">Grow</div><div class="how-step__desc">Watch your portfolio grow with data-backed decisions. Adjust as markets shift.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 94% HERO STAT -->
+  <section class="big-stat">
+    <div class="container fade-in">
+      <div class="big-stat__number">94%</div>
+      <div class="big-stat__label">of Prospera users report making more confident investment decisions within 30 days.</div>
+    </div>
+  </section>
+
+  <!-- PROBLEM / SOLUTION -->
   <section class="section">
     <div class="container">
-      <div class="section-header fade-in">
-        <h2>Purpose-built for ambitious enterprises</h2>
-      </div>
-      <div class="values-stack">
-        <div class="value-item fade-in"><div class="value-item__icon">◆</div><div><div class="value-item__label">Affordability</div><p class="value-item__desc">Institutional-grade insights at a fraction of the cost</p></div></div>
-        <div class="value-item fade-in delay-1"><div class="value-item__icon">◎</div><div><div class="value-item__label">Precision</div><p class="value-item__desc">AI-powered forecasting trusted by data-driven leaders</p></div></div>
-        <div class="value-item fade-in delay-2"><div class="value-item__icon">▲</div><div><div class="value-item__label">Simplicity</div><p class="value-item__desc">Complex analytics made accessible in one dashboard</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DASHBOARD SLIDER -->
-  <section class="section section--navy">
-    <div class="container">
-      <div class="section-header fade-in"><h2>Your Financial Command Centre</h2></div>
-      <div class="carousel fade-in delay-1">
-        <div class="carousel__track"><div class="carousel__slides">
-          <div class="carousel__slide"><div class="c-card"><div class="c-card__head c-card__head--blue">Portfolio Overview</div><div class="c-card__body"><div class="c-card__stats"><div class="c-mini"><div class="c-mini__val">$2.4M</div><div class="c-mini__lbl">Total Value</div></div><div class="c-mini"><div class="c-mini__val">18</div><div class="c-mini__lbl">Positions</div></div><div class="c-mini"><div class="c-mini__val">23.7%</div><div class="c-mini__lbl">Avg ROI</div></div></div><div class="c-bars"><div class="c-bars__bar" style="height:40%;background:var(--blue);"></div><div class="c-bars__bar" style="height:60%;background:var(--blue);"></div><div class="c-bars__bar" style="height:35%;background:var(--blue);"></div><div class="c-bars__bar" style="height:75%;background:var(--blue);"></div><div class="c-bars__bar" style="height:55%;background:var(--blue);"></div><div class="c-bars__bar" style="height:85%;background:var(--blue);"></div><div class="c-bars__bar" style="height:70%;background:var(--blue);"></div><div class="c-bars__bar" style="height:95%;background:var(--blue);"></div></div></div></div></div>
-          <div class="carousel__slide"><div class="c-card"><div class="c-card__head c-card__head--green">Risk Assessment</div><div class="c-card__body"><div class="c-card__stats"><div class="c-mini"><div class="c-mini__val" style="color:var(--green);">Low</div><div class="c-mini__lbl">Risk Level</div></div><div class="c-mini"><div class="c-mini__val">0.34</div><div class="c-mini__lbl">Volatility</div></div><div class="c-mini"><div class="c-mini__val">87%</div><div class="c-mini__lbl">Diversified</div></div></div><div class="c-bars"><div class="c-bars__bar" style="height:20%;background:var(--green);"></div><div class="c-bars__bar" style="height:30%;background:var(--green);"></div><div class="c-bars__bar" style="height:50%;background:var(--green);"></div><div class="c-bars__bar" style="height:40%;background:var(--green);"></div><div class="c-bars__bar" style="height:25%;background:var(--green);"></div><div class="c-bars__bar" style="height:35%;background:var(--green);"></div><div class="c-bars__bar" style="height:15%;background:var(--green);"></div><div class="c-bars__bar" style="height:45%;background:var(--green);"></div></div></div></div></div>
-          <div class="carousel__slide"><div class="c-card"><div class="c-card__head c-card__head--navy">Growth Forecasting</div><div class="c-card__body"><div class="c-card__stats"><div class="c-mini"><div class="c-mini__val">$840K</div><div class="c-mini__lbl">Projected</div></div><div class="c-mini"><div class="c-mini__val">$5.2M</div><div class="c-mini__lbl">Market Opp</div></div><div class="c-mini"><div class="c-mini__val">94%</div><div class="c-mini__lbl">Confidence</div></div></div><div class="c-bars"><div class="c-bars__bar" style="height:30%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:40%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:50%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:60%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:65%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:75%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:85%;background:#1B2E4A;"></div><div class="c-bars__bar" style="height:95%;background:#1B2E4A;"></div></div></div></div></div>
-          <div class="carousel__slide"><div class="c-card"><div class="c-card__head c-card__head--teal">Market Insights</div><div class="c-card__body"><div class="c-card__stats"><div class="c-mini"><div class="c-mini__val" style="color:var(--green);">+7.4%</div><div class="c-mini__lbl">Tech</div></div><div class="c-mini"><div class="c-mini__val">12</div><div class="c-mini__lbl">Signals</div></div><div class="c-mini"><div class="c-mini__val">240+</div><div class="c-mini__lbl">Sources</div></div></div><div class="c-bars"><div class="c-bars__bar" style="height:90%;background:var(--teal);"></div><div class="c-bars__bar" style="height:70%;background:var(--teal);"></div><div class="c-bars__bar" style="height:60%;background:var(--teal);"></div><div class="c-bars__bar" style="height:85%;background:var(--teal);"></div><div class="c-bars__bar" style="height:40%;background:var(--teal);"></div><div class="c-bars__bar" style="height:55%;background:var(--teal);"></div><div class="c-bars__bar" style="height:75%;background:var(--teal);"></div><div class="c-bars__bar" style="height:50%;background:var(--teal);"></div></div></div></div></div>
-        </div></div>
-        <div class="carousel__controls">
-          <button class="carousel__btn carousel__btn--prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <div class="carousel__dots"><div class="carousel__dot carousel__dot--active"></div><div class="carousel__dot"></div><div class="carousel__dot"></div><div class="carousel__dot"></div></div>
-          <button class="carousel__btn carousel__btn--next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM → SOLUTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in"><h2>Why Prospera?</h2></div>
+      <div class="section-header fade-in"><h2>The Playing Field Isn’t Level. Until Now.</h2></div>
       <div class="ps-grid">
         <div class="ps-col fade-in">
-          <h3>The Challenge</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--red">✕</div><div><h4>No Access to Pro Tools</h4><p>Institutional analytics are locked behind enterprise price tags.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red">✕</div><div><h4>Capital Allocation Guesswork</h4><p>Without data models, SMEs rely on gut instinct for critical decisions.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red">✕</div><div><h4>Market Volatility Exposure</h4><p>Small businesses lack frameworks to weather market turbulence.</p></div></div>
+          <h3>The Reality</h3>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Pro Tools Have Pro Price Tags</h4><p>Bloomberg Terminal starts at $25K/year. You shouldn’t need a hedge fund budget to make smart decisions.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Gut Feeling Isn’t a Strategy</h4><p>Without data models, you’re essentially guessing where to put $50K. That’s fine until it isn’t.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Markets Don’t Wait</h4><p>By the time you read the morning news, the smart money has already moved.</p></div></div>
         </div>
-        <div class="ps-col fade-in delay-2">
-          <h3>The Prospera Solution</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--green">✓</div><div><h4>Enterprise Tools, SME Pricing</h4><p>AI-powered forecasting and analytics at a fraction of the cost.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green">✓</div><div><h4>Data-Driven Decisions</h4><p>Models that analyse your financials and recommend strategies.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green">✓</div><div><h4>Built-in Risk Intelligence</h4><p>Real-time risk scoring keeps your portfolio resilient.</p></div></div>
+        <div class="ps-col fade-in delay-1">
+          <h3>The Prospera Way</h3>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Institutional Insights, Startup Pricing</h4><p>Everything a Bloomberg gives you, minus the $25K. AI-powered analysis that punches way above its weight class.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Data-Backed Confidence</h4><p>Every recommendation comes with the reasoning. No black boxes. Just data you can actually understand.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Stay Ahead, Not Behind</h4><p>Real-time risk alerts, market shifts, and opportunity flags. You’ll know before your competitors do.</p></div></div>
         </div>
       </div>
     </div>
   </section>
-
+  
   <!-- FEATURES GRID -->
-  <section class="section section--gray">
+  <section class="section section--warm">
     <div class="container">
-      <div class="section-header fade-in"><h2>Everything You Need to Grow</h2><p>A complete toolkit for SMEs that want to compete with confidence.</p></div>
+      <div class="section-header fade-in"><h2>Put Your Money Where the Data Points</h2><p>Everything you need to invest smarter, sleep better, and grow faster.</p></div>
       <div class="features-grid">
-        <div class="f-card fade-in"><div class="f-card__icon">📊</div><h4>Smart Forecasting</h4><p>AI models that forecast revenue, expenses, and growth trajectories with institutional accuracy.</p></div>
-        <div class="f-card fade-in delay-1"><div class="f-card__icon">🛡️</div><h4>Risk Assessment</h4><p>Real-time risk scoring powered by ML. Understand exposure and volatility at a glance.</p></div>
-        <div class="f-card fade-in delay-2"><div class="f-card__icon">💎</div><h4>Capital Optimizer</h4><p>Analyses goals and market conditions to recommend ideal allocation strategies.</p></div>
-        <div class="f-card fade-in delay-3"><div class="f-card__icon">🚀</div><h4>Growth Strategy</h4><p>Scenario planning, competitive benchmarking, and data-driven strategy tools.</p></div>
-        <div class="f-card fade-in delay-4"><div class="f-card__icon">⚡</div><h4>Market Intelligence</h4><p>Live feeds from 240+ global sources. Track sectors, trends, and act on signals.</p></div>
-        <div class="f-card fade-in delay-5"><div class="f-card__icon">📈</div><h4>Portfolio Tracker</h4><p>Unified dashboard. Benchmark comparisons. Automated monthly reports.</p></div>
+        <div class="f-card fade-in"><div class="icon-box icon-box--blue"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h4>See Tomorrow’s Numbers Today</h4><p>AI models that forecast revenue, expenses, and growth. Like having a crystal ball, but one that actually works.</p></div>
+        <div class="f-card fade-in delay-1"><div class="icon-box icon-box--green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Sleep Better Knowing Someone’s Watching</h4><p>Real-time risk scoring that monitors your portfolio 24/7. We’ll wake you up only when it matters.</p></div>
+        <div class="f-card fade-in delay-2"><div class="icon-box icon-box--blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg></div><h4>Your Money, Optimised</h4><p>Algorithmic capital allocation that would make a quant jealous. Maximum returns, minimum drama.</p></div>
+        <div class="f-card fade-in delay-3"><div class="icon-box icon-box--green"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4>Real-Time, Not Last-Week</h4><p>Live market feeds filtered through your portfolio lens. Know what matters to you, when it matters.</p></div>
+        <div class="f-card fade-in delay-4"><div class="icon-box icon-box--blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>Reports That Actually Get Read</h4><p>Clean, visual reports you’ll actually want to share with your board. No PhD required.</p></div>
+        <div class="f-card fade-in delay-5"><div class="icon-box icon-box--green"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h4>Compliance Without the Headache</h4><p>Automated regulatory checks and audit trails. Stay compliant without hiring a compliance team.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in"><h2>Don’t Take Our Word for It</h2><p>Hear from business owners who stopped guessing and started growing.</p></div>
+      <div class="testimonials fade-in delay-1">
+        <div class="test-card">
+          <div class="test-card__stars">★★★★★</div>
+          <div class="test-card__quote">“I was spreadsheet-managing a $200K portfolio. Prospera showed me I was leaving 15% on the table every quarter. The ROI paid for itself in the first month.”</div>
+          <div class="test-card__author"><div class="test-card__avatar">RK</div><div><div class="test-card__name">Rahul Krishnan</div><div class="test-card__role">CEO, Meridian Supply Co.</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-card__stars">★★★★★</div>
+          <div class="test-card__quote">“We tried three financial advisors before Prospera. They charged us $8K and gave us the same generic advice. This gives me better insights at a fraction of the cost.”</div>
+          <div class="test-card__author"><div class="test-card__avatar">SL</div><div><div class="test-card__name">Sarah Lim</div><div class="test-card__role">CFO, Greenfield Logistics</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-card__stars">★★★★★</div>
+          <div class="test-card__quote">“The risk alerts alone are worth it. Got a notification about market exposure right before a correction. Saved us from a $30K drawdown. I sleep better now.”</div>
+          <div class="test-card__author"><div class="test-card__avatar">JT</div><div><div class="test-card__name">James Tan</div><div class="test-card__role">Founder, Atlas Digital</div></div></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA BANNER -->
-  <section class="section">
+  <section class="section section--warm">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2>Ready to transform how your business invests?</h2>
-        <p>Join thousands of SMEs already on the waitlist for Prospera.</p>
+        <h2>Stop Guessing. Start Growing.</h2>
+        <p>Join thousands of SMEs who decided their money deserves better than a spreadsheet.</p>
         <a href="waitlist.html" class="btn btn--blue btn--lg">Get Early Access</a>
       </div>
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer class="footer"><div class="container">
     <div class="footer__grid">
@@ -849,7 +941,13 @@ p { color: var(--text-muted); line-height: 1.7; }
         <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
       </div>
     </div>
-  </div></footer>
+  
+      <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);">Built with ♥ in Singapore</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);">© 2025 Prospera. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
 /* ============================================
