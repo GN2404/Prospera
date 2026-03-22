@@ -706,7 +706,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 .dash-mock__dot { width: 10px; height: 10px; border-radius: 50%; }
 .dash-mock__dot--r { background: #ff5f57; } .dash-mock__dot--y { background: #febc2e; } .dash-mock__dot--g { background: #28c840; }
 .dash-mock__tabs { display: flex; gap: 4px; margin-left: 16px; }
-.dash-mock__tab { padding: 4px 14px; border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.4); }
+.dash-mock__tab { padding: 4px 14px; border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.4); cursor: pointer; }
 .dash-mock__tab--active { background: rgba(255,255,255,0.1); color: #fff; }
 .dash-mock__body { display: flex; min-height: 320px; }
 .dash-mock__sidebar { width: 56px; background: #151929; display: flex; flex-direction: column; align-items: center; padding-top: 16px; gap: 20px; }
@@ -721,8 +721,19 @@ p { color: var(--text-muted); line-height: 1.7; }
 .dash-mock__chart-bar { flex: 1; background: linear-gradient(to top, var(--blue), var(--teal)); border-radius: 4px 4px 0 0; }
 .dash-mock__chart-y { position: absolute; left: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 120px; top: 52px; }
 .dash-mock__chart-y span { font-size: 10px; color: rgba(255,255,255,0.3); }
-.dash-mock__chart-x { display: flex; padding-left: 40px; gap: 8px; margin-top: 8px; }
+.dash-mock__chart-x { display: flex; justify-content: space-between; padding-left: 40px; margin-top: 8px; }
 .dash-mock__chart-x span { flex: 1; text-align: center; font-size: 10px; color: rgba(255,255,255,0.3); }
+.dash-panel { display: none; }
+.dash-panel--active { display: block; }
+.dash-mock__iconbar { background: #151929; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+.dash-mock__iconbar-btn { width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
+.dash-mock__iconbar-btn:hover { background: rgba(255,255,255,0.12); }
+.dash-mock__iconbar-btn--active { background: rgba(59,99,251,0.3); }
+.dash-mock__panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.dash-mock__risk-bar-row { margin-bottom: 8px; }
+.dash-mock__risk-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.dash-mock__risk-bar-track { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.dash-mock__risk-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--blue), var(--teal)); }
 @media(max-width:768px) { .how-steps { grid-template-columns: 1fr 1fr; gap: 16px; } .how-steps__line { display: none; } .press-bar__inner { gap: 24px; } .dash-mock__stats { grid-template-columns: 1fr; } .dash-mock__body { flex-direction: column; } .dash-mock__sidebar { flex-direction: row; width: 100%; padding: 8px 16px; } }
 @media(max-width:480px) { .how-steps { grid-template-columns: 1fr; } .testimonials { grid-template-columns: 1fr; } }
 
@@ -772,22 +783,73 @@ p { color: var(--text-muted); line-height: 1.7; }
           <div class="dash-mock">
             <div class="dash-mock__toolbar">
               <div class="dash-mock__dots"><div class="dash-mock__dot dash-mock__dot--r"></div><div class="dash-mock__dot dash-mock__dot--y"></div><div class="dash-mock__dot dash-mock__dot--g"></div></div>
-              <div class="dash-mock__tabs"><div class="dash-mock__tab dash-mock__tab--active">Overview</div><div class="dash-mock__tab">Risk</div><div class="dash-mock__tab">Forecast</div></div>
+              <div class="dash-mock__tabs"><div class="dash-mock__tab dash-mock__tab--active" data-tab="overview">Overview</div><div class="dash-mock__tab" data-tab="risk">Risk</div><div class="dash-mock__tab" data-tab="forecast">Forecast</div></div>
             </div>
             <div class="dash-mock__body">
-              <div class="dash-mock__sidebar"><div class="dash-mock__sidebar-icon" style="background:rgba(59,99,251,0.3);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div class="dash-mock__sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="dash-mock__sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="dash-mock__sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div></div>
               <div class="dash-mock__main">
-                <div class="dash-mock__stats">
-                  <div class="dash-mock__stat"><div class="dash-mock__stat-val">$2.4M</div><div class="dash-mock__stat-lbl">Portfolio Value</div><div style="font-size:11px;color:#10B981;margin-top:4px;">+12.3% this quarter</div></div>
-                  <div class="dash-mock__stat"><div class="dash-mock__stat-val">18</div><div class="dash-mock__stat-lbl">Positions</div></div>
-                  <div class="dash-mock__stat"><div class="dash-mock__stat-val" style="color:#14B8A6;">+23.7%</div><div class="dash-mock__stat-lbl">Avg ROI</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">vs 8.2% benchmark</div></div>
+                <!-- Overview Panel -->
+                <div class="dash-panel dash-panel--active" id="panel-overview">
+                  <div class="dash-mock__stats">
+                    <div class="dash-mock__stat"><div class="dash-mock__stat-val">$2.4M</div><div class="dash-mock__stat-lbl">Portfolio Value</div><div style="font-size:11px;color:#10B981;margin-top:4px;">+12.3% this quarter</div></div>
+                    <div class="dash-mock__stat"><div class="dash-mock__stat-val">18</div><div class="dash-mock__stat-lbl">Positions</div></div>
+                    <div class="dash-mock__stat"><div class="dash-mock__stat-val" style="color:#14B8A6;">+23.7%</div><div class="dash-mock__stat-lbl">Avg ROI</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">vs 8.2% benchmark</div></div>
+                  </div>
+                  <div class="dash-mock__chart">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);">Portfolio Growth</span><span style="font-size:11px;color:rgba(255,255,255,0.35);">Last 12 months</span></div>
+                    <div class="dash-mock__chart-y"><span>$3M</span><span>$2M</span><span>$1M</span><span>$0</span></div>
+                    <div class="dash-mock__chart-bars"><div class="dash-mock__chart-bar" style="height:35%"></div><div class="dash-mock__chart-bar" style="height:42%"></div><div class="dash-mock__chart-bar" style="height:38%"></div><div class="dash-mock__chart-bar" style="height:55%"></div><div class="dash-mock__chart-bar" style="height:48%"></div><div class="dash-mock__chart-bar" style="height:65%"></div><div class="dash-mock__chart-bar" style="height:72%"></div><div class="dash-mock__chart-bar" style="height:68%"></div><div class="dash-mock__chart-bar" style="height:82%"></div><div class="dash-mock__chart-bar" style="height:78%"></div><div class="dash-mock__chart-bar" style="height:90%"></div><div class="dash-mock__chart-bar" style="height:95%"></div></div>
+                    <div class="dash-mock__chart-x"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+                  </div>
                 </div>
-                <div class="dash-mock__chart"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);">Portfolio Growth</span><span style="font-size:11px;color:rgba(255,255,255,0.35);">Last 12 months</span></div>
-                  <div class="dash-mock__chart-y"><span>$3M</span><span>$2M</span><span>$1M</span><span>$0</span></div>
-                  <div class="dash-mock__chart-bars"><div class="dash-mock__chart-bar" style="height:35%"></div><div class="dash-mock__chart-bar" style="height:42%"></div><div class="dash-mock__chart-bar" style="height:38%"></div><div class="dash-mock__chart-bar" style="height:55%"></div><div class="dash-mock__chart-bar" style="height:48%"></div><div class="dash-mock__chart-bar" style="height:65%"></div><div class="dash-mock__chart-bar" style="height:72%"></div><div class="dash-mock__chart-bar" style="height:68%"></div><div class="dash-mock__chart-bar" style="height:82%"></div><div class="dash-mock__chart-bar" style="height:78%"></div><div class="dash-mock__chart-bar" style="height:90%"></div><div class="dash-mock__chart-bar" style="height:95%"></div></div>
-                  <div class="dash-mock__chart-x"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+                <!-- Risk Panel -->
+                <div class="dash-panel" id="panel-risk">
+                  <div class="dash-mock__panel-head"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);">Portfolio Risk Analysis</span><span style="font-size:11px;color:rgba(255,255,255,0.35);">Updated today</span></div>
+                  <div style="display:flex;align-items:center;gap:20px;margin-bottom:20px;">
+                    <div style="background:rgba(245,158,11,0.1);border-radius:12px;padding:14px 18px;text-align:center;flex-shrink:0;">
+                      <div style="font-size:36px;font-weight:800;color:#F59E0B;line-height:1;">6.2</div>
+                      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">/10</div>
+                    </div>
+                    <div>
+                      <div style="font-size:14px;font-weight:700;color:#F59E0B;margin-bottom:6px;">Moderate Risk</div>
+                      <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;">Diversified across 4 sectors.<br>Low concentration risk.</div>
+                    </div>
+                  </div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Sector Exposure</div>
+                  <div class="dash-mock__risk-bar-row"><div class="dash-mock__risk-bar-label"><span>Technology</span><span>42%</span></div><div class="dash-mock__risk-bar-track"><div class="dash-mock__risk-bar-fill" style="width:42%"></div></div></div>
+                  <div class="dash-mock__risk-bar-row"><div class="dash-mock__risk-bar-label"><span>Finance</span><span>28%</span></div><div class="dash-mock__risk-bar-track"><div class="dash-mock__risk-bar-fill" style="width:28%"></div></div></div>
+                  <div class="dash-mock__risk-bar-row"><div class="dash-mock__risk-bar-label"><span>Retail</span><span>18%</span></div><div class="dash-mock__risk-bar-track"><div class="dash-mock__risk-bar-fill" style="width:18%"></div></div></div>
+                  <div class="dash-mock__risk-bar-row"><div class="dash-mock__risk-bar-label"><span>Logistics</span><span>12%</span></div><div class="dash-mock__risk-bar-track"><div class="dash-mock__risk-bar-fill" style="width:12%"></div></div></div>
+                </div>
+                <!-- Forecast Panel -->
+                <div class="dash-panel" id="panel-forecast">
+                  <div class="dash-mock__panel-head"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);">Revenue Forecast</span><span style="font-size:11px;color:rgba(255,255,255,0.35);">Q2 2026 Projection</span></div>
+                  <div style="margin-bottom:20px;">
+                    <div style="font-size:42px;font-weight:800;color:#10B981;line-height:1;">+8.4%</div>
+                    <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:600;">Projected Q2 Revenue Growth</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;line-height:1.6;">Based on trailing 6-month trend and market conditions.</div>
+                  </div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">6-Month Trend</div>
+                  <div style="display:flex;align-items:flex-end;gap:6px;height:60px;">
+                    <div style="flex:1;height:50%;background:rgba(16,185,129,0.3);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:58%;background:rgba(16,185,129,0.4);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:65%;background:rgba(16,185,129,0.5);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:74%;background:rgba(16,185,129,0.6);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:83%;background:rgba(16,185,129,0.75);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:92%;background:rgba(16,185,129,0.9);border-radius:3px 3px 0 0;"></div>
+                    <div style="flex:1;height:100%;border:1px dashed rgba(16,185,129,0.5);background:rgba(16,185,129,0.12);border-radius:3px 3px 0 0;"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:4px;">
+                    <span style="font-size:10px;color:rgba(255,255,255,0.3);">Sep</span><span style="font-size:10px;color:rgba(255,255,255,0.3);">Oct</span><span style="font-size:10px;color:rgba(255,255,255,0.3);">Nov</span><span style="font-size:10px;color:rgba(255,255,255,0.3);">Dec</span><span style="font-size:10px;color:rgba(255,255,255,0.3);">Jan</span><span style="font-size:10px;color:rgba(255,255,255,0.3);">Feb</span><span style="font-size:10px;color:#10B981;font-weight:600;">Q2 →</span>
+                  </div>
                 </div>
               </div>
+            </div>
+            <!-- Icon bar — bottom-left horizontal row -->
+            <div class="dash-mock__iconbar">
+              <div class="dash-mock__iconbar-btn dash-mock__iconbar-btn--active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+              <div class="dash-mock__iconbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+              <div class="dash-mock__iconbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="dash-mock__iconbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
             </div>
           </div>
         </div>
@@ -1145,6 +1207,20 @@ document.addEventListener('DOMContentLoaded', () => {
       twSub.style.opacity = '1';
       twSub.classList.add('show');
     }
+  }
+
+  /* --- 12. Dashboard Tab Switching --- */
+  const dashTabs = document.querySelectorAll('.dash-mock__tab[data-tab]');
+  if (dashTabs.length) {
+    dashTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        dashTabs.forEach(t => t.classList.remove('dash-mock__tab--active'));
+        tab.classList.add('dash-mock__tab--active');
+        document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('dash-panel--active'));
+        const panel = document.getElementById('panel-' + tab.dataset.tab);
+        if (panel) panel.classList.add('dash-panel--active');
+      });
+    });
   }
 
   function runTypewriter(el, sub, text) {
