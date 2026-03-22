@@ -690,11 +690,11 @@ p { color: var(--text-muted); line-height: 1.7; }
 .big-stat__label { font-size: 20px; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; }
 .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
 .how-step { text-align: center; padding: 32px 20px; position: relative; z-index: 2; cursor: default; transition: all 0.3s; }
-.how-step:hover { transform: translateY(-4px); } .how-step:hover .how-step__num { box-shadow: 0 0 0 6px var(--warm-gray, #F4F3F0), 0 4px 12px rgba(59,99,251,0.3); }
-.how-step__num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; position: relative; z-index: 2; box-shadow: 0 0 0 6px var(--warm-gray, #F4F3F0); transition: box-shadow 0.3s; }
+.how-step:hover { transform: translateY(-4px); } .how-step:hover .how-step__num { box-shadow: 0 0 0 8px var(--warm-gray, #F4F3F0), 0 4px 12px rgba(59,99,251,0.3); }
+.how-step__num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; position: relative; z-index: 2; box-shadow: 0 0 0 8px var(--warm-gray, #F4F3F0); transition: box-shadow 0.3s; }
 .how-step__title { font-weight: 700; font-size: 18px; margin-bottom: 8px; color: var(--text-dark); }
 .how-step__desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-.how-steps__line { position: absolute; top: 56px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--teal)); z-index: 1; }
+.how-steps__line { position: absolute; top: 56px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--teal)); z-index: 0; }
 .icon-box { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 16px; }
 .icon-box--blue { background: rgba(59,99,251,0.1); color: var(--blue); }
 .icon-box--green { background: rgba(20,184,166,0.1); color: var(--teal); }
