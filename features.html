@@ -131,10 +131,33 @@ p { color: var(--text-muted); line-height: 1.7; }
   .nav__hamburger { display: flex; }
   h1 { font-size: 36px; } h2 { font-size: 28px; }
   .features-grid { grid-template-columns: 1fr; }
-  .comp-table th, .comp-table td { padding: 10px 12px; font-size: 12px; }
+  .comp-table-wrap { display: none; }
+  .comp-cards { display: flex; flex-direction: column; gap: 16px; }
   .footer__grid { flex-direction: column; }
   .footer__bottom { flex-direction: column; text-align: center; }
+  .section { padding: 48px 0; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  .btn { min-height: 44px; padding: 12px 24px; }
+  .btn--lg { min-height: 44px; }
 }
+@media(max-width:480px) {
+  .container { padding: 0 16px; }
+  .cta-banner { padding: 48px 20px; }
+}
+.comp-cards { display: none; }
+.comp-card { border-radius: var(--radius-lg); border: 1px solid var(--border-light); overflow: hidden; box-shadow: var(--shadow-card); }
+.comp-card--prospera { background: var(--navy); border: 2px solid var(--blue); box-shadow: 0 0 0 1px var(--blue), var(--shadow-lg); }
+.comp-card__header { padding: 16px 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(0,0,0,0.08); }
+.comp-card--prospera .comp-card__header { background: rgba(59,99,251,0.25); color: #7DD3FC; }
+.comp-card__row { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-top: 1px solid var(--border-light); gap: 12px; }
+.comp-card--prospera .comp-card__row { border-top-color: rgba(255,255,255,0.08); }
+.comp-card__attr { font-size: 13px; color: var(--text-muted); flex: 1; }
+.comp-card--prospera .comp-card__attr { color: rgba(255,255,255,0.5); }
+.comp-card__val { font-size: 13px; font-weight: 600; color: var(--text-dark); text-align: right; }
+.comp-card--prospera .comp-card__val { color: var(--white); }
+.comp-card__val .ck { color: var(--green); font-size: 15px; }
+.comp-card__val .xx { color: var(--text-faint); font-size: 15px; }
   </style>
 </head>
 <body>
@@ -239,7 +262,8 @@ p { color: var(--text-muted); line-height: 1.7; }
         <h2>How Prospera Compares</h2>
         <p>We built Prospera because nothing else on the market hits the right balance of capability, cost, and SME relevance.</p>
       </div>
-      <div class="fade-in" style="overflow-x:auto;">
+      <!-- Desktop table -->
+      <div class="comp-table-wrap fade-in" style="overflow-x:auto;">
         <table class="comp-table">
           <thead>
             <tr>
@@ -295,6 +319,45 @@ p { color: var(--text-muted); line-height: 1.7; }
             </tr>
           </tbody>
         </table>
+      </div>
+      <!-- Mobile stacked cards -->
+      <div class="comp-cards fade-in">
+        <div class="comp-card comp-card--prospera">
+          <div class="comp-card__header">⭐ Prospera</div>
+          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">From $49</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">For non-finance founders</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-card__header">Financial Advisor</div>
+          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">$500–$2,000+</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Requires meetings</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-card__header">Bloomberg Terminal</div>
+          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">~$2,100+</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Steep learning curve</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-card__header">DIY Spreadsheets</div>
+          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">$0 (but hours of your time)</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Manual and error-prone</span></div>
+          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+        </div>
       </div>
     </div>
   </section>
