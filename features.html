@@ -135,6 +135,15 @@ p { color: var(--text-muted); line-height: 1.7; }
   .comp-cards { display: flex; flex-direction: column; gap: 16px; }
   .footer__grid { flex-direction: column; }
   .footer__bottom { flex-direction: column; text-align: center; }
+  .section { padding: 48px 0; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  .btn { min-height: 44px; padding: 12px 24px; }
+  .btn--lg { min-height: 44px; }
+}
+@media(max-width:480px) {
+  .container { padding: 0 16px; }
+  .cta-banner { padding: 48px 20px; }
 }
 .comp-cards { display: none; }
 .comp-card { border-radius: var(--radius-lg); border: 1px solid var(--border-light); overflow: hidden; box-shadow: var(--shadow-card); }
