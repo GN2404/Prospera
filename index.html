@@ -689,8 +689,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 .big-stat__number { font-family: var(--font-heading); font-size: clamp(80px, 15vw, 180px); font-weight: 700; font-style: italic; color: var(--white); line-height: 1; margin-bottom: 16px; }
 .big-stat__label { font-size: 20px; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; }
 .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-.how-step { text-align: center; padding: 32px 20px; position: relative; cursor: default; transition: all 0.3s; }
-.how-step:hover { transform: translateY(-4px); } .how-step:hover .how-step__num { box-shadow: 0 4px 12px rgba(59,99,251,0.3); }
+.how-step { text-align: center; padding: 32px 20px; position: relative; z-index: 2; cursor: default; transition: all 0.3s; }
+.how-step:hover { transform: translateY(-4px); } .how-step:hover .how-step__num { box-shadow: 0 0 0 6px var(--warm-gray, #F4F3F0), 0 4px 12px rgba(59,99,251,0.3); }
 .how-step__num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; position: relative; z-index: 2; box-shadow: 0 0 0 6px var(--warm-gray, #F4F3F0); transition: box-shadow 0.3s; }
 .how-step__title { font-weight: 700; font-size: 18px; margin-bottom: 8px; color: var(--text-dark); }
 .how-step__desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
