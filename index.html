@@ -659,7 +659,8 @@ p { color: var(--text-muted); line-height: 1.7; }
   .comp-table { font-size: 13px; }
   .comp-table th, .comp-table td { padding: 10px 8px; }
 
-  .trust-bar__inner { justify-content: center; }
+  .trust-bar__inner { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; justify-content: unset; }
+  .trust-item { padding: 16px; background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: center; }
   .wl-inline-form { flex-direction: column; }
   .wl-counter { font-size: 48px; }
 }
