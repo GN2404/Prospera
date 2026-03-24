@@ -714,10 +714,10 @@ p { color: var(--text-muted); line-height: 1.7; }
 .dash-mock__tabs { display: flex; gap: 4px; margin-left: 16px; }
 .dash-mock__tab { padding: 4px 14px; border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.4); cursor: pointer; }
 .dash-mock__tab--active { background: rgba(255,255,255,0.1); color: #fff; }
-.dash-mock__body { display: flex; min-height: 320px; }
+.dash-mock__body { display: flex; min-height: 420px; height: 420px; }
 .dash-mock__sidebar { width: 56px; background: #151929; display: flex; flex-direction: column; align-items: center; padding-top: 16px; gap: 20px; }
 .dash-mock__sidebar-icon { width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.06); }
-.dash-mock__main { flex: 1; padding: 24px; }
+.dash-mock__main { flex: 1; padding: 24px; overflow: hidden; }
 .dash-mock__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
 .dash-mock__stat { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; }
 .dash-mock__stat-val { font-size: 24px; font-weight: 700; color: #fff; }
@@ -740,7 +740,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 .dash-mock__risk-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
 .dash-mock__risk-bar-track { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
 .dash-mock__risk-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--blue), var(--teal)); }
-@media(max-width:768px) { .how-steps { grid-template-columns: 1fr 1fr; gap: 16px; } .how-steps__line { display: none; } .press-bar__inner { gap: 24px; } .dash-mock__stats { grid-template-columns: 1fr; } .dash-mock__body { flex-direction: column; } .dash-mock__sidebar { flex-direction: row; width: 100%; padding: 8px 16px; } }
+@media(max-width:768px) { .how-steps { grid-template-columns: 1fr 1fr; gap: 16px; } .how-steps__line { display: none; } .press-bar__inner { gap: 24px; } .dash-mock__stats { grid-template-columns: 1fr; } .dash-mock__body { flex-direction: column; height: auto; min-height: 320px; } .dash-mock__sidebar { flex-direction: row; width: 100%; padding: 8px 16px; } }
 @media(max-width:480px) { .how-steps { grid-template-columns: 1fr; } .testimonials { grid-template-columns: 1fr; } }
 
 </style>
@@ -777,16 +777,14 @@ p { color: var(--text-muted); line-height: 1.7; }
     <div class="container">
       <div class="hero__inner">
         <div class="hero__text">
-          <div class="section-label fade-in"><span style="display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;margin-right:8px;"></span>SME FINANCIAL INTELLIGENCE</div>
-          <div class="fade-in delay-1" style="margin-bottom:12px;"><span style="font-family:Poppins,sans-serif;font-size:52px;font-weight:700;color:var(--white);letter-spacing:-0.02em;">Prospera</span></div>
-          <h1 class="hero__title fade-in delay-2">Financial intelligence built for Singapore SMEs. Institutional-grade insights. From $49/month.</h1>
-          <p class="hero__subtitle fade-in delay-3">Bloomberg Terminal starts at $25K/year. You just want to know where to put your next $50K. Prospera gives you the insights without the price tag.</p>
-          <div class="hero__ctas fade-in delay-4">
+          <h1 class="hero__title fade-in">Financial intelligence built for Singapore SMEs. Institutional-grade insights. From $49/month.</h1>
+          <p class="hero__subtitle fade-in delay-1">Bloomberg Terminal starts at $25K/year. You just want to know where to put your next $50K. Prospera gives you the insights without the price tag.</p>
+          <div class="hero__ctas fade-in delay-2">
             <a href="waitlist.html" class="btn btn--blue btn--lg">Join the Waitlist</a>
             <a href="features.html" class="btn btn--outline btn--lg">Learn More</a>
           </div>
         </div>
-        <div class="hero__visual fade-in delay-4">
+        <div class="hero__visual fade-in delay-3">
           <div class="dash-mock">
             <div class="dash-mock__toolbar">
               <div class="dash-mock__dots"><div class="dash-mock__dot dash-mock__dot--r"></div><div class="dash-mock__dot dash-mock__dot--y"></div><div class="dash-mock__dot dash-mock__dot--g"></div></div>
@@ -914,15 +912,15 @@ p { color: var(--text-muted); line-height: 1.7; }
       <div class="ps-grid">
         <div class="ps-col fade-in">
           <h3>The Reality</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Pro Tools Have Pro Price Tags</h4><p>Bloomberg Terminal starts at $25K/year. You shouldn’t need a hedge fund budget to make smart decisions.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Gut Feeling Isn’t a Strategy</h4><p>Without data models, you’re essentially guessing where to put $50K. That’s fine until it isn’t.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Markets Don’t Wait</h4><p>By the time you read the morning news, the smart money has already moved.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Pro Tools Have Pro Price Tags</h4><p>Bloomberg Terminal starts at $25K/year. Bank RMs require $350K minimum AUM. Most SMEs are left with spreadsheets.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>One Bank’s View Isn’t Enough</h4><p>Your bank RM sees one bank’s products. You need cross-bank, cross-asset visibility to make informed decisions.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Quarterly Check-Ins Aren’t Enough</h4><p>Between quarterly RM meetings, markets move. You need always-on visibility, not scheduled check-ins.</p></div></div>
         </div>
         <div class="ps-col fade-in delay-1">
           <h3>The Prospera Way</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Institutional-Grade Analysis at 1% of the Cost</h4><p>The same calibre of market intelligence that hedge funds rely on — packaged for businesses investing $50K to $5M. Starting from just $49/month.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Every Insight Comes with the Data Behind It</h4><p>Every insight shows you the data behind it — historical performance, risk metrics, comparable benchmarks. You'll always know why, not just what.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Move Before the Market Does</h4><p>Real-time risk alerts, market shifts, and opportunity flags. You’ll know before your competitors do.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Institutional-Grade Analysis From $49/month</h4><p>The same calibre of market intelligence that Bloomberg and bank wealth desks provide — packaged for businesses investing $50K to $5M. No minimum AUM, no relationship manager required.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Cross-Bank, Cross-Asset Visibility</h4><p>See your full financial picture in one place — across banks, asset classes, and markets. Independent analysis with no product bias.</p></div></div>
+          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Always-On Market Visibility</h4><p>Real-time risk alerts, market shifts, and opportunity flags — 24/7, not just once a quarter. You’ll know before your competitors do.</p></div></div>
         </div>
       </div>
     </div>
