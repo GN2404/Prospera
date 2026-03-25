@@ -220,9 +220,10 @@ p { color: var(--text-muted); line-height: 1.7; }
 
 .hero__inner { display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; }
 .hero__text { flex: 0 0 55%; }
-.hero__title { font-size: 52px; color: var(--white); margin-bottom: 20px; }
-.hero__subtitle { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 500px; line-height: 1.7; }
-.hero__ctas { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); background: rgba(16,185,129,0.12); padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+.hero__title { font-size: clamp(2rem, 4.5vw, 3.25rem); color: var(--white); margin-bottom: 20px; max-width: 600px; line-height: 1.2; }
+.hero__subtitle { font-size: 1.0625rem; color: rgba(255,255,255,0.85); max-width: 520px; line-height: 1.7; }
+.hero__ctas { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; align-items: center; }
 .hero__visual { flex: 1; }
 
 /* Dashboard Mockup Card */
@@ -640,8 +641,8 @@ p { color: var(--text-muted); line-height: 1.7; }
   .hero__subtitle { margin-left: auto; margin-right: auto; }
   .hero__ctas { justify-content: center; }
   .hero__visual { max-width: 100%; }
-  .hero__title { font-size: 2rem; line-height: 1.2; }
-  .hero__subtitle { font-size: 1rem; }
+  .hero__title { font-size: clamp(1.75rem, 6vw, 2.25rem); line-height: 1.2; max-width: 100%; }
+  .hero__subtitle { font-size: 1rem; max-width: 100%; }
 
   .ps-grid { flex-direction: column; gap: 40px; }
   .ps-grid::after { display: none; }
@@ -785,11 +786,12 @@ p { color: var(--text-muted); line-height: 1.7; }
     <div class="container">
       <div class="hero__inner">
         <div class="hero__text">
-          <h1 class="hero__title fade-in">Institutional-grade financial intelligence for Singapore SMEs</h1>
-          <p class="hero__subtitle fade-in delay-1">Your bank RM can't show you portfolio risk, sector exposure, or 12-month cash flow forecasts. Prospera can — free to start, $39/month for Pro.</p>
-          <div class="hero__ctas fade-in delay-2">
+          <span class="hero__eyebrow fade-in">Built for Singapore SMEs</span>
+          <h1 class="hero__title fade-in delay-1">The financial dashboard your bank won't build you</h1>
+          <p class="hero__subtitle fade-in delay-2">Portfolio tracking, risk analysis, and cash flow forecasting — the tools Bloomberg charges $25K/year for, built for SMEs. Free to start.</p>
+          <div class="hero__ctas fade-in delay-3">
             <a href="waitlist.html" class="btn btn--blue btn--lg shiny-cta">Join the Waitlist</a>
-            <a href="features.html" class="btn btn--outline btn--lg">Learn More</a>
+            <a href="features.html" class="btn btn--outline btn--lg">See How It Works</a>
           </div>
         </div>
         <div class="hero__visual fade-in delay-3">
