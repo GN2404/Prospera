@@ -160,6 +160,135 @@ p { color: var(--text-muted); line-height: 1.7; }
 .comp-card__val .xx { color: var(--text-faint); font-size: 15px; }
   </style>
   <link rel="stylesheet" href="glass.css">
+  <style>
+  /* ============================================================
+     FEATURES PAGE — post-glass.css: new comparison table
+     ============================================================ */
+
+  /* Outer container — glass card */
+  .cmp-outer {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+  }
+
+  /* Scroll wrapper — horizontal scroll on mobile */
+  .cmp-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cmp-scroll::-webkit-scrollbar { height: 4px; }
+  .cmp-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+  .cmp-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+  /* Table base */
+  .cmp-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .cmp-table th,
+  .cmp-table td {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 13.5px;
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+
+  /* Feature label column */
+  .cmp-table th:first-child,
+  .cmp-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255,255,255,0.88) !important;
+    white-space: normal;
+    width: 22%;
+  }
+
+  /* Header row */
+  .cmp-table thead th {
+    background: rgba(0,0,0,0.22);
+    color: rgba(255,255,255,0.5) !important;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 16px 18px;
+    white-space: normal;
+  }
+
+  /* Prospera header — blue tint + top accent bar */
+  .cmp-table thead th.cmp-th--prospera {
+    background: rgba(59,99,251,0.28) !important;
+    color: #93c5fd !important;
+    border-left: 1px solid rgba(59,99,251,0.35);
+    border-right: 1px solid rgba(59,99,251,0.35);
+    border-top: 3px solid #3B63FB;
+    padding-top: 14px;
+  }
+
+  /* Body data cells */
+  .cmp-table tbody td {
+    color: rgba(255,255,255,0.62) !important;
+    font-weight: 400;
+  }
+
+  /* Prospera data column */
+  .cmp-table td.cmp-td--prospera {
+    background: rgba(59,99,251,0.07) !important;
+    color: rgba(255,255,255,0.92) !important;
+    font-weight: 600;
+    border-left: 1px solid rgba(59,99,251,0.2);
+    border-right: 1px solid rgba(59,99,251,0.2);
+  }
+
+  /* Subtle row striping */
+  .cmp-table tbody tr:nth-child(odd) td {
+    background: rgba(255,255,255,0.015);
+  }
+  .cmp-table tbody tr:nth-child(odd) td.cmp-td--prospera {
+    background: rgba(59,99,251,0.09) !important;
+  }
+
+  /* Last row — no bottom border */
+  .cmp-table tbody tr:last-child td { border-bottom: none; }
+
+  /* Row hover */
+  .cmp-table tbody tr:hover td { background: rgba(255,255,255,0.04); }
+  .cmp-table tbody tr:hover td.cmp-td--prospera { background: rgba(59,99,251,0.13) !important; }
+
+  /* Icon colours — text chars so CSS colour applies cleanly */
+  .ico-ck { color: #10B981; font-weight: 700; font-size: 15px; }
+  .ico-xx { color: #EF4444; font-weight: 700; font-size: 15px; }
+  .ico-wn { color: #F59E0B; font-weight: 700; font-size: 15px; }
+
+  /* Disclaimer note below table */
+  .cmp-note {
+    margin: 16px auto 0;
+    text-align: center;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.38) !important;
+    font-style: italic;
+    max-width: 700px;
+    line-height: 1.65;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .cmp-table th, .cmp-table td { padding: 12px 13px; font-size: 12.5px; }
+    .cmp-table th:first-child, .cmp-table td:first-child { width: 30%; }
+  }
+  </style>
 </head>
 <body>
 
@@ -257,109 +386,81 @@ p { color: var(--text-muted); line-height: 1.7; }
   </section>
 
   <!-- COMPARISON TABLE -->
-  <section class="section section--gray">
+  <section class="section">
     <div class="container">
       <div class="section-header fade-in">
         <h2>How Prospera Compares</h2>
-        <p>We built Prospera because nothing else on the market hits the right balance of capability, cost, and SME relevance.</p>
+        <p>We're not here to replace your bank. We're here to give you the visibility your bank can't.</p>
       </div>
-      <!-- Desktop table -->
-      <div class="comp-table-wrap fade-in" style="overflow-x:auto;">
-        <table class="comp-table">
-          <thead>
-            <tr>
-              <th style="text-align:left;"></th>
-              <th style="color:#7DD3FC;">Prospera</th>
-              <th>Financial Advisor</th>
-              <th>Bloomberg Terminal</th>
-              <th>DIY Spreadsheets</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Monthly Cost</td>
-              <td class="prospera-col">From $49</td>
-              <td>$500–$2,000+</td>
-              <td>~$2,100+</td>
-              <td>$0 (but hours of your time)</td>
-            </tr>
-            <tr>
-              <td>Real-Time Alerts</td>
-              <td class="prospera-col"><span class="ck">&#10003;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="ck">&#10003;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-            </tr>
-            <tr>
-              <td>AI-Powered Forecasting</td>
-              <td class="prospera-col"><span class="ck">&#10003;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-            </tr>
-            <tr>
-              <td>SME-Specific Insights</td>
-              <td class="prospera-col"><span class="ck">&#10003;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-            </tr>
-            <tr>
-              <td>Ease of Use</td>
-              <td class="prospera-col">Designed for non-finance founders</td>
-              <td>Requires meetings</td>
-              <td>Steep learning curve</td>
-              <td>Manual and error-prone</td>
-            </tr>
-            <tr>
-              <td>Regulatory Compliance Support</td>
-              <td class="prospera-col"><span class="ck">&#10003;</span></td>
-              <td><span class="ck">&#10003;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-              <td><span class="xx">&#10005;</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- Mobile stacked cards -->
-      <div class="comp-cards fade-in">
-        <div class="comp-card comp-card--prospera">
-          <div class="comp-card__header">⭐ Prospera</div>
-          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">From $49</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">For non-finance founders</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-card__header">Financial Advisor</div>
-          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">$500–$2,000+</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Requires meetings</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-card__header">Bloomberg Terminal</div>
-          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">~$2,100+</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="ck">&#10003;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Steep learning curve</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-card__header">DIY Spreadsheets</div>
-          <div class="comp-card__row"><span class="comp-card__attr">Monthly Cost</span><span class="comp-card__val">$0 (but hours of your time)</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Real-Time Alerts</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">AI-Powered Forecasting</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">SME-Specific Insights</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Ease of Use</span><span class="comp-card__val">Manual and error-prone</span></div>
-          <div class="comp-card__row"><span class="comp-card__attr">Regulatory Compliance</span><span class="comp-card__val"><span class="xx">&#10005;</span></span></div>
+
+      <div class="cmp-outer fade-in">
+        <div class="cmp-scroll">
+          <table class="cmp-table">
+            <thead>
+              <tr>
+                <th style="text-align:left;">Feature</th>
+                <th>Bank RM<br><span style="font-weight:500;letter-spacing:0;text-transform:none;font-size:10px;opacity:0.7;">(DBS / OCBC / UOB)</span></th>
+                <th>Bloomberg Terminal</th>
+                <th class="cmp-th--prospera">Prospera</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly Cost</td>
+                <td>$0 <span style="opacity:0.6;font-size:12px;">(requires $350K+ AUM)</span></td>
+                <td>$2,000+/month</td>
+                <td class="cmp-td--prospera">Free, or $39/mo for Pro</td>
+              </tr>
+              <tr>
+                <td>Cross-Bank Visibility</td>
+                <td><span class="ico-xx">✗</span> Single bank only</td>
+                <td><span class="ico-ck">✓</span> Yes</td>
+                <td class="cmp-td--prospera"><span class="ico-ck">✓</span> Yes</td>
+              </tr>
+              <tr>
+                <td>Always-On Access</td>
+                <td><span class="ico-xx">✗</span> Quarterly meetings</td>
+                <td><span class="ico-ck">✓</span> Yes</td>
+                <td class="cmp-td--prospera"><span class="ico-ck">✓</span> 24/7 dashboard</td>
+              </tr>
+              <tr>
+                <td>SME-Focused Analytics</td>
+                <td><span class="ico-xx">✗</span> Mass-market advice</td>
+                <td><span class="ico-xx">✗</span> Institutional focus</td>
+                <td class="cmp-td--prospera"><span class="ico-ck">✓</span> Built for SMEs</td>
+              </tr>
+              <tr>
+                <td>Singapore Market Focus</td>
+                <td><span class="ico-wn">⚠</span> Partial (own products)</td>
+                <td><span class="ico-ck">✓</span> Comprehensive</td>
+                <td class="cmp-td--prospera"><span class="ico-ck">✓</span> SG-first</td>
+              </tr>
+              <tr>
+                <td>Minimum Investment</td>
+                <td>$350K+</td>
+                <td style="font-size:12.5px;opacity:0.75;">N/A (tool cost is barrier)</td>
+                <td class="cmp-td--prospera">$50K</td>
+              </tr>
+              <tr>
+                <td>Data Transparency</td>
+                <td><span class="ico-wn">⚠</span> Low (RM discretion)</td>
+                <td><span class="ico-ck">✓</span> High</td>
+                <td class="cmp-td--prospera"><span class="ico-ck">✓</span> Every insight shows source data</td>
+              </tr>
+              <tr>
+                <td>Setup Time</td>
+                <td>Weeks (KYC, meetings)</td>
+                <td>Days (training needed)</td>
+                <td class="cmp-td--prospera">5 minutes</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
+      <p class="cmp-note fade-in">
+        Prospera is currently in pre-launch. Features listed reflect our planned Pro tier capabilities. Some features will roll out progressively — see our <a href="waitlist.html" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Roadmap</a> for timelines.
+      </p>
     </div>
   </section>
 
