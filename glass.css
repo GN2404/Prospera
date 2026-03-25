@@ -3,97 +3,60 @@
    Apple iOS 26 / visionOS — Vivid Blue + White
    ================================================ */
 
-/* ---- 1. BODY BACKGROUND — vivid blue-to-violet gradient ---- */
+/* ---- 1. BODY BACKGROUND — dark navy-to-blue gradient ---- */
 
 html { min-height: 100%; }
 
 body {
   background:
-    radial-gradient(ellipse 130% 90% at 15% 5%,  rgba(37,99,235,0.9)  0%, transparent 52%),
-    radial-gradient(ellipse 110% 100% at 85% 95%, rgba(124,58,237,0.85) 0%, transparent 52%),
-    linear-gradient(160deg, #1e3a8a 0%, #2563eb 40%, #5b21b6 100%) !important;
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(37,99,235,0.45) 0%, transparent 60%),
+    linear-gradient(160deg, #0f1f3a 0%, #1e40af 100%) !important;
   background-attachment: fixed !important;
   min-height: 100vh;
   color: rgba(255,255,255,0.92) !important;
 }
 
-/* ---- 4 animated orbs for fluid motion ---- */
+/* ---- 2 subtle orbs — depth without distraction ---- */
 
-/* Orb 1 — bright blue, top-left → drifts down-right */
+/* Orb 1 — soft blue, top-left */
 body::before {
   content: '';
   position: fixed;
-  top: -25%;
-  left: -20%;
-  width: 75vw;
-  height: 75vw;
-  background: radial-gradient(ellipse at center, rgba(96,165,250,0.55) 0%, transparent 65%);
+  top: -20%;
+  left: -15%;
+  width: 65vw;
+  height: 65vw;
+  background: radial-gradient(ellipse at center, rgba(96,165,250,0.2) 0%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  animation: orbDrift1 14s infinite alternate ease-in-out;
+  animation: orbDrift1 18s infinite alternate ease-in-out;
 }
 
-/* Orb 2 — deep violet, bottom-right → drifts up-left */
+/* Orb 2 — violet, bottom-right */
 body::after {
   content: '';
   position: fixed;
-  bottom: -25%;
-  right: -20%;
-  width: 70vw;
-  height: 70vw;
-  background: radial-gradient(ellipse at center, rgba(167,139,250,0.5) 0%, transparent 65%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  animation: orbDrift2 14s infinite alternate ease-in-out;
-}
-
-/* Orb 3 — cyan, top-right corner */
-html::before {
-  content: '';
-  position: fixed;
-  top: 10%;
+  bottom: -20%;
   right: -15%;
-  width: 55vw;
-  height: 55vw;
-  background: radial-gradient(ellipse at center, rgba(56,189,248,0.38) 0%, transparent 65%);
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(ellipse at center, rgba(139,92,246,0.18) 0%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  animation: orbDrift3 18s infinite alternate ease-in-out;
+  animation: orbDrift2 18s infinite alternate ease-in-out;
 }
 
-/* Orb 4 — indigo, bottom-left */
-html::after {
-  content: '';
-  position: fixed;
-  bottom: 5%;
-  left: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(ellipse at center, rgba(99,102,241,0.42) 0%, transparent 65%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  animation: orbDrift4 16s infinite alternate ease-in-out;
-}
+html::before, html::after { content: none; }
 
 @keyframes orbDrift1 {
   from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(15%, 18%) scale(1.15); }
+  to   { transform: translate(10%, 12%) scale(1.08); }
 }
 @keyframes orbDrift2 {
   from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(-15%, -18%) scale(1.1); }
-}
-@keyframes orbDrift3 {
-  from { transform: translate(0, 0) scale(1) rotate(0deg); }
-  to   { transform: translate(-12%, 14%) scale(1.12) rotate(5deg); }
-}
-@keyframes orbDrift4 {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(12%, -12%) scale(1.08); }
+  to   { transform: translate(-10%, -12%) scale(1.06); }
 }
 
 /* Ensure all page content sits above the orbs */

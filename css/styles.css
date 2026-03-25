@@ -42,6 +42,10 @@
   --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
   --nav-h: 72px;
   --transition: 0.3s ease;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 80px;
 }
 
 /* --- Base --- */
@@ -108,7 +112,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 
 /* --- Layout --- */
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.section { padding: 80px 0; }
+.section { padding: var(--space-xl) 0; }
 .section--navy { background: var(--navy); color: var(--white); }
 .section--navy h1, .section--navy h2 { color: var(--white); }
 .section--navy p { color: rgba(255,255,255,0.8); }
