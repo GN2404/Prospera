@@ -837,3 +837,76 @@ p { color: rgba(255,255,255,0.8); }
 }
 .form-success h3 { color: rgba(255,255,255,0.97) !important; }
 .form-success p  { color: rgba(255,255,255,0.75) !important; }
+
+
+/* ================================================================
+   CONTRAST FIXES — WCAG AA compliance on dark glass background
+   ================================================================ */
+
+/* --- NAV: white text on blue-tinted frosted glass --- */
+.nav__link              { color: rgba(255,255,255,0.88) !important; }
+.nav__link:hover,
+.nav__link--active      { color: #fff !important; border-bottom-color: #fff !important; }
+.nav__link--active::after { background: #fff !important; }
+.nav__logo span         { color: #fff !important; }
+.nav__hamburger span    { background: rgba(255,255,255,0.9) !important; }
+/* Mobile nav retains dark text (near-white background) */
+.nav__mobile a          { color: rgba(15,23,60,0.9) !important; }
+
+/* --- HOW-STEP: BEM divs not caught by h4/p tag selectors --- */
+.how-step__title        { color: rgba(255,255,255,0.97) !important; }
+.how-step__desc         { color: rgba(255,255,255,0.82) !important; }
+
+/* --- CAREERS page --- */
+.perk-card h4,
+.job-card__title        { color: rgba(255,255,255,0.97) !important; }
+.perk-card p            { color: rgba(255,255,255,0.82) !important; }
+.job-card__meta         { color: rgba(255,255,255,0.75) !important; }
+.culture-stat__lbl      { color: rgba(255,255,255,0.75) !important; }
+.perk-card {
+  background: rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  border: 1px solid rgba(255,255,255,0.42) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 2px 0 rgba(255,255,255,0.6) inset, 0 12px 32px rgba(0,0,0,0.15) !important;
+}
+.job-card {
+  background: rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  border: 1px solid rgba(255,255,255,0.42) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 2px 0 rgba(255,255,255,0.55) inset, 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+.job-card:hover {
+  border-color: rgba(255,255,255,0.72) !important;
+  box-shadow: 0 2px 0 rgba(255,255,255,0.75) inset, 0 16px 40px rgba(0,0,0,0.2) !important;
+}
+
+/* --- FEATURES page comparison table --- */
+.comp-card__val                         { color: rgba(255,255,255,0.92) !important; }
+.comp-table th:first-child,
+.comp-table td:first-child              { color: rgba(255,255,255,0.92) !important; }
+
+/* --- BOOST faint card paragraph text (0.75 → 0.85) --- */
+.f-card p               { color: rgba(255,255,255,0.85) !important; }
+.value-card p           { color: rgba(255,255,255,0.85) !important; }
+.p-card__desc           { color: rgba(255,255,255,0.82) !important; }
+.p-card__note           { color: rgba(255,255,255,0.78) !important; }
+.faq-a__inner           { color: rgba(255,255,255,0.85) !important; }
+.roadmap__desc          { color: rgba(255,255,255,0.82) !important; }
+.wl-counter-label       { color: rgba(255,255,255,0.82) !important; }
+
+/* --- ICON BOXES — increase visibility on dark background --- */
+.icon-box--blue  { background: rgba(59,99,251,0.35) !important;    color: #93c5fd !important; }
+.icon-box--green { background: rgba(16,185,129,0.3) !important;    color: #6ee7b7 !important; }
+
+/* --- BETA BAR (new element) --- */
+.beta-bar {
+  background: transparent !important;
+  border-top-color: rgba(255,255,255,0.12) !important;
+  border-bottom-color: rgba(255,255,255,0.12) !important;
+}
+.beta-bar__text { color: rgba(255,255,255,0.65) !important; }
+.beta-bar__dot  { background: rgba(255,255,255,0.3) !important; }
