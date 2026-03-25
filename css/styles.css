@@ -231,8 +231,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 /* --- Feature Cards --- */
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .f-card {
-  background: var(--white); border-radius: 12px; padding: 36px;
-  box-shadow: var(--shadow-card); transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 36px;
+  box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .f-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .f-card__icon {
