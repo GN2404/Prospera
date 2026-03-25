@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ — Prospera</title>
   <meta name="description" content="Frequently asked questions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
   <style>
 *, *::before, *::after {
   margin: 0;
@@ -16,8 +21,6 @@
    PROSPERA — Stylesheet v3
    Editorial FinTech: Playfair Display + Inter
    ============================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* --- Variables --- */
 :root {
@@ -764,7 +767,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 <body>
   <!-- NAVBAR -->
   <nav class="nav"><div class="nav__inner">
-    <a href="index.html" class="nav__logo"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;"><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
+    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
     <div class="nav__links">
       <a href="index.html" class="nav__link ">Home</a>
       <a href="features.html" class="nav__link ">Features</a>
@@ -852,7 +855,7 @@ p { color: var(--text-muted); line-height: 1.7; }
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;"></a>
+        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy"></picture></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>
