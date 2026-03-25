@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Careers — Prospera</title>
-  <meta name="description" content="Join Prospera and help build the financial intelligence platform powering Singapore's SMEs.">
+  <title>Careers — Join the Prospera Team</title>
+  <meta name="description" content="Join Prospera and help build the financial intelligence platform powering Singapore SMEs. See open roles and learn about our culture.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prospera">
+  <meta property="og:url" content="https://prospera.io/careers.html">
+  <meta property="og:title" content="Careers at Prospera — Build the Future of SME Finance">
+  <meta property="og:description" content="Join our team and help give Singapore SMEs the financial tools they deserve. See open roles and learn about working at Prospera.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
@@ -43,8 +48,8 @@ h3 { font-size: 22px; }
 h4 { font-size: 18px; }
 p { color: var(--text-muted); line-height: 1.7; }
 
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
 .section--gray { background: var(--off-white); }
 .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
 .section-header p { margin-top: 16px; font-size: 17px; }
@@ -185,8 +190,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 <body>
 
   <!-- NAVBAR -->
-  <nav class="nav"><div class="nav__inner">
-    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
+  <nav class="nav" aria-label="Main navigation"><div class="nav__inner">
+    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
     <div class="nav__links">
       <a href="index.html" class="nav__link">Home</a>
       <a href="features.html" class="nav__link">Features</a>
@@ -195,7 +200,7 @@ p { color: var(--text-muted); line-height: 1.7; }
       <a href="waitlist.html" class="nav__link">Waitlist</a>
     </div>
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
-    <div class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+    <button class="nav__hamburger" type="button" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav__mobile">
     <a href="index.html" class="nav__link">Home</a>
@@ -206,6 +211,7 @@ p { color: var(--text-muted); line-height: 1.7; }
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
   </div></nav>
 
+  <main>
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
@@ -389,10 +395,12 @@ p { color: var(--text-muted); line-height: 1.7; }
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-left:8px;">Prospera</span></a>
+        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-left:8px;">Prospera</span></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>
@@ -412,28 +420,6 @@ p { color: var(--text-muted); line-height: 1.7; }
     <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:24px;text-align:center;"><p style="font-size:13px;color:rgba(255,255,255,0.4);">Built with ♥ in Singapore</p></div>
   </div></footer>
 
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const fades = document.querySelectorAll('.fade-in');
-  if (fades.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    fades.forEach(el => obs.observe(el));
-  }
-  const nav = document.querySelector('.nav');
-  if (nav) { window.addEventListener('scroll', () => { nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.08)'; }); }
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileNav = document.querySelector('.nav__mobile');
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('nav__hamburger--open');
-      mobileNav.classList.toggle('nav__mobile--open');
-      document.body.style.overflow = mobileNav.classList.contains('nav__mobile--open') ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('nav__hamburger--open'); mobileNav.classList.remove('nav__mobile--open'); document.body.style.overflow = ''; }); });
-  }
-});
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

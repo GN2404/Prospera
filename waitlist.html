@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the Waitlist — Prospera</title>
-  <meta name="description" content="Be the first to try Prospera.">
+  <title>Join the Waitlist — Prospera Launches Q3 2026</title>
+  <meta name="description" content="Be among the first Singapore SMEs to access Prospera when we launch in Q3 2026. Join the waitlist for early access to institutional-grade financial intelligence.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prospera">
+  <meta property="og:url" content="https://prospera.io/waitlist.html">
+  <meta property="og:title" content="Join the Prospera Waitlist — Launching Q3 2026">
+  <meta property="og:description" content="Be first in line for Prospera — institutional-grade financial intelligence for Singapore SMEs. Waitlist open now for Q3 2026 beta access.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
@@ -110,8 +115,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 }
 
 /* --- Layout --- */
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
 .section--navy { background: var(--navy); color: var(--white); }
 .section--navy h1, .section--navy h2 { color: var(--white); }
 .section--navy p { color: rgba(255,255,255,0.65); }
@@ -824,8 +829,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav class="nav"><div class="nav__inner">
-    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
+  <nav class="nav" aria-label="Main navigation"><div class="nav__inner">
+    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
     <div class="nav__links">
       <a href="index.html" class="nav__link ">Home</a>
       <a href="features.html" class="nav__link ">Features</a>
@@ -834,7 +839,7 @@ p { color: var(--text-muted); line-height: 1.7; }
       <a href="waitlist.html" class="nav__link nav__link--active">Waitlist</a>
     </div>
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
-    <div class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+    <button class="nav__hamburger" type="button" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav__mobile">
     <a href="index.html" class="nav__link">Home</a>
@@ -845,6 +850,7 @@ p { color: var(--text-muted); line-height: 1.7; }
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
   </div></nav>
 
+  <main>
   <section class="wl-hero">
     <div class="container">
       <div class="section-label fade-in">Early Access</div>
@@ -919,10 +925,12 @@ p { color: var(--text-muted); line-height: 1.7; }
     </div>
   </div></section>
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy"></picture></a>
+        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy" decoding="async"></picture></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>
@@ -943,220 +951,6 @@ p { color: var(--text-muted); line-height: 1.7; }
   <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:24px;text-align:center;"><p style="font-size:13px;color:rgba(255,255,255,0.4);">Built with ♥ in Singapore</p></div>
 </footer>
 
-  <script>
-/* ============================================
-   PROSPERA — Main JavaScript v3
-   Scroll animations, carousel, FAQ, counter,
-   mobile nav, form validation, modal
-   ============================================ */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* --- 1. Fade-In on Scroll (Intersection Observer) --- */
-  const fades = document.querySelectorAll('.fade-in');
-  if (fades.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    fades.forEach(el => obs.observe(el));
-  }
-
-  /* --- 2. Nav shadow on scroll --- */
-  const nav = document.querySelector('.nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.style.boxShadow = window.scrollY > 10
-        ? '0 2px 12px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.08)';
-    });
-  }
-
-  /* --- 3. Mobile hamburger --- */
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileNav = document.querySelector('.nav__mobile');
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('nav__hamburger--open');
-      mobileNav.classList.toggle('nav__mobile--open');
-      document.body.style.overflow = mobileNav.classList.contains('nav__mobile--open') ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('nav__hamburger--open');
-        mobileNav.classList.remove('nav__mobile--open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  /* --- 4. Dashboard Carousel --- */
-  const carousel = document.querySelector('.carousel');
-  if (carousel) {
-    const slides = carousel.querySelector('.carousel__slides');
-    const dots = carousel.querySelectorAll('.carousel__dot');
-    const prev = carousel.querySelector('.carousel__btn--prev');
-    const next = carousel.querySelector('.carousel__btn--next');
-    const total = carousel.querySelectorAll('.carousel__slide').length;
-    let cur = 0, timer;
-
-    function go(i) {
-      if (i >= total) i = 0;
-      if (i < 0) i = total - 1;
-      cur = i;
-      slides.style.transform = `translateX(-${cur * 100}%)`;
-      dots.forEach((d, idx) => d.classList.toggle('carousel__dot--active', idx === cur));
-    }
-    if (next) next.addEventListener('click', () => { go(cur + 1); reset(); });
-    if (prev) prev.addEventListener('click', () => { go(cur - 1); reset(); });
-    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); reset(); }));
-
-    function start() { timer = setInterval(() => go(cur + 1), 4000); }
-    function reset() { clearInterval(timer); start(); }
-    start();
-  }
-
-  /* --- 5. FAQ Accordion --- */
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    q.addEventListener('click', () => {
-      const open = item.classList.contains('faq-item--open');
-      document.querySelectorAll('.faq-item').forEach(o => {
-        o.classList.remove('faq-item--open');
-        o.querySelector('.faq-a').style.maxHeight = null;
-      });
-      if (!open) { item.classList.add('faq-item--open'); a.style.maxHeight = a.scrollHeight + 'px'; }
-    });
-  });
-
-  /* --- 7. Sign Up Form Validation --- */
-  const signupForm = document.getElementById('signupForm');
-  if (signupForm) {
-    const success = document.getElementById('signupSuccess');
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let ok = true;
-      signupForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('form-group--error'));
-      signupForm.querySelectorAll('.form-input,.form-select').forEach(i => i.classList.remove('form-input--error'));
-
-      signupForm.querySelectorAll('[required]').forEach(f => {
-        if (!f.value.trim()) { err(f, 'This field is required.'); ok = false; }
-      });
-      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      signupForm.querySelectorAll('input[type="email"]').forEach(f => {
-        if (f.value.trim() && !emailRe.test(f.value)) { err(f, 'Enter a valid email.'); ok = false; }
-      });
-      const pw = signupForm.querySelector('#password');
-      if (pw && pw.value.length > 0 && pw.value.length < 8) { err(pw, 'Min 8 characters.'); ok = false; }
-      const cpw = signupForm.querySelector('#confirmPassword');
-      if (pw && cpw && pw.value !== cpw.value) { err(cpw, 'Passwords don\'t match.'); ok = false; }
-
-      if (ok) { signupForm.style.display = 'none'; if (success) success.classList.add('form-success--show'); }
-    });
-
-    // Real-time validation on blur
-    signupForm.querySelectorAll('.form-input,.form-select').forEach(f => {
-      f.addEventListener('blur', () => {
-        if (f.value.trim()) {
-          const g = f.closest('.form-group');
-          if (g) g.classList.remove('form-group--error');
-          f.classList.remove('form-input--error');
-        }
-      });
-    });
-  }
-
-  function err(field, msg) {
-    const g = field.closest('.form-group');
-    if (g) { g.classList.add('form-group--error'); field.classList.add('form-input--error'); const e = g.querySelector('.form-error'); if (e) e.textContent = msg; }
-  }
-
-  /* --- 8. Waitlist Form --- */
-  const wlForm = document.getElementById('waitlistForm');
-  if (wlForm) {
-    const wlSuccess = document.getElementById('waitlistSuccess');
-    wlForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = wlForm.querySelector('input[type="email"]');
-      if (email && email.value.trim()) {
-        wlForm.style.display = 'none';
-        if (wlSuccess) wlSuccess.classList.add('form-success--show');
-      }
-    });
-  }
-
-  /* --- 9. Login Modal --- */
-  const loginModal = document.getElementById('loginModal');
-  if (loginModal) {
-    document.querySelectorAll('[data-open-login]').forEach(b => {
-      b.addEventListener('click', (e) => { e.preventDefault(); loginModal.classList.add('modal-overlay--show'); });
-    });
-    const close = loginModal.querySelector('.modal__close');
-    if (close) close.addEventListener('click', () => loginModal.classList.remove('modal-overlay--show'));
-    loginModal.addEventListener('click', (e) => { if (e.target === loginModal) loginModal.classList.remove('modal-overlay--show'); });
-  }
-
-  /* --- 10. Smooth scroll for anchors --- */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
-
-  /* --- 11. Typewriter Animation (Home page) --- */
-  const twEl = document.getElementById('typewriterText');
-  const twSub = document.getElementById('typewriterSub');
-
-  if (twEl && twSub) {
-    const fullText = 'Prospera';
-    const lastVisit = localStorage.getItem('prospera_visited');
-    const now = Date.now();
-    const sevenDays = 7 * 24 * 60 * 60 * 1000;
-
-    if (!lastVisit || (now - parseInt(lastVisit)) > sevenDays) {
-      // Run typewriter animation
-      runTypewriter(twEl, twSub, fullText);
-      localStorage.setItem('prospera_visited', now.toString());
-    } else {
-      // Show instantly — no animation
-      twEl.textContent = fullText;
-      twEl.style.width = 'auto';
-      twEl.classList.add('done');
-      twSub.style.opacity = '1';
-      twSub.classList.add('show');
-    }
-  }
-
-  function runTypewriter(el, sub, text) {
-    let i = 0;
-    el.style.width = 'auto';
-    // Measure full width then reset
-    el.textContent = text;
-    const fullWidth = el.scrollWidth;
-    el.textContent = '';
-    el.style.width = '0';
-
-    function type() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        i++;
-        // Smoothly grow width
-        el.style.width = ((i / text.length) * fullWidth) + 'px';
-        setTimeout(type, 120);
-      } else {
-        // Typing done
-        el.style.width = 'auto';
-        el.classList.add('done');
-        sub.classList.add('show');
-      }
-    }
-    setTimeout(type, 600); // Small delay before starting
-  }
-
-});
-
-</script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
