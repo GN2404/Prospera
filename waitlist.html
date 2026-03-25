@@ -682,6 +682,142 @@ p { color: var(--text-muted); line-height: 1.7; }
 </style>
   <link rel="stylesheet" href="glass.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233B63FB'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>P</text></svg>">
+  <style>
+  /* ============================================================
+     WAITLIST PAGE — post-glass.css overrides
+     ============================================================ */
+
+  /* ---- Vertical Timeline ---- */
+  .vtl {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+    padding-left: 48px;
+  }
+  .vtl::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 2px;
+  }
+  .vtl__item {
+    position: relative;
+    padding: 0 0 36px 32px;
+  }
+  .vtl__item:last-child { padding-bottom: 0; }
+
+  /* Dot on the timeline line */
+  .vtl__dot {
+    position: absolute;
+    left: -39px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+  .vtl__item--active .vtl__dot {
+    width: 20px;
+    height: 20px;
+    left: -41px;
+    top: 8px;
+    background: #3B63FB;
+    border-color: #3B63FB;
+    box-shadow: 0 0 0 5px rgba(59,99,251,0.22), 0 0 16px rgba(59,99,251,0.4);
+  }
+
+  /* Quarter label */
+  .vtl__quarter {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3B63FB !important;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .vtl__item--muted .vtl__quarter {
+    color: rgba(255,255,255,0.3) !important;
+  }
+
+  /* Card */
+  .vtl__card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 14px;
+    padding: 20px 24px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    transition: all 0.3s ease;
+  }
+  .vtl__item--active .vtl__card {
+    background: rgba(59,99,251,0.12);
+    border-color: rgba(59,99,251,0.35);
+    box-shadow: 0 0 0 1px rgba(59,99,251,0.18), 0 8px 28px rgba(59,99,251,0.12);
+  }
+  .vtl__item--muted .vtl__card {
+    opacity: 0.45;
+  }
+
+  /* Title inside card */
+  .vtl__title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+    line-height: 1.3 !important;
+  }
+  .vtl__item--muted .vtl__title {
+    color: rgba(255,255,255,0.55) !important;
+  }
+
+  /* Description inside card */
+  .vtl__desc {
+    font-size: 14px !important;
+    color: rgba(255,255,255,0.62) !important;
+    line-height: 1.65 !important;
+    margin: 0 !important;
+  }
+  .vtl__item--muted .vtl__desc {
+    color: rgba(255,255,255,0.38) !important;
+  }
+
+  /* ---- Stacked waitlist form ---- */
+  .wl-stacked-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .wl-stacked-form .form-input {
+    background: rgba(255,255,255,0.12) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: #fff !important;
+    border-radius: 10px;
+  }
+  .wl-stacked-form .form-input::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+  }
+  .wl-stacked-form .form-input:focus {
+    border-color: #3B63FB !important;
+    box-shadow: 0 0 0 3px rgba(59,99,251,0.25) !important;
+    outline: none;
+  }
+
+  @media (max-width: 480px) {
+    .vtl { padding-left: 36px; }
+    .vtl__card { padding: 16px 18px; }
+  }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -709,43 +845,74 @@ p { color: var(--text-muted); line-height: 1.7; }
   <section class="wl-hero">
     <div class="container">
       <div class="section-label fade-in">Early Access</div>
-      <h1 class="fade-in delay-1">Be the First to Experience the Future of SME Finance</h1>
-      <p class="fade-in delay-2">Join our waitlist for priority access. Early members get exclusive founding pricing and direct product influence.</p>
-      <div class="wl-counter fade-in delay-3" id="wlCounter">0</div>
-      <div class="wl-counter-label fade-in delay-3">people have already joined</div>
+      <h1 class="fade-in delay-1">Take Control of Your Financial Data — From Day One</h1>
+      <p class="fade-in delay-2">Join Singapore SME owners getting ready to take control of their financial data.</p>
     </div>
   </section>
 
   <section class="section"><div class="container">
-    <div class="section-header fade-in"><h2>What you'll unlock</h2><p>Waitlist members aren't just early — they're VIPs.</p></div>
+    <div class="section-header fade-in"><h2>What we're building for you</h2><p>Join early and help shape the product. Waitlist members get priority access and founding member pricing at launch.</p></div>
     <div style="max-width:700px;margin:0 auto;">
-      <div class="wl-benefit fade-in"><div class="wl-benefit__icon">🔮</div><div class="wl-benefit__content"><h4>AI-Powered Forecasting</h4><p>Multi-scenario modelling with 36-month projections, confidence intervals, and seasonal auto-adjustment. Institutional accuracy at SME pricing.</p></div></div>
-      <div class="wl-benefit fade-in delay-1"><div class="wl-benefit__icon">🛡️</div><div class="wl-benefit__content"><h4>Real-Time Risk Monitoring</h4><p>Continuous portfolio monitoring, volatility tracking, early warning alerts, and stress-testing against historical downturns — all automated.</p></div></div>
-      <div class="wl-benefit fade-in delay-2"><div class="wl-benefit__icon">💎</div><div class="wl-benefit__content"><h4>Capital Allocation Engine</h4><p>Goal-based allocation, automated rebalancing suggestions, tax-efficient distribution, and what-if analysis for major financial decisions.</p></div></div>
-      <div class="wl-benefit fade-in delay-3"><div class="wl-benefit__icon">🚀</div><div class="wl-benefit__content"><h4>Growth Strategy Builder</h4><p>Industry playbooks, competitor benchmarking, milestone tracking, and board-ready strategy reports — all powered by your real data.</p></div></div>
+      <div class="wl-benefit fade-in"><div class="wl-benefit__icon">📊</div><div class="wl-benefit__content"><h4>Portfolio Tracking &amp; Visualisation</h4><p>A clear, unified view of your business investments and assets — no spreadsheets required. Upload your data via CSV or connect your accounts when bank integrations launch.</p></div></div>
+      <div class="wl-benefit fade-in delay-1"><div class="wl-benefit__icon">🛡️</div><div class="wl-benefit__content"><h4>Risk Scoring &amp; Benchmarking</h4><p>Understand how your portfolio compares to industry peers. Risk scoring and sector benchmarks give you context that spreadsheets can't.</p></div></div>
+      <div class="wl-benefit fade-in delay-2"><div class="wl-benefit__icon">📈</div><div class="wl-benefit__content"><h4>Market Data &amp; Alerts</h4><p>Stay informed with market data relevant to your holdings. Set thresholds and get alerted when conditions change — built for SME investors, not day traders.</p></div></div>
+      <div class="wl-benefit fade-in delay-3"><div class="wl-benefit__icon">🤝</div><div class="wl-benefit__content"><h4>Early Access &amp; Direct Input</h4><p>Waitlist members get beta access before the public, founding member pricing, and a direct line to our team. Your feedback shapes what we build next.</p></div></div>
     </div>
   </div></section>
 
-  <section class="section section--gray"><div class="container">
-    <div class="section-header fade-in"><h2>Our Roadmap</h2></div>
-    <div class="roadmap fade-in">
-      <div class="roadmap__item roadmap__item--done"><div class="roadmap__dot">Q2</div><div class="roadmap__label">Beta Launch</div><div class="roadmap__desc">Core platform for founders</div></div>
-      <div class="roadmap__item roadmap__item--active"><div class="roadmap__dot">Q3</div><div class="roadmap__label">Full Platform</div><div class="roadmap__desc">Risk, allocation, intelligence</div></div>
-      <div class="roadmap__item"><div class="roadmap__dot">Q4</div><div class="roadmap__label">Mobile App</div><div class="roadmap__desc">iOS &amp; Android</div></div>
-      <div class="roadmap__item"><div class="roadmap__dot">Q1</div><div class="roadmap__label">AI Insights V2</div><div class="roadmap__desc">Next-gen models</div></div>
+  <section class="section"><div class="container">
+    <div class="section-header fade-in"><h2>Our Roadmap</h2><p>We're building in public. Here's what's coming and when.</p></div>
+    <div class="vtl fade-in">
+
+      <div class="vtl__item vtl__item--active">
+        <div class="vtl__dot"></div>
+        <div class="vtl__card">
+          <span class="vtl__quarter">Q3 2026 — Current Focus</span>
+          <h4 class="vtl__title">Beta Launch</h4>
+          <p class="vtl__desc">Core dashboard with portfolio tracking, CSV upload, and basic market data visualisation. Available to early waitlist members first.</p>
+        </div>
+      </div>
+
+      <div class="vtl__item">
+        <div class="vtl__dot"></div>
+        <div class="vtl__card">
+          <span class="vtl__quarter">Q4 2026</span>
+          <h4 class="vtl__title">Analytics Expansion</h4>
+          <p class="vtl__desc">Risk scoring, industry benchmarking, and enhanced data visualisation tools. Pro tier features begin rolling out to beta users.</p>
+        </div>
+      </div>
+
+      <div class="vtl__item vtl__item--muted">
+        <div class="vtl__dot"></div>
+        <div class="vtl__card">
+          <span class="vtl__quarter">Q1 2027</span>
+          <h4 class="vtl__title">Pro Tier Live</h4>
+          <p class="vtl__desc">Full Pro tier launch with near-real-time market data, advanced analytics, alert system, and PDF/CSV export.</p>
+        </div>
+      </div>
+
+      <div class="vtl__item vtl__item--muted">
+        <div class="vtl__dot"></div>
+        <div class="vtl__card">
+          <span class="vtl__quarter">2027 &amp; Beyond</span>
+          <h4 class="vtl__title">Platform Growth</h4>
+          <p class="vtl__desc">Bank API integrations, mobile experience, expanded asset class coverage, and community features.</p>
+        </div>
+      </div>
+
     </div>
   </div></section>
 
   <section class="section"><div class="container">
     <div class="wl-join-card fade-in">
-      <h2>Join the movement</h2>
-      <p>Secure your founding member spot. No spam — only launch updates.</p>
-      <form id="waitlistForm" class="wl-inline-form">
-        <input type="text" class="form-input" placeholder="Your name" required>
-        <input type="email" class="form-input" placeholder="Email address" required>
-        <button type="submit" class="btn btn--blue shiny-cta">Join Waitlist</button>
+      <h2>Reserve your spot</h2>
+      <p>We're building something real and we want you along from day one. No spam — just launch updates and early access when the beta opens.</p>
+      <form id="waitlistForm" class="wl-stacked-form">
+        <input type="email" name="email" class="form-input" placeholder="Email address" required autocomplete="email">
+        <input type="text" name="company" class="form-input" placeholder="Company name (optional)" autocomplete="organization">
+        <button type="submit" class="btn btn--blue btn--full shiny-cta">Join the Waitlist</button>
       </form>
-      <div id="waitlistSuccess" class="form-success"><div class="form-success__icon" style="background:var(--green-bg);">✓</div><h3 style="color:var(--white);">You're in!</h3><p style="color:rgba(255,255,255,0.6);">Welcome to Prospera. We'll notify you when early access opens.</p></div>
+      <div id="waitlistSuccess" class="form-success"><div class="form-success__icon" style="background:var(--green-bg);color:var(--green);font-size:24px;font-weight:700;">✓</div><h3 style="color:var(--white);">You're on the list!</h3><p style="color:rgba(255,255,255,0.6);">We'll reach out when early access opens. Thanks for being part of this from the start.</p></div>
     </div>
   </div></section>
   <!-- FOOTER -->
@@ -859,33 +1026,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!open) { item.classList.add('faq-item--open'); a.style.maxHeight = a.scrollHeight + 'px'; }
     });
   });
-
-  /* --- 6. Counter Animation (Waitlist page) --- */
-  const counterEl = document.getElementById('wlCounter');
-  if (counterEl) {
-    let counted = false;
-    const target = 1247;
-    const counterObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting && !counted) {
-          counted = true;
-          let start = 0;
-          const duration = 2000;
-          const startTime = performance.now();
-          function tick(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease-out quad
-            const eased = 1 - (1 - progress) * (1 - progress);
-            counterEl.textContent = Math.floor(eased * target).toLocaleString();
-            if (progress < 1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
-        }
-      });
-    }, { threshold: 0.3 });
-    counterObs.observe(counterEl);
-  }
 
   /* --- 7. Sign Up Form Validation --- */
   const signupForm = document.getElementById('signupForm');
