@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features — Prospera</title>
-  <meta name="description" content="Institutional-grade financial tools built for Singapore SMEs. Explore every Prospera feature.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Features — Prospera | SME Financial Intelligence Platform</title>
+  <meta name="description" content="Institutional-grade financial tools built for Singapore SMEs. Portfolio tracking, risk scoring, sector analysis, cash flow forecasting and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prospera">
+  <meta property="og:url" content="https://prospera.io/features.html">
+  <meta property="og:title" content="Prospera Features — Institutional-Grade Tools for Singapore SMEs">
+  <meta property="og:description" content="Explore every Prospera feature: portfolio tracking, risk analysis, cash flow forecasting, and comparison to Bloomberg Terminal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
   <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --navy: #0A1628; --navy-light: #0F1F3A; --navy-mid: #1B2E4A;
@@ -39,8 +46,8 @@ h3, h4 { font-family: var(--font-body); font-weight: 700; line-height: 1.3; }
 h4 { font-size: 18px; }
 p { color: var(--text-muted); line-height: 1.7; }
 
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
 .section--gray { background: var(--off-white); }
 .section--navy { background: var(--navy); }
 .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
@@ -293,8 +300,8 @@ p { color: var(--text-muted); line-height: 1.7; }
 <body>
 
   <!-- NAVBAR -->
-  <nav class="nav"><div class="nav__inner">
-    <a href="index.html" class="nav__logo"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;"><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
+  <nav class="nav" aria-label="Main navigation"><div class="nav__inner">
+    <a href="index.html" class="nav__logo"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-left:8px;">Prospera</span></a>
     <div class="nav__links">
       <a href="index.html" class="nav__link">Home</a>
       <a href="features.html" class="nav__link nav__link--active">Features</a>
@@ -303,7 +310,7 @@ p { color: var(--text-muted); line-height: 1.7; }
       <a href="waitlist.html" class="nav__link">Waitlist</a>
     </div>
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
-    <div class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+    <button class="nav__hamburger" type="button" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav__mobile">
     <a href="index.html" class="nav__link">Home</a>
@@ -314,6 +321,7 @@ p { color: var(--text-muted); line-height: 1.7; }
     <a href="signup.html" class="nav__cta shiny-cta">Sign Up</a>
   </div></nav>
 
+  <main>
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
@@ -476,10 +484,12 @@ p { color: var(--text-muted); line-height: 1.7; }
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;"><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-left:8px;">Prospera</span></a>
+        <a href="index.html" class="nav__logo" style="margin-bottom:12px;"><picture><source srcset="prospera-logo.webp" type="image/webp"><img src="prospera-logo.png" alt="Prospera Logo" style="height:36px;width:auto;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-left:8px;">Prospera</span></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>
@@ -499,19 +509,6 @@ p { color: var(--text-muted); line-height: 1.7; }
     <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:24px;text-align:center;"><p style="font-size:13px;color:rgba(255,255,255,0.4);">Built with &#9829; in Singapore</p></div>
   </div></footer>
 
-  <script>
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    fadeEls.forEach(el => observer.observe(el));
-
-    const hamburger = document.querySelector('.nav__hamburger');
-    const mobileNav = document.querySelector('.nav__mobile');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('nav__hamburger--open');
-      mobileNav.classList.toggle('nav__mobile--open');
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
