@@ -232,54 +232,54 @@ html, body { isolation: isolate; }
 
 h1, h2 { color: #fff; }
 h3, h4 { color: rgba(255,255,255,0.95); }
-p { color: rgba(255,255,255,0.75); }
+p { color: rgba(255,255,255,0.8); }
 .section-header h2 { color: #fff !important; }
-.section-header p  { color: rgba(255,255,255,0.75) !important; }
+.section-header p  { color: rgba(255,255,255,0.8) !important; }
 .mission-text h2   { color: #fff !important; }
-.mission-text p    { color: rgba(255,255,255,0.8) !important; }
+.mission-text p    { color: rgba(255,255,255,0.85) !important; }
 .section-label {
   background: rgba(255,255,255,0.22) !important;
   color: #bfdbfe !important;
   border: 1px solid rgba(255,255,255,0.4) !important;
 }
-.press-bar__label  { color: rgba(255,255,255,0.65) !important; }
-.press-bar__logo   { color: rgba(255,255,255,0.55) !important; }
+.press-bar__label  { color: rgba(255,255,255,0.75) !important; }
+.press-bar__logo   { color: rgba(255,255,255,0.7) !important; }
 .big-stat__number  { color: #fff !important; }
-.big-stat__label   { color: rgba(255,255,255,0.7) !important; }
+.big-stat__label   { color: rgba(255,255,255,0.8) !important; }
 .wl-counter        { color: #fff !important; }
-.wl-counter-label  { color: rgba(255,255,255,0.65) !important; }
+.wl-counter-label  { color: rgba(255,255,255,0.75) !important; }
 .trust-item__value  { color: #fff !important; }
-.trust-item__label  { color: rgba(255,255,255,0.7) !important; }
+.trust-item__label  { color: rgba(255,255,255,0.8) !important; }
 .value-item__label  { color: rgba(255,255,255,0.95) !important; }
 .value-item__desc   { color: rgba(255,255,255,0.75) !important; }
 .timeline__content h4 { color: rgba(255,255,255,0.95) !important; }
-.timeline__content p  { color: rgba(255,255,255,0.72) !important; }
+.timeline__content p  { color: rgba(255,255,255,0.8) !important; }
 .team-card h4  { color: rgba(255,255,255,0.97) !important; }
-.team-card p   { color: rgba(255,255,255,0.72) !important; }
+.team-card p   { color: rgba(255,255,255,0.8) !important; }
 .ps-col h3     { color: rgba(255,255,255,0.88) !important; }
 .ps-item h4    { color: rgba(255,255,255,0.95) !important; }
-.ps-item p     { color: rgba(255,255,255,0.72) !important; }
+.ps-item p     { color: rgba(255,255,255,0.8) !important; }
 .roadmap__label { color: rgba(255,255,255,0.95) !important; }
-.roadmap__desc  { color: rgba(255,255,255,0.68) !important; }
+.roadmap__desc  { color: rgba(255,255,255,0.75) !important; }
 .how-step h4   { color: rgba(255,255,255,0.95) !important; }
-.how-step p    { color: rgba(255,255,255,0.72) !important; }
-.how-step__num { color: rgba(255,255,255,0.25) !important; }
+.how-step p    { color: rgba(255,255,255,0.8) !important; }
+.how-step__num { color: rgba(255,255,255,0.5) !important; }
 .wl-benefit__content h4 { color: rgba(255,255,255,0.95) !important; }
-.wl-benefit__content p  { color: rgba(255,255,255,0.75) !important; }
+.wl-benefit__content p  { color: rgba(255,255,255,0.8) !important; }
 .signup-header h1  { color: #fff !important; }
-.signup-header p   { color: rgba(255,255,255,0.75) !important; }
-.signup-footer     { color: rgba(255,255,255,0.7) !important; }
+.signup-header p   { color: rgba(255,255,255,0.85) !important; }
+.signup-footer     { color: rgba(255,255,255,0.8) !important; }
 .signup-footer a   { color: #bfdbfe !important; }
 .comp-table td     { color: rgba(255,255,255,0.82) !important; border-color: rgba(255,255,255,0.1) !important; }
 .comp-table th     { border-color: rgba(255,255,255,0.1) !important; }
-.comp-table .xx    { color: rgba(255,255,255,0.3) !important; }
+.comp-table .xx    { color: rgba(255,255,255,0.55) !important; }
 .test-card__quote  { color: rgba(255,255,255,0.92) !important; }
 .test-card__name   { color: rgba(255,255,255,0.97) !important; }
-.test-card__role   { color: rgba(255,255,255,0.65) !important; }
+.test-card__role   { color: rgba(255,255,255,0.75) !important; }
 .mock-stat-box__val { color: #bfdbfe !important; }
-.mock-stat-box__lbl { color: rgba(255,255,255,0.65) !important; }
+.mock-stat-box__lbl { color: rgba(255,255,255,0.75) !important; }
 .feat-row__content h4 { color: rgba(255,255,255,0.95) !important; }
-.feat-row__content p  { color: rgba(255,255,255,0.75) !important; }
+.feat-row__content p  { color: rgba(255,255,255,0.8) !important; }
 .feat-check           { color: rgba(255,255,255,0.8) !important; }
 .timeline::before     { background: rgba(255,255,255,0.2) !important; }
 .ps-grid::after       { background: rgba(255,255,255,0.15) !important; }
@@ -464,12 +464,12 @@ p { color: rgba(255,255,255,0.75); }
   z-index: 0;
 }
 .p-card > * { position: relative; z-index: 1; }
-.p-card__name  { color: rgba(255,255,255,0.72) !important; }
+.p-card__name  { color: rgba(255,255,255,0.8) !important; }
 .p-card__price { color: #fff !important; }
-.p-card__price span { color: rgba(255,255,255,0.65) !important; }
-.p-card__desc  { color: rgba(255,255,255,0.68) !important; }
+.p-card__price span { color: rgba(255,255,255,0.8) !important; }
+.p-card__desc  { color: rgba(255,255,255,0.75) !important; }
 .p-card__list li { color: rgba(255,255,255,0.85) !important; border-color: rgba(255,255,255,0.15) !important; }
-.p-card__note  { color: rgba(255,255,255,0.55) !important; }
+.p-card__note  { color: rgba(255,255,255,0.7) !important; }
 
 
 /* --- VALUE CARDS (About) --- */
@@ -524,7 +524,7 @@ p { color: rgba(255,255,255,0.75); }
   border: 1px solid rgba(255,255,255,0.3) !important;
 }
 .c-mini__val { color: #fff !important; }
-.c-mini__lbl { color: rgba(255,255,255,0.65) !important; }
+.c-mini__lbl { color: rgba(255,255,255,0.75) !important; }
 .c-bars { background: rgba(255,255,255,0.12) !important; }
 .carousel__btn {
   border-color: rgba(255,255,255,0.45) !important;
@@ -579,7 +579,7 @@ p { color: rgba(255,255,255,0.75); }
     0 2px 0 0 rgba(255,255,255,0.35) inset,
     0 24px 64px rgba(0,0,0,0.35) !important;
 }
-.dash-mock__tab       { color: rgba(255,255,255,0.55) !important; }
+.dash-mock__tab       { color: rgba(255,255,255,0.7) !important; }
 .dash-mock__tab--active { color: #fff !important; }
 
 
@@ -672,7 +672,7 @@ p { color: rgba(255,255,255,0.75); }
   box-shadow: 0 0 0 3px rgba(255,255,255,0.2) !important;
   background: rgba(255,255,255,0.25) !important;
 }
-.form-input::placeholder { color: rgba(255,255,255,0.4) !important; }
+.form-input::placeholder { color: rgba(255,255,255,0.55) !important; }
 .form-group label { color: rgba(255,255,255,0.88) !important; }
 
 
@@ -690,7 +690,7 @@ p { color: rgba(255,255,255,0.75); }
 }
 .modal h3 { color: #1e3a8a !important; }
 .modal p  { color: rgba(30,58,138,0.75) !important; }
-.modal__close { color: rgba(30,58,138,0.55) !important; }
+.modal__close { color: rgba(30,58,138,0.75) !important; }
 .modal__close:hover { background: rgba(30,58,138,0.1) !important; color: #1e3a8a !important; }
 
 
@@ -706,7 +706,7 @@ p { color: rgba(255,255,255,0.75); }
     0 32px 80px rgba(0,0,0,0.22) !important;
 }
 .wl-join-card h2 { color: #fff !important; }
-.wl-join-card p  { color: rgba(255,255,255,0.72) !important; }
+.wl-join-card p  { color: rgba(255,255,255,0.8) !important; }
 
 
 /* --- FEATURE ROW VISUAL --- */
