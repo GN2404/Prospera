@@ -15,47 +15,353 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Prospera Financial Intelligence Platform",
-  "url": "https://www.prospera.sg/pricing.html",
-  "description": "Institutional-grade financial intelligence for Singapore SMEs. Free to start, Pro at $39/month.",
-  "brand": {
-    "@type": "Brand",
-    "name": "Prospera"
-  },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Explorer — Free",
-      "price": "0",
-      "priceCurrency": "SGD",
-      "availability": "https://schema.org/InStock",
-      "description": "Core portfolio tracking and basic market data. Free forever."
-    },
-    {
-      "@type": "Offer",
-      "name": "Pro — Monthly",
-      "price": "39",
-      "priceCurrency": "SGD",
-      "availability": "https://schema.org/InStock",
-      "billingIncrement": "P1M",
-      "description": "Full analytics suite — real-time data, risk scoring, benchmarking, and priority support. 14-day free trial."
-    },
-    {
-      "@type": "Offer",
-      "name": "Pro — Annual",
-      "price": "349",
-      "priceCurrency": "SGD",
-      "availability": "https://schema.org/InStock",
-      "billingIncrement": "P1Y",
-      "description": "Annual Pro plan — save 25% vs monthly billing."
-    }
-  ]
-}
-</script>
+  <style>
+  /* ================================================================
+     PRICING PAGE — billing toggle, cards, FAQ accordion
+     ================================================================ */
+
+  /* ---- Billing Toggle ---- */
+  .billing-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 56px;
+  }
+  .billing-toggle__wrap {
+    display: inline-flex;
+    background: var(--color-surface-container-low);
+    border-radius: 40px;
+    padding: 4px;
+    position: relative;
+  }
+  .billing-toggle__btn {
+    position: relative;
+    z-index: 1;
+    padding: 10px 24px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-on-surface-variant);
+    border-radius: 36px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+  .billing-toggle__btn.is-active { color: #fff; }
+  .billing-toggle__indicator {
+    position: absolute;
+    top: 4px;
+    height: calc(100% - 8px);
+    border-radius: 36px;
+    background: var(--gradient-brand);
+    transition: left 0.3s ease, width 0.3s ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ---- Pricing cards layout ---- */
+  .pricing-v2 {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* ---- Base card ---- */
+  .pc {
+    flex: 0 1 380px;
+    border-radius: 20px;
+    padding: 36px 36px 40px;
+    position: relative;
+  }
+
+  /* Explorer */
+  .pc--explorer {
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Pro */
+  .pc--pro {
+    background: var(--color-on-surface);
+    box-shadow: var(--shadow-lg), 0 0 60px rgba(26, 86, 219, 0.1);
+  }
+
+  /* "Most Popular" badge */
+  .pc__badge {
+    position: absolute;
+    top: -1px;
+    right: 24px;
+    background: var(--gradient-brand);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 4px 4px 16px 16px;
+    line-height: 1;
+  }
+
+  /* Plan label */
+  .pc__label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .pc--explorer .pc__label { color: var(--color-on-surface-variant); }
+  .pc--pro .pc__label { color: #b8c3ff; }
+
+  /* Plan name */
+  .pc__name {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .pc--explorer .pc__name { color: var(--color-on-surface); }
+  .pc--pro .pc__name { color: #fff; }
+
+  /* Price row */
+  .pc__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pc__amount {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .pc--explorer .pc__amount { color: var(--color-on-surface); }
+  .pc--pro .pc__amount { color: #fff; }
+  .pc__per {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .pc--explorer .pc__per { color: var(--color-on-surface-variant); }
+  .pc--pro .pc__per { color: rgba(255,255,255,0.55); }
+
+  /* Yearly note (Pro only, hidden by default) */
+  .pc__yearly-note {
+    font-size: 13px;
+    color: #b8c3ff;
+    min-height: 20px;
+    margin-bottom: 6px;
+  }
+
+  /* Trial / note */
+  .pc__trial {
+    font-size: 13px;
+    font-style: italic;
+    min-height: 20px;
+    margin-bottom: 28px;
+  }
+  .pc--explorer .pc__trial { color: var(--color-on-surface-variant); }
+  .pc--pro .pc__trial { color: #b8c3ff; }
+
+  /* Divider */
+  .pc__divider {
+    height: 1px;
+    margin: 0 0 24px;
+  }
+  .pc--explorer .pc__divider { background: var(--color-outline-variant); }
+  .pc--pro .pc__divider { background: rgba(255,255,255,0.1); }
+
+  /* Features list */
+  .pc__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .pc__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .pc--explorer .pc__features li { color: var(--color-on-surface); }
+  .pc--pro .pc__features li { color: rgba(255,255,255,0.88); }
+
+  /* Check circle */
+  .pc__ck {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .pc--explorer .pc__ck {
+    background: var(--color-tertiary-container);
+    color: var(--color-tertiary);
+  }
+  .pc--pro .pc__ck {
+    background: rgba(26, 86, 219, 0.28);
+    color: #93b4ff;
+  }
+  .pc__ck svg {
+    width: 10px;
+    height: 10px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* CTA buttons */
+  .pc__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-sizing: border-box;
+  }
+  .pc__cta--outline {
+    border: 2px solid var(--color-outline-variant);
+    color: var(--color-on-surface);
+    background: transparent;
+  }
+  .pc__cta--outline:hover { background: var(--color-surface-container-low); }
+  .pc__cta--gradient {
+    background: var(--gradient-brand);
+    color: #fff;
+    box-shadow: var(--shadow-glow);
+    border: none;
+  }
+  .pc__cta--gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(26, 86, 219, 0.3);
+  }
+
+  /* ---- Pricing FAQ ---- */
+  .pfaq {
+    max-width: 720px;
+    margin: 72px auto 0;
+  }
+  .pfaq__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-on-surface);
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .pfaq__item {
+    background: var(--color-surface-container-lowest);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .pfaq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-on-surface);
+    list-style: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .pfaq__q::-webkit-details-marker { display: none; }
+  .pfaq__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primary-container);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 0;
+    transition: transform 0.3s ease;
+  }
+  details[open] .pfaq__icon { transform: rotate(45deg); }
+  .pfaq__body {
+    padding: 0 24px 20px;
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.75;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 860px) {
+    .pricing-v2 { flex-direction: column; align-items: center; }
+    .pc { flex: none; width: 100%; max-width: 440px; }
+  }
+  @media (max-width: 480px) {
+    .pc { padding: 28px 24px 32px; }
+    .pfaq__q { padding: 18px 20px; }
+    .pfaq__body { padding: 0 20px 18px; }
+  }
+  </style>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233B63FB'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>P</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Prospera Financial Intelligence Platform",
+    "url": "https://www.prospera.sg/pricing.html",
+    "description": "Institutional-grade financial intelligence for Singapore SMEs. Free to start, Pro at $39/month.",
+    "brand": { "@type": "Brand", "name": "Prospera" },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Explorer — Free",
+        "price": "0",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/InStock",
+        "description": "Core portfolio tracking and basic market data. Free forever."
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro — Monthly",
+        "price": "39",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/InStock",
+        "billingIncrement": "P1M",
+        "description": "Full analytics suite — real-time data, risk scoring, benchmarking, and priority support. 14-day free trial."
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro — Annual",
+        "price": "349",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/InStock",
+        "billingIncrement": "P1Y",
+        "description": "Annual Pro plan — save 25% vs monthly billing."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -80,68 +386,138 @@
   </div></nav>
 
   <main>
-  <!-- PAGE HERO -->
+
+  <!-- PAGE HEADER -->
   <section class="page-hero">
     <div class="container">
-      <h1>Simple, Transparent Pricing</h1>
-      <p>No hidden fees. No lock-in contracts. Start free for 14 days and upgrade when you're ready.</p>
+      <h1 style="font-size:2.5rem;">Simple, Transparent Pricing</h1>
+      <p style="font-size:1.125rem;">Start free. Upgrade when you're ready.</p>
     </div>
   </section>
 
-  <!-- PRICING TABLE -->
-  <section class="section">
+  <!-- BILLING TOGGLE + PRICING CARDS -->
+  <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="pricing-grid fade-in">
+
+      <!-- Toggle -->
+      <div class="billing-toggle" role="group" aria-label="Billing frequency">
+        <div class="billing-toggle__wrap">
+          <div class="billing-toggle__indicator" aria-hidden="true"></div>
+          <button class="billing-toggle__btn is-active" data-period="monthly" type="button">Monthly</button>
+          <button class="billing-toggle__btn" data-period="yearly" type="button">Yearly (Save 25%)</button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="pricing-v2">
 
         <!-- Explorer (Free) -->
-        <div class="p-card">
-          <div class="p-card__name">Explorer</div>
-          <div class="p-card__price">$0<span>/forever</span></div>
-          <div class="p-card__desc">Start tracking your portfolio at no cost. No credit card required.</div>
-          <ul class="p-card__list">
-            <li><span class="ck">&#10003;</span>Core portfolio tracking</li>
-            <li><span class="ck">&#10003;</span>CSV data upload</li>
-            <li><span class="ck">&#10003;</span>Basic market data visualisation</li>
-            <li><span class="ck">&#10003;</span>Up to 3 connected accounts</li>
-            <li><span class="ck">&#10003;</span>14-day Pro trial included</li>
+        <div class="pc pc--explorer fade-in">
+          <div class="pc__label">For Early-Stage Founders</div>
+          <div class="pc__name">Explorer</div>
+          <div class="pc__price">
+            <span class="pc__amount">$0</span>
+            <span class="pc__per">/mo</span>
+          </div>
+          <div class="pc__yearly-note">&nbsp;</div>
+          <div class="pc__trial">No credit card required.</div>
+          <div class="pc__divider"></div>
+          <ul class="pc__features">
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Basic Portfolio Dashboard
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              1 Industry Benchmark Report / mo
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Core Banking Integrations
+            </li>
           </ul>
-          <a href="waitlist.html" class="btn btn--outline-dark btn--full shiny-cta">Join Waitlist</a>
-          <p class="p-card__note">Free forever. No credit card needed.</p>
+          <a href="signup.html" class="pc__cta pc__cta--outline">Get Started Free</a>
         </div>
 
-        <!-- Pro (featured) -->
-        <div class="p-card p-card--feat">
-          <div class="p-card__badge">Most Popular</div>
-          <div class="p-card__name">Pro</div>
-          <div class="p-card__price">$39<span>/month</span></div>
-          <div class="p-card__desc">The full analytics suite for SMEs serious about their financial data.</div>
-          <ul class="p-card__list">
-            <li><span class="ck">&#10003;</span>Everything in Explorer</li>
-            <li><span class="ck">&#10003;</span>Near-real-time market data</li>
-            <li><span class="ck">&#10003;</span>Risk scoring &amp; benchmarking</li>
-            <li><span class="ck">&#10003;</span>Alert system &amp; notifications</li>
-            <li><span class="ck">&#10003;</span>PDF &amp; CSV export</li>
-            <li><span class="ck">&#10003;</span>Priority support</li>
+        <!-- Pro -->
+        <div class="pc pc--pro fade-in delay-1">
+          <div class="pc__badge">Most Popular</div>
+          <div class="pc__label">For Scaling SMEs</div>
+          <div class="pc__name">Pro</div>
+          <div class="pc__price">
+            <span class="pc__amount" id="pro-amount">$39</span>
+            <span class="pc__per">/mo</span>
+          </div>
+          <div class="pc__yearly-note" id="pro-yearly-note">&nbsp;</div>
+          <div class="pc__trial">14-day free trial — No credit card required.</div>
+          <div class="pc__divider"></div>
+          <ul class="pc__features">
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Portfolio Risk Scoring
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Scenario Modelling Engine
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Industry &amp; Peer Benchmarking
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Tax-Optimised Surplus Calculator
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Priority Support
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              API Access
+            </li>
           </ul>
-          <a href="waitlist.html" class="btn btn--blue btn--full shiny-cta">Start Free Trial</a>
-          <p class="p-card__note">Or $349/year — save 25%. 14-day free trial.</p>
+          <a href="waitlist.html" class="pc__cta pc__cta--gradient">Get Pro Now</a>
+          <p style="font-size:13px;font-style:italic;color:#b8c3ff;text-align:center;margin-top:14px;">Includes 14-day free trial — No credit card required</p>
         </div>
 
       </div>
 
-      <!-- Free trial note -->
-      <p style="text-align:center;font-size:14px;color:var(--text-faint);margin-top:36px;">Both plans include a 14-day free trial of Pro. No credit card required.</p>
-    </div>
-  </section>
+      <!-- Pricing FAQ -->
+      <div class="pfaq">
+        <h2 class="pfaq__heading">Frequently Asked Questions</h2>
 
-  <!-- CTA BANNER -->
-  <section class="section section--gray">
-    <div class="container">
-      <div class="cta-banner fade-in">
-        <h2>Ready to Make Your Money Work Harder?</h2>
-        <p>Built for Singapore's 280,000+ SMEs. Join the waitlist and get early access.</p>
-        <a href="waitlist.html" class="btn btn--blue btn--lg shiny-cta">Join Waitlist</a>
+        <details class="pfaq__item">
+          <summary class="pfaq__q">
+            Is there a free trial?
+            <span class="pfaq__icon">+</span>
+          </summary>
+          <div class="pfaq__body">
+            Yes — every Pro plan starts with a 14-day free trial with full access to all Pro features. No credit card required. If Prospera isn't for you, you'll automatically revert to the free Explorer plan.
+          </div>
+        </details>
+
+        <details class="pfaq__item">
+          <summary class="pfaq__q">
+            Can I cancel anytime?
+            <span class="pfaq__icon">+</span>
+          </summary>
+          <div class="pfaq__body">
+            Absolutely. No contracts, no cancellation fees. Cancel from your dashboard and keep access until the end of your billing period.
+          </div>
+        </details>
+
+        <details class="pfaq__item">
+          <summary class="pfaq__q">
+            Will prices increase after launch?
+            <span class="pfaq__icon">+</span>
+          </summary>
+          <div class="pfaq__body">
+            Early waitlist members lock in launch pricing for their first 12 months. We'll give at least 60 days' notice before any changes.
+          </div>
+        </details>
       </div>
+
     </div>
   </section>
 
@@ -172,5 +548,37 @@
   </div></footer>
 
   <script src="js/main.js" defer></script>
+  <script>
+  (function () {
+    var wrap  = document.querySelector('.billing-toggle__wrap');
+    var btns  = wrap.querySelectorAll('.billing-toggle__btn');
+    var ind   = wrap.querySelector('.billing-toggle__indicator');
+    var proAmount = document.getElementById('pro-amount');
+    var proNote   = document.getElementById('pro-yearly-note');
+
+    function setActive(idx) {
+      btns.forEach(function (b, i) {
+        b.classList.toggle('is-active', i === idx);
+      });
+      var btn = btns[idx];
+      ind.style.left  = btn.offsetLeft + 'px';
+      ind.style.width = btn.offsetWidth + 'px';
+      if (idx === 0) {
+        proAmount.textContent = '$39';
+        proNote.innerHTML = '&nbsp;';
+      } else {
+        proAmount.textContent = '$29';
+        proNote.textContent = 'Or $349/year (Save 25%)';
+      }
+    }
+
+    btns.forEach(function (btn, i) {
+      btn.addEventListener('click', function () { setActive(i); });
+    });
+
+    // Initialise indicator position after layout
+    window.addEventListener('load', function () { setActive(0); });
+  }());
+  </script>
 </body>
 </html>
