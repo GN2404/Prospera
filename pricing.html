@@ -60,6 +60,20 @@
     pointer-events: none;
   }
 
+  /* ---- Toggle inside Pro card ---- */
+  .pc__toggle {
+    display: flex;
+    justify-content: flex-start;
+    margin: 16px 0 20px;
+  }
+  .pc__toggle .billing-toggle__wrap {
+    padding: 3px;
+  }
+  .pc__toggle .billing-toggle__btn {
+    padding: 8px 18px;
+    font-size: 0.8125rem;
+  }
+
   /* ---- Pricing cards layout ---- */
   .pricing-v2 {
     display: flex;
@@ -83,10 +97,19 @@
     box-shadow: var(--shadow-md);
   }
 
-  /* Pro */
+  /* Pro — white card with gradient top accent */
   .pc--pro {
-    background: var(--color-on-surface);
-    box-shadow: var(--shadow-lg), 0 0 60px rgba(26, 86, 219, 0.1);
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(26,86,219,0.18), 0 0 64px rgba(26,86,219,0.08);
+  }
+  .pc--pro::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gradient-brand);
+    border-radius: 20px 20px 0 0;
+    pointer-events: none;
   }
 
   /* "Most Popular" badge */
@@ -114,7 +137,7 @@
     margin-bottom: 10px;
   }
   .pc--explorer .pc__label { color: var(--color-on-surface-variant); }
-  .pc--pro .pc__label { color: #b8c3ff; }
+  .pc--pro .pc__label { color: var(--color-primary); }
 
   /* Plan name */
   .pc__name {
@@ -124,7 +147,7 @@
     margin-bottom: 24px;
   }
   .pc--explorer .pc__name { color: var(--color-on-surface); }
-  .pc--pro .pc__name { color: #fff; }
+  .pc--pro .pc__name { color: var(--color-on-surface); }
 
   /* Price row */
   .pc__price {
@@ -141,18 +164,18 @@
     letter-spacing: -0.03em;
   }
   .pc--explorer .pc__amount { color: var(--color-on-surface); }
-  .pc--pro .pc__amount { color: #fff; }
+  .pc--pro .pc__amount { color: var(--color-on-surface); }
   .pc__per {
     font-size: 1rem;
     font-weight: 500;
   }
   .pc--explorer .pc__per { color: var(--color-on-surface-variant); }
-  .pc--pro .pc__per { color: rgba(255,255,255,0.55); }
+  .pc--pro .pc__per { color: var(--color-on-surface-variant); }
 
   /* Yearly note (Pro only, hidden by default) */
   .pc__yearly-note {
     font-size: 13px;
-    color: #b8c3ff;
+    color: var(--color-primary);
     min-height: 20px;
     margin-bottom: 6px;
   }
@@ -165,7 +188,7 @@
     margin-bottom: 28px;
   }
   .pc--explorer .pc__trial { color: var(--color-on-surface-variant); }
-  .pc--pro .pc__trial { color: #b8c3ff; }
+  .pc--pro .pc__trial { color: var(--color-on-surface-variant); }
 
   /* Divider */
   .pc__divider {
@@ -173,7 +196,7 @@
     margin: 0 0 24px;
   }
   .pc--explorer .pc__divider { background: var(--color-outline-variant); }
-  .pc--pro .pc__divider { background: rgba(255,255,255,0.1); }
+  .pc--pro .pc__divider { background: var(--color-outline-variant); }
 
   /* Features list */
   .pc__features {
@@ -192,7 +215,7 @@
     line-height: 1.5;
   }
   .pc--explorer .pc__features li { color: var(--color-on-surface); }
-  .pc--pro .pc__features li { color: rgba(255,255,255,0.88); }
+  .pc--pro .pc__features li { color: var(--color-on-surface); }
 
   /* Check circle */
   .pc__ck {
@@ -210,8 +233,8 @@
     color: var(--color-tertiary);
   }
   .pc--pro .pc__ck {
-    background: rgba(26, 86, 219, 0.28);
-    color: #93b4ff;
+    background: var(--color-primary-container);
+    color: var(--color-primary);
   }
   .pc__ck svg {
     width: 10px;
@@ -401,15 +424,6 @@
   <section class="section" style="padding-top:0;">
     <div class="container">
 
-      <!-- Toggle -->
-      <div class="billing-toggle" role="group" aria-label="Billing frequency">
-        <div class="billing-toggle__wrap">
-          <div class="billing-toggle__indicator" aria-hidden="true"></div>
-          <button class="billing-toggle__btn is-active" data-period="monthly" type="button">Monthly</button>
-          <button class="billing-toggle__btn" data-period="yearly" type="button">Yearly (Save 25%)</button>
-        </div>
-      </div>
-
       <!-- Cards -->
       <div class="pricing-v2">
 
@@ -421,7 +435,6 @@
             <span class="pc__amount">$0</span>
             <span class="pc__per">/mo</span>
           </div>
-          <div class="pc__yearly-note">&nbsp;</div>
           <div class="pc__trial">No credit card required.</div>
           <div class="pc__divider"></div>
           <ul class="pc__features">
@@ -431,11 +444,35 @@
             </li>
             <li>
               <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Up to 5 Tracked Asset Positions
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              CSV Upload &amp; Portfolio Import
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Basic Market Data Visualisation
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
               1 Industry Benchmark Report / mo
             </li>
             <li>
               <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Cash Flow Summary View
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Monthly Performance Snapshot
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
               Core Banking Integrations
+            </li>
+            <li>
+              <span class="pc__ck"><svg viewBox="0 0 12 12"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></span>
+              Email Support
             </li>
           </ul>
           <a href="signup.html" class="pc__cta pc__cta--outline">Get Started Free</a>
@@ -446,6 +483,14 @@
           <div class="pc__badge">Most Popular</div>
           <div class="pc__label">For Scaling SMEs</div>
           <div class="pc__name">Pro</div>
+          <!-- Billing toggle — Pro card only -->
+          <div class="pc__toggle" role="group" aria-label="Billing frequency">
+            <div class="billing-toggle__wrap">
+              <div class="billing-toggle__indicator" aria-hidden="true"></div>
+              <button class="billing-toggle__btn is-active" data-period="monthly" type="button">Monthly</button>
+              <button class="billing-toggle__btn" data-period="yearly" type="button">Yearly (Save 25%)</button>
+            </div>
+          </div>
           <div class="pc__price">
             <span class="pc__amount" id="pro-amount">$39</span>
             <span class="pc__per">/mo</span>
@@ -480,7 +525,6 @@
             </li>
           </ul>
           <a href="waitlist.html" class="pc__cta pc__cta--gradient">Get Pro Now</a>
-          <p style="font-size:13px;font-style:italic;color:#b8c3ff;text-align:center;margin-top:14px;">Includes 14-day free trial — No credit card required</p>
         </div>
 
       </div>
