@@ -268,6 +268,15 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
   display: inline-flex; align-items: center;
 }
 .nav__cta:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26,86,219,0.3); }
+.nav__login {
+  border: 1.5px solid var(--color-outline-variant);
+  color: var(--color-on-surface);
+  padding: 9px 20px;
+  border-radius: 8px; font-weight: 600; font-size: 0.9375rem;
+  cursor: pointer; transition: all var(--transition); min-height: 44px;
+  display: inline-flex; align-items: center; text-decoration: none;
+}
+.nav__login:hover { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-primary-container); }
 .nav__hamburger {
   display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px;
   z-index: 1001; min-height: 44px; align-items: center; justify-content: center;
@@ -568,7 +577,7 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 
 @media (max-width: 768px) {
   body { padding-top: var(--nav-h); }
-  .nav__links, .nav__cta { display: none; }
+  .nav__links, .nav__cta, .nav__login { display: none; }
   .nav__hamburger { display: flex; }
 
   .hero { min-height: auto; padding-bottom: 60px; }
@@ -900,7 +909,7 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 .culture-stat__lbl { font-size: 0.75rem; color: var(--color-on-surface-variant); line-height: 1.4; }
 
 /* --- Waitlist / Signup page --- */
-.signup-page { min-height: 100vh; display: flex; align-items: center; background: var(--color-surface); padding: 60px 0; }
+.signup-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-surface); padding: 60px 24px; }
 .signup-header { text-align: center; margin-bottom: 40px; }
 .signup-header h1 { margin-bottom: 12px; }
 
