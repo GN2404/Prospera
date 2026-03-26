@@ -225,6 +225,12 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 .btn--lg { padding: 14px 32px; font-size: 1rem; }
 .btn--full { width: 100%; }
 
+/* --- Logo utility classes --- */
+.logo-on-dark img { filter: brightness(1.3) drop-shadow(0 0 1px rgba(255,255,255,0.3)); }
+.logo-on-dark span { color: #fff !important; }
+.logo-on-light img { filter: none; }
+.logo-on-light span { color: var(--color-on-surface) !important; }
+
 /* --- Navbar --- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
