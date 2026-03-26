@@ -1,6 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    /* Make container fluid on mobile and centered on desktop */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    /* Prevent any image from causing horizontal scroll */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mission section two‑column layout */
+    .mission-grid {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .mission-text,
+    .mission-visual {
+      flex: 1 1 0;
+    }
+
+    /* Mission stats as responsive grid */
+    .mission-visual {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    /* Values cards grid */
+    .how-v3__grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    /* Team card should shrink nicely */
+    .team-card {
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    /* Footer grid fallback if not already using grid */
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    /* MOBILE BREAKPOINT */
+    @media (max-width: 768px) {
+      /* Stack mission text and stats */
+      .mission-grid {
+        flex-direction: column;
+      }
+
+      /* Keep stats in 2 columns on mid‑size phones */
+      .mission-visual {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      /* Values: from 3 columns to 1 column */
+      .how-v3__grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Page hero text */
+      .page-hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .page-hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Global section spacing and side padding */
+      .section {
+        padding: 40px 0;
+      }
+
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      /* Footer: stack columns */
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__brand {
+        max-width: 100%;
+      }
+    }
+
+    /* EXTRA SMALL SCREENS */
+    @media (max-width: 480px) {
+      .mission-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Prospera — Our Mission for Singapore SMEs</title>
