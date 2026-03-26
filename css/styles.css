@@ -1085,7 +1085,7 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
   .how-v3__grid { grid-template-columns: 1fr; }
 }
 
-/* ===== 280K STAT BAND ===== */
+/* ===== 350K STAT BAND ===== */
 .stat-band {
   background: var(--color-surface-container-low);
   padding: 48px 0;

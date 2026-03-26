@@ -726,113 +726,33 @@
   </section>
 
   <!-- SINGAPORE SME FACTS BAND -->
-  <section class="sg-facts fade-in">
-    <div class="sg-facts__inner">
+  <section style="width:100%;position:relative;background:linear-gradient(135deg,#0d1e4a 0%,#1a3fa0 35%,#0a6d7c 68%,#054d35 100%);padding:72px 0;overflow:hidden;" class="fade-in">
+    <!-- Watermark -->
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden;">
+      <span style="font-size:clamp(72px,13vw,150px);font-weight:900;color:rgba(255,255,255,0.035);letter-spacing:0.18em;white-space:nowrap;user-select:none;font-family:Poppins,sans-serif;">SINGAPORE</span>
+    </div>
+    <!-- Stats grid -->
+    <div style="max-width:1400px;margin:0 auto;padding:0 48px;position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;">
 
-      <!-- Left: two stats -->
-      <div class="sg-facts__col">
-        <div class="sg-stat">
-          <div class="sg-stat__num">280,000</div>
-          <div class="sg-stat__label">SMEs in Singapore</div>
-          <div class="sg-stat__desc">Small and medium enterprises are the backbone of Singapore's economy — yet most lack the tools to manage finances strategically.</div>
-        </div>
-        <div class="sg-stat">
-          <div class="sg-stat__num">3%</div>
-          <div class="sg-stat__label">Have institutional tools</div>
-          <div class="sg-stat__desc">Fewer than 1 in 30 Singapore SMEs can access the kind of financial intelligence that large institutions take for granted.</div>
-        </div>
+      <!-- Stat 1 -->
+      <div style="flex:1;min-width:220px;max-width:380px;text-align:center;padding:32px 40px;border-right:1px solid rgba(255,255,255,0.12);">
+        <div style="font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">350,000</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:12px;">SMEs in Singapore</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.68);margin-top:12px;line-height:1.65;max-width:240px;margin-left:auto;margin-right:auto;">Small and medium enterprises are the backbone of Singapore's economy.</div>
       </div>
 
-      <!-- Centre: Singapore map -->
-      <div class="sg-facts__map">
-        <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Singapore" role="img">
-          <defs>
-            <linearGradient id="sgMain" x1="10%" y1="0%" x2="90%" y2="100%">
-              <stop offset="0%"   stop-color="#7dd3fc"/>
-              <stop offset="30%"  stop-color="#38bdf8"/>
-              <stop offset="60%"  stop-color="#1d7fd6"/>
-              <stop offset="100%" stop-color="#0b3d7a"/>
-            </linearGradient>
-            <linearGradient id="sgFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="sgFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#1e40af" stop-opacity="0.4"/>
-              <stop offset="100%" stop-color="#0f172a" stop-opacity="0.15"/>
-            </linearGradient>
-            <filter id="sgGlow" x="-15%" y="-15%" width="130%" height="130%">
-              <feGaussianBlur stdDeviation="8" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <!-- Main island silhouette -->
-          <path filter="url(#sgGlow)" fill="url(#sgMain)"
-            d="M 40,158
-               C 36,144 38,126 50,111
-               C 64,95 82,83 104,73
-               C 128,63 155,58 182,56
-               C 206,54 230,54 254,55
-               C 278,57 302,60 326,65
-               C 350,70 372,78 392,88
-               C 410,97 423,109 428,122
-               C 433,134 430,147 422,157
-               C 414,167 402,173 387,177
-               C 370,180 351,181 332,182
-               C 310,184 287,185 264,185
-               C 240,185 216,183 192,179
-               C 168,175 145,167 124,158
-               C 104,149 84,146 66,150
-               C 54,152 43,157 40,158 Z"/>
-
-          <!-- Low-poly facet overlays — top-left light facets -->
-          <polygon fill="url(#sgFacet1)" points="50,110 130,75 170,120"/>
-          <polygon fill="rgba(186,230,253,0.22)" points="130,75 220,64 200,118"/>
-          <polygon fill="rgba(125,211,252,0.18)" points="220,64 310,67 280,112"/>
-          <polygon fill="rgba(56,189,248,0.15)" points="310,67 400,90 370,118"/>
-
-          <!-- Mid-tone facets -->
-          <polygon fill="rgba(29,127,214,0.18)" points="60,148 140,128 110,165"/>
-          <polygon fill="rgba(14,165,233,0.15)" points="140,128 230,130 195,170"/>
-          <polygon fill="rgba(3,105,161,0.20)" points="230,130 330,128 300,172"/>
-          <polygon fill="rgba(7,89,133,0.18)"  points="330,128 420,148 395,175"/>
-
-          <!-- Dark shadow facets — bottom -->
-          <polygon fill="url(#sgFacet2)" points="70,158 160,173 110,185"/>
-          <polygon fill="rgba(15,23,42,0.22)"  points="160,173 265,180 220,188"/>
-          <polygon fill="rgba(11,61,122,0.20)" points="265,180 365,176 330,188"/>
-
-          <!-- Southern islands — Sentosa + nearby -->
-          <path fill="url(#sgMain)" opacity="0.85"
-            d="M 148,208 C 142,202 141,194 147,188 C 154,182 164,181 175,185
-               C 186,189 192,197 189,205 C 186,212 178,215 167,213 C 157,212 151,210 148,208 Z"/>
-          <path fill="url(#sgMain)" opacity="0.75"
-            d="M 196,218 C 191,213 191,206 196,202 C 202,198 210,198 216,203
-               C 222,208 222,215 217,219 C 211,223 200,222 196,218 Z"/>
-          <path fill="url(#sgMain)" opacity="0.65"
-            d="M 228,222 C 224,217 225,211 230,208 C 235,205 242,206 246,211
-               C 249,215 248,221 243,224 C 237,227 231,226 228,222 Z"/>
-
-          <!-- Small NE islands -->
-          <path fill="url(#sgMain)" opacity="0.7"
-            d="M 458,110 C 455,106 455,100 459,97 C 463,94 469,95 472,100
-               C 475,104 474,110 470,112 C 465,114 460,113 458,110 Z"/>
-          <path fill="url(#sgMain)" opacity="0.6"
-            d="M 475,125 C 473,121 474,116 478,114 C 482,112 487,114 488,118
-               C 489,122 487,127 483,128 C 479,129 476,128 475,125 Z"/>
-        </svg>
-        <div class="sg-facts__map-label">Singapore</div>
+      <!-- Stat 2 -->
+      <div style="flex:1;min-width:220px;max-width:380px;text-align:center;padding:32px 40px;border-right:1px solid rgba(255,255,255,0.12);">
+        <div style="font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">3%</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:12px;">Have Institutional Tools</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.68);margin-top:12px;line-height:1.65;max-width:240px;margin-left:auto;margin-right:auto;">Fewer than 1 in 30 SMEs can access the financial tools large institutions take for granted.</div>
       </div>
 
-      <!-- Right: primary stat -->
-      <div class="sg-facts__col sg-facts__col--right">
-        <div class="sg-stat sg-stat--hero">
-          <div class="sg-stat__num">97%</div>
-          <div class="sg-stat__label">Built for them</div>
-          <div class="sg-stat__desc">Prospera gives the other 97% access to the same quality of financial intelligence that institutional investors rely on — at a fraction of the cost.</div>
-          <a href="waitlist.html" class="sg-stat__cta">Join the Waitlist →</a>
-        </div>
+      <!-- Stat 3 -->
+      <div style="flex:1;min-width:220px;max-width:380px;text-align:center;padding:32px 40px;">
+        <div style="font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">97%</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:12px;">Built For Them</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.68);margin-top:12px;line-height:1.65;max-width:240px;margin-left:auto;margin-right:auto;">Prospera gives the other 97% the same institutional-grade financial intelligence — at a fraction of the cost.</div>
       </div>
 
     </div>
@@ -973,7 +893,7 @@
     <div class="container">
       <div class="cta-v2__card fade-in">
         <h2>Ready to See Your Finances Clearly?</h2>
-        <p>Built for Singapore's 280,000+ SMEs. Start free, upgrade when you're ready.</p>
+        <p>Built for Singapore's 350,000+ SMEs. Start free, upgrade when you're ready.</p>
         <div class="cta-v2__btns">
           <a href="signup.html" class="cta-v2__btn-primary">Get Started Free</a>
           <a href="waitlist.html" class="cta-v2__btn-secondary">Join the Waitlist</a>
