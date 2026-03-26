@@ -325,8 +325,8 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 /* --- Page Hero (sub-pages) --- */
 .page-hero {
   background: var(--color-surface);
-  padding: 120px 0 80px; text-align: center;
-  margin-top: calc(-1 * var(--nav-h)); padding-top: calc(var(--nav-h) + 80px);
+  padding: 64px 0 48px; text-align: center;
+  margin-top: calc(-1 * var(--nav-h)); padding-top: calc(var(--nav-h) + 36px);
   position: relative; overflow: hidden;
 }
 .page-hero::before {
@@ -928,7 +928,7 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 /* --- Waitlist hero --- */
 .wl-hero {
   background: var(--color-surface);
-  padding: 100px 0 72px;
+  padding: 56px 0 48px;
   text-align: center;
 }
 .wl-hero h1 {
