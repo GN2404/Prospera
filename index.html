@@ -754,43 +754,15 @@
         <a href="waitlist.html" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#60c0f8;text-decoration:none;">Join the waitlist <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
-      <!-- CENTER: Accurate Singapore SVG map -->
+      <!-- CENTER: Singapore 3D map image -->
       <div style="flex:0 0 auto;position:relative;">
         <!-- Glow halo behind map -->
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:480px;height:320px;background:radial-gradient(ellipse,rgba(96,192,248,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-        <svg viewBox="60 0 740 410" xmlns="http://www.w3.org/2000/svg"
-          style="width:clamp(340px,42vw,520px);height:auto;display:block;filter:drop-shadow(0 12px 40px rgba(0,10,50,0.7)) drop-shadow(0 0 30px rgba(96,192,248,0.5));">
-          <defs>
-            <linearGradient id="sgTop" x1="20%" y1="0%" x2="80%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="45%" stop-color="#daedf8"/>
-              <stop offset="100%" stop-color="#9ec8e0"/>
-            </linearGradient>
-            <linearGradient id="sgSide" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#c8e4f4"/>
-              <stop offset="100%" stop-color="#82b4cf"/>
-            </linearGradient>
-            <filter id="sg3d" x="-4%" y="-8%" width="108%" height="124%">
-              <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(2,12,50,0.65)"/>
-              <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(2,12,50,0.3)"/>
-            </filter>
-          </defs>
-          <!-- South West -->
-          <path fill="url(#sgTop)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" filter="url(#sg3d)"
-            d="M451.1,383.5 444.9,390.9 433.5,395.8 405.4,400 352.1,399 325.8,392.2 314.6,379.3 295.9,349.5 250.6,328.8 196,316.2 149.3,311.2 54.4,313.6 15.8,304.3 0,274.3 9.4,240 74.7,148.3 84.1,107.2 94.9,84.1 119.4,59.3 148.4,41.8 169.4,38.3 217,44.5 266.1,38.3 263.5,59.3 259.3,83.1 257.9,101.4 257.9,126.7 269.2,142.1 284.7,157.6 300.3,170.2 321.5,187.1 322.9,201.1 314.4,211 305.9,219.4 310.2,229.2 327.1,234.8 344.1,248.9 362.5,268.6 365.3,296.6 363.9,314.9 369.5,336 390.7,358.4 410.5,369.7 436,379.5Z"/>
-          <!-- Central Singapore -->
-          <path fill="url(#sgTop)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" filter="url(#sg3d)"
-            d="M562.9,311.2 540.2,319.8 463.7,371.8 451.1,383.5 436,379.5 410.5,369.7 390.7,358.4 369.5,336 363.9,314.9 365.3,296.6 362.5,268.6 380.8,254.5 400.6,234.8 400.6,212.4 390.7,196.9 402.1,180.1 424.7,167.4 441.6,153.4 438.8,136.5 430.3,119.7 416.2,104.2 421.8,85.9 438.8,69.1 458.6,67.7 485.5,69.1 510.9,66.3 526.5,47.9 587.6,78.2 577.3,91.6 568.9,112.6 564.6,135.1 546.2,142.1 532.1,149.2 516.6,164.6 508.1,185.7 508.1,206.7 512.3,229.2 525,250.3 540.6,274.2 556.1,299.5Z"/>
-          <!-- North East -->
-          <path fill="url(#sgTop)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" filter="url(#sg3d)"
-            d="M587.6,78.2 637.9,103.1 699.8,124.9 710.7,127.3 703.2,142.1 686.2,156.2 666.4,164.6 666.4,181.5 659.3,205.3 643.8,205.3 632.5,195.5 604.2,182.9 580.2,174.4 561.8,160.4 564.6,135.1 568.9,112.6 577.3,91.6Z"/>
-          <!-- South East -->
-          <path fill="url(#sgTop)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" filter="url(#sg3d)"
-            d="M710.7,127.3 754.2,137.1 784.4,148.3 792.9,161.6 767.7,203.4 730.5,247.8 685.7,283.3 636.7,297.7 582.8,303.6 562.9,311.2 556.1,299.5 540.6,274.2 525,250.3 512.3,229.2 508.1,206.7 508.1,185.7 516.6,164.6 532.1,149.2 546.2,142.1 561.8,160.4 580.2,174.4 604.2,182.9 632.5,195.5 643.8,205.3 659.3,205.3 666.4,181.5 666.4,164.6 686.2,156.2 703.2,142.1Z"/>
-          <!-- North West -->
-          <path fill="url(#sgTop)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" filter="url(#sg3d)"
-            d="M266.1,38.3 326.9,9.4 359.4,0 417.5,3.4 473.5,21.5 526.5,47.9 510.9,66.3 485.5,69.1 458.6,67.7 438.8,69.1 421.8,85.9 416.2,104.2 430.3,119.7 438.8,136.5 441.6,153.4 424.7,167.4 402.1,180.1 390.7,196.9 400.6,212.4 400.6,234.8 380.8,254.5 362.5,268.6 344.1,248.9 327.1,234.8 310.2,229.2 305.9,219.4 314.4,211 322.9,201.1 321.5,187.1 300.3,170.2 284.7,157.6 269.2,142.1 257.9,126.7 257.9,101.4 259.3,83.1 263.5,59.3Z"/>
-        </svg>
+        <img
+          src="https://img.freepik.com/premium-vector/3d-singapore-map-flag-3d-shape-design-independence-day-concept-perspective-view-vector_941588-579.jpg"
+          alt="3D Singapore map"
+          style="width:clamp(300px,38vw,480px);height:auto;display:block;border-radius:12px;filter:drop-shadow(0 12px 40px rgba(0,10,50,0.7)) drop-shadow(0 0 30px rgba(96,192,248,0.4));"
+        />
       </div>
 
       <!-- RIGHT: 3 stat items -->
