@@ -326,6 +326,179 @@
     .hero-v2__stats-row { grid-template-columns: 1fr 1fr; }
     .hero-v2__stats-row > :last-child { display: none; }
   }
+
+  /* ================================================================
+     HOW V2 — 4-step process with connecting line
+     ================================================================ */
+  .how-v2 { padding-top: 16px; }
+  .how-v2__track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+  }
+  .how-v2__track::before {
+    content: '';
+    position: absolute;
+    top: 53px; /* centre of 64px icon + 22px num + 12px gap = ~53px from top */
+    left: calc(12.5% + 10px);
+    right: calc(12.5% + 10px);
+    height: 2px;
+    background: var(--gradient-brand);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .how-v2__step {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .how-v2__num {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .how-v2__icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--shadow-sm);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    color: var(--color-primary);
+  }
+  .how-v2__icon svg {
+    width: 26px; height: 26px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .how-v2__step h4 {
+    font-size: 0.9375rem; font-weight: 700;
+    color: var(--color-on-surface);
+    margin-bottom: 10px;
+  }
+  .how-v2__step p {
+    font-size: 0.8125rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.65;
+    margin: 0;
+  }
+  @media (max-width: 860px) {
+    .how-v2__track { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    .how-v2__track::before { display: none; }
+  }
+  @media (max-width: 480px) {
+    .how-v2__track { grid-template-columns: 1fr; gap: 36px; }
+  }
+
+  /* ================================================================
+     PLAYING FIELD V2 — problem/solution cards
+     ================================================================ */
+  .ps-v2__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+  }
+  .ps-v2__col-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.8px; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ps-v2__col-label--problem { color: #b45309; }
+  .ps-v2__col-label--solution { color: var(--color-tertiary); }
+  .ps-v2__card {
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .ps-v2__card:last-child { margin-bottom: 0; }
+  .ps-v2__card--problem { background: #fef2f2; }
+  .ps-v2__card--solution { background: var(--color-tertiary-container); }
+  .ps-v2__card-icon {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .ps-v2__card--problem .ps-v2__card-icon { background: #fee2e2; color: #ef4444; }
+  .ps-v2__card--solution .ps-v2__card-icon { background: rgba(5,150,105,0.15); color: var(--color-tertiary); }
+  .ps-v2__card-icon svg {
+    width: 18px; height: 18px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .ps-v2__card h4 {
+    font-size: 0.9375rem; font-weight: 700;
+    color: var(--color-on-surface); margin-bottom: 6px;
+  }
+  .ps-v2__card p {
+    font-size: 0.8125rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.6; margin: 0;
+  }
+  @media (max-width: 700px) {
+    .ps-v2__grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ================================================================
+     CTA V2 — gradient card
+     ================================================================ */
+  .cta-v2 { padding: 80px 0; background: var(--color-surface); }
+  .cta-v2__card {
+    background: var(--gradient-brand);
+    border-radius: 24px;
+    padding: 64px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-v2__card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% -10%, rgba(255,255,255,0.15), transparent);
+    pointer-events: none;
+  }
+  .cta-v2__card > * { position: relative; z-index: 1; }
+  .cta-v2__card h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700;
+    color: #fff; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .cta-v2__card p {
+    font-size: 1rem; color: rgba(255,255,255,0.88);
+    margin-bottom: 36px;
+    max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .cta-v2__btns {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  }
+  .cta-v2__btn-primary {
+    display: inline-flex; align-items: center;
+    background: #fff; color: var(--color-primary);
+    font-weight: 700; font-size: 0.9375rem;
+    padding: 14px 32px; border-radius: 8px;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .cta-v2__btn-primary:hover { opacity: 0.92; }
+  .cta-v2__btn-secondary {
+    display: inline-flex; align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; font-weight: 600; font-size: 0.9375rem;
+    padding: 14px 32px; border-radius: 8px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .cta-v2__btn-secondary:hover { background: rgba(255,255,255,0.18); }
+  @media (max-width: 600px) {
+    .cta-v2__card { padding: 48px 24px; }
+    .cta-v2__btns { flex-direction: column; align-items: stretch; }
+    .cta-v2__btn-primary, .cta-v2__btn-secondary { justify-content: center; }
+  }
   </style>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233B63FB'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>P</text></svg>">
@@ -580,15 +753,51 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="section section--warm">
+  <section class="section section--alt">
     <div class="container">
-      <div class="section-header fade-in"><h2>How It Works</h2><p>Getting started takes about 5 minutes. No finance degree needed.</p></div>
-      <div class="how-steps fade-in delay-1" style="position:relative;">
-        <div class="how-steps__line"></div>
-        <div class="how-step"><div class="how-step__num">1</div><div class="how-step__title">Connect</div><div class="how-step__desc">Securely link your business accounts in minutes using bank-grade encryption.</div></div>
-        <div class="how-step"><div class="how-step__num">2</div><div class="how-step__title">Analyse</div><div class="how-step__desc">We benchmark your financials against real-time market data and industry peers.</div></div>
-        <div class="how-step"><div class="how-step__num">3</div><div class="how-step__title">Strategise</div><div class="how-step__desc">Get clear, jargon-free insights tailored to your business risk appetite and goals.</div></div>
-        <div class="how-step"><div class="how-step__num">4</div><div class="how-step__title">Grow</div><div class="how-step__desc">Monitor your portfolio in real time so you can focus on running your business.</div></div>
+      <div class="section-header fade-in">
+        <h2>From Business Owner to Data-Driven Decision Maker</h2>
+      </div>
+      <div class="how-v2 fade-in delay-1">
+        <div class="how-v2__track">
+
+          <div class="how-v2__step">
+            <div class="how-v2__num">1</div>
+            <div class="how-v2__icon">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h4>Connect your accounts</h4>
+            <p>Securely aggregate your banking, accounting, and payroll data through our encrypted SME portal.</p>
+          </div>
+
+          <div class="how-v2__step">
+            <div class="how-v2__num">2</div>
+            <div class="how-v2__icon">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><circle cx="18" cy="7" r="3" fill="none"/><polyline points="15 7 18 4 21 7"/></svg>
+            </div>
+            <h4>Get AI-driven insights</h4>
+            <p>Our proprietary algorithms analyse cash flow patterns and benchmark your performance against Singapore industry standards.</p>
+          </div>
+
+          <div class="how-v2__step">
+            <div class="how-v2__num">3</div>
+            <div class="how-v2__icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+            </div>
+            <h4>Allocate with confidence</h4>
+            <p>Deploy surplus capital into high-yield instruments or reinvest in core growth with precise ROI forecasts.</p>
+          </div>
+
+          <div class="how-v2__step">
+            <div class="how-v2__num">4</div>
+            <div class="how-v2__icon">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h4>Grow your capital</h4>
+            <p>Track your portfolio and industry position in real time. We keep watching so you can focus on your business.</p>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -600,23 +809,70 @@
     </div>
   </section>
 
-  <!-- PROBLEM / SOLUTION -->
+  <!-- PLAYING FIELD -->
   <section class="section">
     <div class="container">
-      <div class="section-header fade-in"><h2>The Playing Field Isn’t Level. Until Now.</h2></div>
-      <div class="ps-grid">
-        <div class="ps-col fade-in">
-          <h3>The Reality</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Pro Tools Have Pro Price Tags</h4><p>Bloomberg Terminal: $25K/year. Bank RM access: $350K minimum AUM.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>One Bank’s View Isn’t Enough</h4><p>Your RM only sees their own products — not the full market picture.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--red"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Quarterly Check-Ins Aren’t Enough</h4><p>Markets move daily. Waiting for your next RM meeting costs you.</p></div></div>
+      <div class="section-header fade-in">
+        <h2>The Playing Field Isn’t Level. Until Now.</h2>
+      </div>
+      <div class="ps-v2__grid">
+
+        <div class="fade-in">
+          <div class="ps-v2__col-label ps-v2__col-label--problem">The Problems</div>
+
+          <div class="ps-v2__card ps-v2__card--problem">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            </div>
+            <h4>Bank RMs Serve the Banks, Not You</h4>
+            <p>Your relationship manager sees one bank’s products and pushes what earns them commission. You need cross-bank, cross-asset visibility.</p>
+          </div>
+
+          <div class="ps-v2__card ps-v2__card--problem">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4>Pro Tools Have Pro Price Tags</h4>
+            <p>Bloomberg starts at $25K/year. Bank wealth management requires $350K minimum AUM. Most SMEs are left with spreadsheets.</p>
+          </div>
+
+          <div class="ps-v2__card ps-v2__card--problem">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h4>Quarterly Meetings Don’t Cut It</h4>
+            <p>Between scheduled RM meetings, markets move and opportunities appear. You need always-on visibility, not a check-in every 90 days.</p>
+          </div>
         </div>
-        <div class="ps-col fade-in delay-1">
-          <h3>The Prospera Way</h3>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Institutional-Grade Analysis, SME Pricing</h4><p>Bloomberg-level intelligence for $50K–$5M portfolios. Free to start, $39/month for Pro.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Cross-Bank, Cross-Asset Visibility</h4><p>Your full financial picture in one place — no product bias, no minimums.</p></div></div>
-          <div class="ps-item"><div class="ps-dot ps-dot--green"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Always-On Intelligence</h4><p>Real-time risk alerts and opportunity flags — 24/7, not just once a quarter.</p></div></div>
+
+        <div class="fade-in delay-1">
+          <div class="ps-v2__col-label ps-v2__col-label--solution">Prospera Solutions</div>
+
+          <div class="ps-v2__card ps-v2__card--solution">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <h4>Cross-Bank Portfolio Visibility</h4>
+            <p>See your entire financial position across all banks and asset classes in one dashboard.</p>
+          </div>
+
+          <div class="ps-v2__card ps-v2__card--solution">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h4>Institutional-Grade Analytics from $39/month</h4>
+            <p>The same calibre of market data and risk analytics that large firms use. Free tier available.</p>
+          </div>
+
+          <div class="ps-v2__card ps-v2__card--solution">
+            <div class="ps-v2__card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Always-On Market Intelligence</h4>
+            <p>Real-time risk monitoring, market shift alerts, and opportunity flags. 24/7.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -636,13 +892,16 @@
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="section section--warm">
+  <!-- CTA -->
+  <section class="cta-v2">
     <div class="container">
-      <div class="cta-banner fade-in">
-        <h2>Ready to Make Your Money Work Harder?</h2>
-        <p>Built for Singapore's 280,000+ SMEs. Your money shouldn't sit idle while opportunities pass by.</p>
-        <a href="waitlist.html" class="btn btn--blue btn--lg shiny-cta">Join Waitlist</a>
+      <div class="cta-v2__card fade-in">
+        <h2>Ready to See Your Finances Clearly?</h2>
+        <p>Built for Singapore's 280,000+ SMEs. Start free, upgrade when you're ready.</p>
+        <div class="cta-v2__btns">
+          <a href="signup.html" class="cta-v2__btn-primary">Get Started Free</a>
+          <a href="waitlist.html" class="cta-v2__btn-secondary">Join the Waitlist</a>
+        </div>
       </div>
     </div>
   </section>
