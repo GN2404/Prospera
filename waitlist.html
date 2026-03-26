@@ -124,12 +124,12 @@
   .vtl::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: 5px;
     top: 16px;
     bottom: 16px;
-    width: 4px;
+    width: 20px;
     background: linear-gradient(to bottom, #1a56db, #0d9488, #059669);
-    border-radius: 2px;
+    border-radius: 99px;
   }
   .vtl__item {
     position: relative;
@@ -141,22 +141,24 @@
   .vtl__dot {
     position: absolute;
     left: -43px;
-    top: calc(50% - 26px); /* center on card, offset for 40px bottom padding + half dot */
+    top: calc(50% - 26px);
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--color-outline-variant);
-    border: 2px solid var(--color-outline-variant);
+    background: #fff;
+    border: 2.5px solid var(--color-outline-variant);
+    z-index: 1;
     transition: all 0.3s ease;
   }
   /* Active (current) dot — larger, primary colour, pulse */
   .vtl__item--active .vtl__dot {
-    width: 18px;
-    height: 18px;
-    left: -46px;
-    top: calc(50% - 29px); /* larger dot, same center logic */
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    width: 16px;
+    height: 16px;
+    left: -45px;
+    top: calc(50% - 28px);
+    background: #fff;
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26,86,219,0.2);
     animation: dot-pulse 2s ease-in-out infinite;
   }
   @keyframes dot-pulse {
