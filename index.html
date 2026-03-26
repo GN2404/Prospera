@@ -551,7 +551,8 @@
     <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:32px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--color-on-surface);">Prospera</span></a>
     <div class="nav__links">
       <a href="index.html" class="nav__link nav__link--active">Home</a>
-      <a href="features.html" class="nav__link">Features</a>
+      <a href="about.html" class="nav__link">About Us</a>
+          <a href="features.html" class="nav__link">Features</a>
       <a href="pricing.html" class="nav__link">Pricing</a>
       <a href="waitlist.html" class="nav__link">Waitlist</a>
       <a href="faq.html" class="nav__link">FAQ</a>
@@ -564,7 +565,8 @@
   </div>
   <div class="nav__mobile">
     <a href="index.html" class="nav__link nav__link--active">Home</a>
-    <a href="features.html" class="nav__link">Features</a>
+    <a href="about.html" class="nav__link">About Us</a>
+          <a href="features.html" class="nav__link">Features</a>
     <a href="pricing.html" class="nav__link">Pricing</a>
     <a href="waitlist.html" class="nav__link">Waitlist</a>
     <a href="faq.html" class="nav__link">FAQ</a>
@@ -730,95 +732,99 @@
     </div><!-- /.container -->
   </section>
 
-  <!-- SINGAPORE SME FACTS — Map + Stats Visual -->
-  <section style="width:100%;position:relative;background:linear-gradient(135deg,#06112b 0%,#0d2a6e 35%,#0a4d6e 68%,#063d30 100%);padding:88px 0;overflow:hidden;" class="fade-in">
-    <!-- Radial glow behind map -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(56,189,248,0.13) 0%,transparent 70%);pointer-events:none;"></div>
-    <!-- Content row -->
-    <div style="max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1;display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;">
+  <!-- SINGAPORE SME FACTS — Digital Map Visual -->
+  <section style="width:100%;position:relative;overflow:hidden;background:#0b1f4a;" class="fade-in">
+    <!-- Grid dot pattern background -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+          <rect x="10" y="10" width="5" height="5" rx="1" fill="#4a9fd4"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+    <!-- Blue radial glow centre -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(30,100,210,0.55) 0%,rgba(10,40,140,0.3) 40%,transparent 70%);pointer-events:none;"></div>
+    <!-- Bright centre spot -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;background:radial-gradient(ellipse,rgba(100,180,255,0.35) 0%,transparent 70%);pointer-events:none;"></div>
+    <!-- Circular ring decorations -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border-radius:50%;border:1px solid rgba(100,180,255,0.12);pointer-events:none;"></div>
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;border-radius:50%;border:1px solid rgba(100,180,255,0.07);pointer-events:none;"></div>
+    <!-- Content -->
+    <div style="max-width:1200px;margin:0 auto;padding:80px 48px;position:relative;z-index:1;display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;">
 
       <!-- LEFT: heading + description -->
-      <div style="flex:1;min-width:260px;max-width:320px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#38bdf8;margin-bottom:16px;">Singapore SME Landscape</div>
-        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.25;margin-bottom:20px;">The Gap No One<br>Talks About</h2>
-        <p style="font-size:14.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:28px;">Singapore's SMEs generate over 45% of GDP — yet fewer than 3% have access to the financial intelligence tools that large corporations use every day.</p>
-        <a href="waitlist.html" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#38bdf8;text-decoration:none;">Join the waitlist <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div style="flex:1;min-width:240px;max-width:300px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60c0f8;margin-bottom:14px;">Singapore SME Landscape</div>
+        <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:#fff;line-height:1.3;margin-bottom:18px;">The Gap No One<br>Talks About</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.78;margin-bottom:26px;">Singapore's SMEs generate over 45% of GDP — yet fewer than 3% have access to the financial intelligence tools that large corporations use every day.</p>
+        <a href="waitlist.html" style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:#60c0f8;text-decoration:none;">Join the waitlist <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
-      <!-- CENTER: Singapore SVG Map -->
-      <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;">
-        <!-- Outer glow ring -->
-        <div style="position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse,rgba(56,189,248,0.10) 0%,transparent 70%);"></div>
-        <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" style="width:clamp(280px,38vw,440px);height:auto;filter:drop-shadow(0 0 32px rgba(56,189,248,0.35));">
+      <!-- CENTER: Singapore map (white elevated 3D style) -->
+      <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;min-width:300px;">
+        <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="width:clamp(300px,40vw,460px);height:auto;filter:drop-shadow(0 10px 36px rgba(0,0,0,0.6)) drop-shadow(0 0 28px rgba(120,190,255,0.45));">
           <defs>
-            <linearGradient id="sgFill" x1="0%" y1="0%" x2="60%" y2="100%">
-              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
-              <stop offset="45%" stop-color="#0284c7" stop-opacity="0.85"/>
-              <stop offset="100%" stop-color="#0c3d6e" stop-opacity="0.9"/>
+            <linearGradient id="sgW" x1="25%" y1="0%" x2="75%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="50%" stop-color="#d8edf8"/>
+              <stop offset="100%" stop-color="#a5c8e4"/>
             </linearGradient>
-            <linearGradient id="sgFill2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0.85"/>
+            <linearGradient id="sgW2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#cce3f4"/>
+              <stop offset="100%" stop-color="#88b8d6"/>
             </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            <filter id="el" x="-8%" y="-15%" width="116%" height="140%">
+              <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="rgba(4,18,60,0.6)"/>
+              <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(4,18,60,0.3)"/>
             </filter>
           </defs>
-          <!-- Main island — approximate Singapore outline -->
-          <path d="M72,148 L78,130 L88,115 L102,103 L118,94 L138,88 L162,82 L190,78 L218,76 L248,76 L278,78 L308,82 L334,88 L356,96 L374,106 L390,118 L404,130 L412,143 L414,156 L410,168 L400,178 L386,186 L368,193 L346,199 L322,205 L298,210 L274,214 L250,216 L226,216 L202,214 L178,210 L155,204 L133,196 L112,186 L94,174 L80,162 Z"
-            fill="url(#sgFill)" stroke="rgba(186,230,253,0.5)" stroke-width="1.5" filter="url(#glow)"/>
-          <!-- Jurong island (SW) -->
-          <path d="M86,192 L96,184 L104,190 L110,202 L118,212 L114,224 L104,228 L94,222 L84,210 Z"
-            fill="url(#sgFill2)" stroke="rgba(186,230,253,0.3)" stroke-width="1"/>
-          <!-- Sentosa + southern islands -->
-          <path d="M210,232 L228,226 L248,224 L268,226 L280,234 L276,244 L258,250 L238,250 L220,244 Z"
-            fill="url(#sgFill2)" stroke="rgba(186,230,253,0.3)" stroke-width="1"/>
-          <!-- Pulau Ubin (NE) -->
-          <path d="M378,72 L398,66 L416,68 L424,78 L416,88 L396,90 L378,84 Z"
-            fill="url(#sgFill2)" stroke="rgba(186,230,253,0.3)" stroke-width="1"/>
-          <!-- Small southern islets -->
-          <ellipse cx="178" cy="248" rx="14" ry="8" fill="url(#sgFill2)" stroke="rgba(186,230,253,0.25)" stroke-width="1" transform="rotate(-10,178,248)"/>
-          <ellipse cx="302" cy="254" rx="11" ry="6" fill="url(#sgFill2)" stroke="rgba(186,230,253,0.25)" stroke-width="1"/>
-          <!-- SINGAPORE label -->
-          <text x="243" y="150" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" font-weight="700" fill="rgba(255,255,255,0.55)" letter-spacing="4">SINGAPORE</text>
-          <!-- Dot markers for key areas -->
-          <circle cx="243" cy="165" r="4" fill="#38bdf8" opacity="0.9"/>
-          <circle cx="390" cy="120" r="3" fill="#38bdf8" opacity="0.7"/>
-          <circle cx="100" cy="170" r="3" fill="#38bdf8" opacity="0.7"/>
+          <!-- Main island -->
+          <path filter="url(#el)" fill="url(#sgW)" stroke="rgba(255,255,255,0.55)" stroke-width="1"
+            d="M80,158 L87,136 L98,118 L112,104 L130,93 L152,85 L178,77 L208,71 L240,68 L270,68 L300,70 L328,76 L354,84 L376,95 L394,108 L410,123 L422,140 L428,156 L426,170 L416,182 L400,192 L380,200 L356,207 L328,213 L298,217 L268,218 L238,217 L208,213 L178,206 L150,196 L124,183 L100,168 Z"/>
+          <!-- Jurong Island SW -->
+          <path filter="url(#el)" fill="url(#sgW2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"
+            d="M90,200 L104,188 L118,194 L126,210 L132,226 L124,238 L110,242 L96,232 L84,218 Z"/>
+          <!-- Sentosa + south cluster -->
+          <path filter="url(#el)" fill="url(#sgW2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"
+            d="M220,242 L242,234 L266,232 L286,237 L296,248 L288,260 L264,266 L240,264 L222,255 Z"/>
+          <!-- Pulau Ubin NE -->
+          <path filter="url(#el)" fill="url(#sgW2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"
+            d="M388,74 L412,66 L432,70 L440,82 L428,94 L404,96 L388,86 Z"/>
+          <!-- Small south islets -->
+          <ellipse cx="186" cy="270" rx="16" ry="9" fill="url(#sgW2)" filter="url(#el)" transform="rotate(-8,186,270)"/>
+          <ellipse cx="316" cy="276" rx="13" ry="7" fill="url(#sgW2)" filter="url(#el)"/>
+          <ellipse cx="144" cy="244" rx="11" ry="6" fill="url(#sgW2)" filter="url(#el)" transform="rotate(5,144,244)"/>
         </svg>
       </div>
 
-      <!-- RIGHT: 3 stat items with connector dots -->
-      <div style="flex:1;min-width:220px;max-width:300px;display:flex;flex-direction:column;gap:32px;">
+      <!-- RIGHT: 3 stat items -->
+      <div style="flex:1;min-width:220px;max-width:290px;display:flex;flex-direction:column;gap:30px;">
 
-        <!-- Stat 1 -->
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#38bdf8;margin-top:6px;flex-shrink:0;box-shadow:0 0 8px rgba(56,189,248,0.6);"></div>
+        <div style="display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#60c0f8;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(96,192,248,0.8);"></div>
           <div>
-            <div style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">350,000<span style="font-size:1.2rem;color:#38bdf8;">+</span></div>
-            <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px;">SMEs in Singapore</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;line-height:1.6;">The backbone of Singapore's economy, employing 70% of the workforce.</div>
+            <div style="font-size:clamp(1.7rem,2.8vw,2.5rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">350,000<span style="font-size:1.1rem;color:#60c0f8;">+</span></div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">SMEs in Singapore</div>
+            <div style="font-size:12.5px;color:rgba(255,255,255,0.52);margin-top:5px;line-height:1.65;">The backbone of Singapore's economy, employing 70% of the workforce.</div>
           </div>
         </div>
 
-        <!-- Stat 2 -->
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#0d9488;margin-top:6px;flex-shrink:0;box-shadow:0 0 8px rgba(13,148,136,0.6);"></div>
+        <div style="display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#0d9488;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(13,148,136,0.8);"></div>
           <div>
-            <div style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">3%</div>
-            <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px;">Have Institutional Tools</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;line-height:1.6;">Fewer than 1 in 30 SMEs access the analytics tools large firms rely on.</div>
+            <div style="font-size:clamp(1.7rem,2.8vw,2.5rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">3%</div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">Have Institutional Tools</div>
+            <div style="font-size:12.5px;color:rgba(255,255,255,0.52);margin-top:5px;line-height:1.65;">Fewer than 1 in 30 SMEs access the analytics tools large firms rely on.</div>
           </div>
         </div>
 
-        <!-- Stat 3 -->
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#059669;margin-top:6px;flex-shrink:0;box-shadow:0 0 8px rgba(5,150,105,0.6);"></div>
+        <div style="display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#059669;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(5,150,105,0.8);"></div>
           <div>
-            <div style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">97%</div>
-            <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px;">Underserved — Until Now</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;line-height:1.6;">Prospera brings institutional-grade intelligence to the other 97%.</div>
+            <div style="font-size:clamp(1.7rem,2.8vw,2.5rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;">97%</div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">Underserved — Until Now</div>
+            <div style="font-size:12.5px;color:rgba(255,255,255,0.52);margin-top:5px;line-height:1.65;">Prospera brings institutional-grade intelligence to the other 97%.</div>
           </div>
         </div>
 
@@ -830,7 +836,7 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>From Business Owner to<br><strong style="font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Data-Driven Decision Maker</strong></h2>
+        <h2>Your Pathway from Business Owner<br><strong style="font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Data-Driven Decision Maker</strong></h2>
       </div>
       <div class="how-v3 fade-in delay-1">
         <div class="how-v3__grid">
@@ -896,7 +902,7 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>The Playing Field Isn't Level. Until Now.</h2>
+        <h2>The Playing Field Wasn't Level.<br><strong style="font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Until Now.</strong></h2>
         <p>We're not here to replace your bank. We're here to give you the visibility your bank can't.</p>
       </div>
       <div class="compare-wrap fade-in">

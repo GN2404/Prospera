@@ -1070,10 +1070,10 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 }
 .how-v3__card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(16,28,46,0.06); }
 .how-v3__tab {
-  padding: 18px 20px 20px; display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 20px 20px 22px; display: flex; align-items: center; justify-content: center;
   clip-path: ellipse(120% 100% at 50% 0%);
 }
-.how-v3__num { font-size: 28px; font-weight: 800; color: #fff; line-height: 1; }
+.how-v3__num { font-size: 30px; font-weight: 800; color: #fff; line-height: 1; text-align: center; }
 .how-v3__tab-icon { opacity: 0.35; }
 .how-v3__tab-icon svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .how-v3__body {
