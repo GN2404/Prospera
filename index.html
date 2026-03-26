@@ -726,21 +726,116 @@
     </div><!-- /.container -->
   </section>
 
-  <!-- 280K STAT BAND -->
-  <section style="width:100%;background:linear-gradient(135deg,#1a56db 0%,#0d9488 50%,#059669 100%);padding:48px 0;margin:0;" class="fade-in">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:0;width:100%;">
-      <div style="flex:1;min-width:220px;max-width:340px;text-align:center;padding:24px 32px;border-right:1px solid rgba(255,255,255,0.2);">
-        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">280,000</div>
-        <div style="font-size:15px;color:rgba(255,255,255,0.85);margin-top:8px;font-weight:500;">SMEs in Singapore</div>
+  <!-- SINGAPORE SME FACTS BAND -->
+  <section class="sg-facts fade-in">
+    <div class="sg-facts__inner">
+
+      <!-- Left: two stats -->
+      <div class="sg-facts__col">
+        <div class="sg-stat">
+          <div class="sg-stat__num">280,000</div>
+          <div class="sg-stat__label">SMEs in Singapore</div>
+          <div class="sg-stat__desc">Small and medium enterprises are the backbone of Singapore's economy — yet most lack the tools to manage finances strategically.</div>
+        </div>
+        <div class="sg-stat">
+          <div class="sg-stat__num">3%</div>
+          <div class="sg-stat__label">Have institutional tools</div>
+          <div class="sg-stat__desc">Fewer than 1 in 30 Singapore SMEs can access the kind of financial intelligence that large institutions take for granted.</div>
+        </div>
       </div>
-      <div style="flex:1;min-width:220px;max-width:340px;text-align:center;padding:24px 32px;border-right:1px solid rgba(255,255,255,0.2);">
-        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">3%</div>
-        <div style="font-size:15px;color:rgba(255,255,255,0.85);margin-top:8px;font-weight:500;">Have institutional-grade financial tools</div>
+
+      <!-- Centre: Singapore map -->
+      <div class="sg-facts__map">
+        <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Singapore" role="img">
+          <defs>
+            <linearGradient id="sgMain" x1="10%" y1="0%" x2="90%" y2="100%">
+              <stop offset="0%"   stop-color="#7dd3fc"/>
+              <stop offset="30%"  stop-color="#38bdf8"/>
+              <stop offset="60%"  stop-color="#1d7fd6"/>
+              <stop offset="100%" stop-color="#0b3d7a"/>
+            </linearGradient>
+            <linearGradient id="sgFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="sgFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e40af" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#0f172a" stop-opacity="0.15"/>
+            </linearGradient>
+            <filter id="sgGlow" x="-15%" y="-15%" width="130%" height="130%">
+              <feGaussianBlur stdDeviation="8" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Main island silhouette -->
+          <path filter="url(#sgGlow)" fill="url(#sgMain)"
+            d="M 40,158
+               C 36,144 38,126 50,111
+               C 64,95 82,83 104,73
+               C 128,63 155,58 182,56
+               C 206,54 230,54 254,55
+               C 278,57 302,60 326,65
+               C 350,70 372,78 392,88
+               C 410,97 423,109 428,122
+               C 433,134 430,147 422,157
+               C 414,167 402,173 387,177
+               C 370,180 351,181 332,182
+               C 310,184 287,185 264,185
+               C 240,185 216,183 192,179
+               C 168,175 145,167 124,158
+               C 104,149 84,146 66,150
+               C 54,152 43,157 40,158 Z"/>
+
+          <!-- Low-poly facet overlays — top-left light facets -->
+          <polygon fill="url(#sgFacet1)" points="50,110 130,75 170,120"/>
+          <polygon fill="rgba(186,230,253,0.22)" points="130,75 220,64 200,118"/>
+          <polygon fill="rgba(125,211,252,0.18)" points="220,64 310,67 280,112"/>
+          <polygon fill="rgba(56,189,248,0.15)" points="310,67 400,90 370,118"/>
+
+          <!-- Mid-tone facets -->
+          <polygon fill="rgba(29,127,214,0.18)" points="60,148 140,128 110,165"/>
+          <polygon fill="rgba(14,165,233,0.15)" points="140,128 230,130 195,170"/>
+          <polygon fill="rgba(3,105,161,0.20)" points="230,130 330,128 300,172"/>
+          <polygon fill="rgba(7,89,133,0.18)"  points="330,128 420,148 395,175"/>
+
+          <!-- Dark shadow facets — bottom -->
+          <polygon fill="url(#sgFacet2)" points="70,158 160,173 110,185"/>
+          <polygon fill="rgba(15,23,42,0.22)"  points="160,173 265,180 220,188"/>
+          <polygon fill="rgba(11,61,122,0.20)" points="265,180 365,176 330,188"/>
+
+          <!-- Southern islands — Sentosa + nearby -->
+          <path fill="url(#sgMain)" opacity="0.85"
+            d="M 148,208 C 142,202 141,194 147,188 C 154,182 164,181 175,185
+               C 186,189 192,197 189,205 C 186,212 178,215 167,213 C 157,212 151,210 148,208 Z"/>
+          <path fill="url(#sgMain)" opacity="0.75"
+            d="M 196,218 C 191,213 191,206 196,202 C 202,198 210,198 216,203
+               C 222,208 222,215 217,219 C 211,223 200,222 196,218 Z"/>
+          <path fill="url(#sgMain)" opacity="0.65"
+            d="M 228,222 C 224,217 225,211 230,208 C 235,205 242,206 246,211
+               C 249,215 248,221 243,224 C 237,227 231,226 228,222 Z"/>
+
+          <!-- Small NE islands -->
+          <path fill="url(#sgMain)" opacity="0.7"
+            d="M 458,110 C 455,106 455,100 459,97 C 463,94 469,95 472,100
+               C 475,104 474,110 470,112 C 465,114 460,113 458,110 Z"/>
+          <path fill="url(#sgMain)" opacity="0.6"
+            d="M 475,125 C 473,121 474,116 478,114 C 482,112 487,114 488,118
+               C 489,122 487,127 483,128 C 479,129 476,128 475,125 Z"/>
+        </svg>
+        <div class="sg-facts__map-label">Singapore</div>
       </div>
-      <div style="flex:1;min-width:220px;max-width:340px;text-align:center;padding:24px 32px;">
-        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">97%</div>
-        <div style="font-size:15px;color:rgba(255,255,255,0.85);margin-top:8px;font-weight:500;">Are who Prospera is built for</div>
+
+      <!-- Right: primary stat -->
+      <div class="sg-facts__col sg-facts__col--right">
+        <div class="sg-stat sg-stat--hero">
+          <div class="sg-stat__num">97%</div>
+          <div class="sg-stat__label">Built for them</div>
+          <div class="sg-stat__desc">Prospera gives the other 97% access to the same quality of financial intelligence that institutional investors rely on — at a fraction of the cost.</div>
+          <a href="waitlist.html" class="sg-stat__cta">Join the Waitlist →</a>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -748,7 +843,7 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>From Business Owner to <strong style="font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Data-Driven Decision Maker</strong></h2>
+        <h2>From Business Owner to<br><strong style="font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Data-Driven Decision Maker</strong></h2>
       </div>
       <div class="how-v3 fade-in delay-1">
         <div class="how-v3__grid">
@@ -756,7 +851,6 @@
           <div class="how-v3__card">
             <div class="how-v3__tab" style="background:#1a56db;">
               <span class="how-v3__num">01</span>
-              <span class="how-v3__tab-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>
             </div>
             <div class="how-v3__body">
               <div class="how-v3__icon" style="background:rgba(26,86,219,0.1);color:#1a56db;">
@@ -770,7 +864,6 @@
           <div class="how-v3__card">
             <div class="how-v3__tab" style="background:#0ea5e9;">
               <span class="how-v3__num">02</span>
-              <span class="how-v3__tab-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
             </div>
             <div class="how-v3__body">
               <div class="how-v3__icon" style="background:rgba(14,165,233,0.1);color:#0ea5e9;">
@@ -784,7 +877,6 @@
           <div class="how-v3__card">
             <div class="how-v3__tab" style="background:#0d9488;">
               <span class="how-v3__num">03</span>
-              <span class="how-v3__tab-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/></svg></span>
             </div>
             <div class="how-v3__body">
               <div class="how-v3__icon" style="background:rgba(13,148,136,0.1);color:#0d9488;">
@@ -798,7 +890,6 @@
           <div class="how-v3__card">
             <div class="how-v3__tab" style="background:#059669;">
               <span class="how-v3__num">04</span>
-              <span class="how-v3__tab-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
             </div>
             <div class="how-v3__body">
               <div class="how-v3__icon" style="background:rgba(5,150,105,0.1);color:#059669;">
