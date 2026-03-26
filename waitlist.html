@@ -215,23 +215,16 @@
     margin: 0;
   }
 
-  /* Mobile: collapse to stacked cards with left accent bar */
+  /* Mobile: keep the line but tighten spacing */
   @media (max-width: 560px) {
     .vtl {
-      padding-left: 0;
+      padding-left: 52px;
     }
-    .vtl::before { display: none; }
-    .vtl__dot { display: none; }
     .vtl__item {
-      padding-left: 0;
-      padding-bottom: 16px;
+      padding-bottom: 24px;
     }
     .vtl__card {
-      border-left: 4px solid var(--color-outline-variant);
-      border-radius: 0 12px 12px 0;
-    }
-    .vtl__item--active .vtl__card {
-      border-left-color: var(--color-primary);
+      padding: 16px;
     }
     .wl-form-card { padding: 28px 20px; }
   }

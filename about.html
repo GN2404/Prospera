@@ -114,7 +114,7 @@
         <p>Our values aren't a poster on a wall — they're the principles behind every product decision we make.</p>
       </div>
       <div class="how-v3 fade-in delay-1">
-        <div class="how-v3__grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="how-v3__grid about-values-grid">
 
           <div class="how-v3__card">
             <div class="how-v3__tab" style="background:#1a56db;">
@@ -283,11 +283,36 @@
     margin: 0;
   }
   @media (max-width: 560px) {
-    .story-vtl { padding-left: 0; }
-    .story-vtl::before { display: none; }
-    .story-vtl__dot { display: none; }
-    .story-vtl__item { padding-left: 0; padding-bottom: 16px; }
-    .story-vtl__card { border-left: 4px solid var(--color-primary); border-radius: 0 12px 12px 0; }
+    .story-vtl { padding-left: 52px; }
+    .story-vtl__item { padding-bottom: 24px; }
+    .story-vtl__card { padding: 16px; }
+  }
+
+  /* Values grid — 3 cols desktop, 2 cols tablet, 1 col mobile */
+  .about-values-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  @media (max-width: 860px) {
+    .about-values-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 540px) {
+    .about-values-grid { grid-template-columns: 1fr !important; }
+  }
+
+  /* Mission section mobile */
+  @media (max-width: 680px) {
+    .mission-grid { flex-direction: column !important; gap: 32px !important; }
+    .mission-visual { flex: none !important; width: 100% !important; }
+  }
+
+  /* Team card mobile */
+  @media (max-width: 480px) {
+    .team-card { padding: 32px 24px !important; }
+    .team-card__avatar { width: 80px !important; height: 80px !important; font-size: 28px !important; }
+  }
+
+  /* Page hero mobile */
+  @media (max-width: 480px) {
+    .page-hero h1 { font-size: 1.75rem !important; }
+    .page-hero p { font-size: 0.9375rem !important; }
   }
   </style>
 
@@ -352,6 +377,32 @@
           <h4>Gaurav Nandwani</h4>
           <div class="team-card__role">Founder &amp; CEO</div>
           <p>Building Prospera to give Singapore's SMEs access to the financial intelligence that was once reserved only for large institutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD WITH US -->
+  <section class="section section--gray">
+    <div class="container">
+      <div style="max-width:760px;margin:0 auto;text-align:center;" class="fade-in">
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-container);padding:6px 16px;border-radius:99px;margin-bottom:20px;">Early Stage</div>
+        <h2 style="margin-bottom:16px;">We're Looking for the Right People to Build This With</h2>
+        <p style="font-size:1.0625rem;color:var(--color-on-surface-variant);line-height:1.75;max-width:600px;margin:0 auto 40px;">Prospera is at a formative stage and we're actively seeking <strong>co-founders</strong> and <strong>developers</strong> who believe in democratising financial intelligence for Singapore's SMEs. If you're excited by the problem — not just the product — we'd love to hear from you.</p>
+        <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+          <div style="background:var(--color-surface-container-lowest);border:1px solid var(--color-outline-variant);border-radius:var(--radius-lg);padding:28px 32px;flex:1;min-width:220px;max-width:300px;text-align:left;">
+            <div style="font-size:1.5rem;margin-bottom:12px;">🤝</div>
+            <h4 style="margin-bottom:8px;color:var(--color-on-surface);">Co-Founder</h4>
+            <p style="font-size:0.9rem;color:var(--color-on-surface-variant);line-height:1.65;margin-bottom:0;">Looking for a business-minded co-founder to help shape strategy, grow partnerships, and take Prospera to market.</p>
+          </div>
+          <div style="background:var(--color-surface-container-lowest);border:1px solid var(--color-outline-variant);border-radius:var(--radius-lg);padding:28px 32px;flex:1;min-width:220px;max-width:300px;text-align:left;">
+            <div style="font-size:1.5rem;margin-bottom:12px;">💻</div>
+            <h4 style="margin-bottom:8px;color:var(--color-on-surface);">Developer</h4>
+            <p style="font-size:0.9rem;color:var(--color-on-surface-variant);line-height:1.65;margin-bottom:0;">Seeking a full-stack or frontend developer passionate about fintech and building clean, user-focused products.</p>
+          </div>
+        </div>
+        <div style="margin-top:36px;">
+          <a href="careers.html" class="btn btn--blue btn--lg shiny-cta">See Open Roles</a>
         </div>
       </div>
     </div>
