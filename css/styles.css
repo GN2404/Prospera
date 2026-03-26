@@ -919,6 +919,54 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 .faq-section { background: var(--color-surface); }
 .faq-cta-section { background: var(--color-surface-container-low); }
 
+/* --- Waitlist hero --- */
+.wl-hero {
+  background: var(--color-surface);
+  padding: 100px 0 72px;
+  text-align: center;
+}
+.wl-hero h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  letter-spacing: -0.02em;
+  max-width: 640px;
+  margin: 12px auto 16px;
+  line-height: 1.2;
+}
+.wl-hero p {
+  font-size: 1.0625rem;
+  color: var(--color-on-surface-variant);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* --- Form success state --- */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 32px 16px 8px;
+}
+.form-success__icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--color-tertiary-container);
+  color: var(--color-tertiary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 700;
+  margin: 0 auto 20px;
+}
+.form-success h3 {
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--color-on-surface);
+  margin-bottom: 8px;
+}
+.form-success p {
+  font-size: 0.9rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+}
+
 /* --- Responsive additions --- */
 @media (max-width: 1024px) {
   .team-grid { grid-template-columns: repeat(2,1fr); }
