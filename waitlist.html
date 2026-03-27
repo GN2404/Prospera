@@ -2,7 +2,7 @@
 <html lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the Waitlist — Prospera Launches Q3 2026</title>
+  <title>Join the Waitlist — Prospera Analytics Launches Q3 2026</title>
   <meta name="description" content="Be among the first Singapore SME owners to access Prospera when we launch in Q3 2026. Join the waitlist for early access to institutional-grade financial intelligence.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Prospera">
@@ -247,18 +247,26 @@
   }
 }
 </script>
+  <link rel="stylesheet" href="glass.css">
 </head>
 <body>
   <!-- NAVBAR -->
   <nav class="nav" aria-label="Main navigation"><div class="nav__inner">
-    <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:32px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--color-on-surface);">Prospera</span></a>
-    <div class="nav__links">
+    <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:32px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--color-on-surface);">Prospera Analytics</span></a>
+        <div class="nav__links">
       <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About Us</a>
       <a href="features.html" class="nav__link">Features</a>
-      <a href="pricing.html" class="nav__link">Pricing</a>
       <a href="waitlist.html" class="nav__link nav__link--active">Waitlist</a>
-      <a href="faq.html" class="nav__link">FAQ</a>
+      <a href="pricing.html" class="nav__link">Pricing</a>
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link nav__link--dropdown-toggle">About Us</a>
+        <div class="nav__dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="waitlist.html">Contact</a>
+        </div>
+      </div>
+      <a href="faq.html" class="nav__link">FAQs</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
     <a href="signup.html" class="nav__login">Create Account</a>
@@ -266,13 +274,14 @@
   </div>
     <button class="nav__hamburger" type="button" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav__mobile">
+    <div class="nav__mobile">
     <a href="index.html" class="nav__link">Home</a>
-    <a href="about.html" class="nav__link">About Us</a>
     <a href="features.html" class="nav__link">Features</a>
-    <a href="pricing.html" class="nav__link">Pricing</a>
     <a href="waitlist.html" class="nav__link nav__link--active">Waitlist</a>
-    <a href="faq.html" class="nav__link">FAQ</a>
+    <a href="pricing.html" class="nav__link">Pricing</a>
+    <a href="about.html" class="nav__link">About Us</a>
+    <a href="careers.html" class="nav__link">Careers</a>
+    <a href="faq.html" class="nav__link">FAQs</a>
     <a href="signup.html" class="nav__link">Create Account</a>
     <a href="waitlist.html" class="nav__cta shiny-cta">Join Waitlist</a>
   </div></nav>
@@ -292,31 +301,7 @@
     <div class="container">
       <div class="wl-split">
 
-        <!-- Left: Form -->
-        <div class="wl-split__form">
-          <div class="wl-form-card reveal">
-            <h2>Reserve Your Spot</h2>
-            <p>No spam — just launch updates and early access when the beta opens in Q3 2026.</p>
-            <form id="waitlistForm" class="wl-form" novalidate>
-              <div class="wl-field-wrap">
-                <label class="wl-label" for="wl-email">Email address <span style="color:var(--color-primary);">*</span></label>
-                <input id="wl-email" type="email" name="email" class="wl-field" placeholder="you@company.com" required autocomplete="email">
-              </div>
-              <div class="wl-field-wrap">
-                <label class="wl-label" for="wl-company">Company name <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--color-on-surface-variant);font-size:11px;">(optional)</span></label>
-                <input id="wl-company" type="text" name="company" class="wl-field" placeholder="Acme Pte Ltd" autocomplete="organization">
-              </div>
-              <button type="submit" class="wl-submit shiny-cta">Join the Waitlist</button>
-            </form>
-            <div id="waitlistSuccess" class="form-success" style="display:none;">
-              <div class="form-success__icon">✓</div>
-              <h3>You're on the list!</h3>
-              <p>We'll reach out when early access opens. Thanks for being part of this from the start.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Roadmap -->
+        <!-- Left: Roadmap -->
         <div class="wl-split__roadmap">
           <div class="section-header reveal">
             <h2>The Road Ahead</h2>
@@ -358,6 +343,30 @@
           </div>
         </div>
 
+        <!-- Right: Form -->
+        <div class="wl-split__form">
+          <div class="wl-form-card reveal">
+            <h2>Reserve Your Spot</h2>
+            <p>No spam — just launch updates and early access when the beta opens in Q3 2026.</p>
+            <form id="waitlistForm" class="wl-form" novalidate>
+              <div class="wl-field-wrap">
+                <label class="wl-label" for="wl-email">Email address <span style="color:var(--color-primary);">*</span></label>
+                <input id="wl-email" type="email" name="email" class="wl-field" placeholder="you@company.com" required autocomplete="email">
+              </div>
+              <div class="wl-field-wrap">
+                <label class="wl-label" for="wl-company">Company name <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--color-on-surface-variant);font-size:11px;">(optional)</span></label>
+                <input id="wl-company" type="text" name="company" class="wl-field" placeholder="Acme Pte Ltd" autocomplete="organization">
+              </div>
+              <button type="submit" class="wl-submit shiny-cta">Join the Waitlist</button>
+            </form>
+            <div id="waitlistSuccess" class="form-success" style="display:none;">
+              <div class="form-success__icon">✓</div>
+              <h3>You're on the list!</h3>
+              <p>We'll reach out when early access opens. Thanks for being part of this from the start.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -368,7 +377,7 @@
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:40px;width:auto;object-fit:contain;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera</span></a>
+        <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:40px;width:auto;object-fit:contain;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera Analytics</span></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>

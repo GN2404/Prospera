@@ -167,6 +167,25 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 .section-header p { margin-top: 16px; font-size: 1.0625rem; }
 .text-center { text-align: center; }
 
+/* --- Smooth section transitions (no hard colour lines between sections) --- */
+/* In light theme: use a soft inline fade at top+bottom of alternating sections */
+.section--alt {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    black 32px,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    black 32px,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+
 /* --- Glass module --- */
 .glass-module {
   background: rgba(255,255,255,0.7);
