@@ -175,11 +175,27 @@
     display: flex; align-items: center; gap: 9px;
     padding: 8px 14px;
     font-size: 11.5px; color: rgba(255,255,255,0.42);
-    cursor: default; white-space: nowrap;
+    cursor: pointer; white-space: nowrap;
     border-right: 2px solid transparent;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none;
   }
+  .dash-nav-item:hover { color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.04); }
   .dash-nav-item svg { width: 13px; height: 13px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .dash-nav-item--active { color: #fff; background: rgba(26,86,219,0.2); border-right-color: #1a56db; }
+
+  /* Clickable dashboard cards */
+  .dash-card-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+  .dash-card-link .dash-card {
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .dash-card-link:hover .dash-card {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 48px 96px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.12);
+  }
+  .dash-stat-link { display: flex; flex: 1; text-decoration: none; color: inherit; cursor: pointer; border-radius: 8px; transition: background 0.2s; padding: 4px; margin: -4px; }
+  .dash-stat-link:hover { background: rgba(255,255,255,0.05); }
   .dash-main {
     flex: 1; min-width: 0;
     display: flex; flex-direction: column;
@@ -386,14 +402,14 @@
             <div class="dash-sidebar__logo-icon">PA</div>
             <span class="dash-sidebar__logo-text">Prospera</span>
           </div>
-          <div class="dash-nav-item dash-nav-item--active">
+          <a href="features.html" class="dash-nav-item dash-nav-item--active">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
-          </div>
-          <div class="dash-nav-item"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Portfolio</div>
-          <div class="dash-nav-item"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</div>
-          <div class="dash-nav-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Risk</div>
-          <div class="dash-nav-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Reports</div>
-          <div class="dash-nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2"/></svg>Settings</div>
+          </a>
+          <a href="waitlist.html" class="dash-nav-item"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Portfolio</a>
+          <a href="features.html" class="dash-nav-item"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</a>
+          <a href="features.html" class="dash-nav-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Risk</a>
+          <a href="pricing.html" class="dash-nav-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Reports</a>
+          <a href="signup.html" class="dash-nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2"/></svg>Settings</a>
         </aside>
         <div class="dash-main">
           <div class="dash-topbar">
@@ -402,7 +418,7 @@
           </div>
           <div class="dash-cards">
             <!-- KPI 1: Cash Runway -->
-            <div class="dash-card">
+            <a href="features.html#cash-flow" class="dash-card-link"><div class="dash-card">
               <div class="dash-card__lbl">Cash Runway</div>
               <div class="dash-card__val">8 <span style="font-size:13px;font-weight:500;opacity:0.7;">months</span></div>
               <div class="dash-card__change" style="color:#f59e0b;">⚠ Monitor closely</div>
@@ -416,9 +432,9 @@
                 <div style="width:14px;background:rgba(245,158,11,0.8);border-radius:2px 2px 0 0;height:95%;"></div>
                 <div style="width:14px;background:#f59e0b;border-radius:2px 2px 0 0;height:100%;"></div>
               </div>
-            </div>
+            </div></a>
             <!-- KPI 2: Portfolio Growth bar chart -->
-            <div class="dash-card" style="padding:14px 14px 10px;">
+            <a href="pricing.html" class="dash-card-link"><div class="dash-card" style="padding:14px 14px 10px;">
               <div class="dash-card__lbl">Portfolio Growth — 12 Months</div>
               <svg viewBox="0 0 280 128" preserveAspectRatio="none" style="width:100%;height:calc(100% - 28px);">
                 <defs>
@@ -455,9 +471,9 @@
                 <text x="198" y="124" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.45)">Sep</text>
                 <text x="267" y="124" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.45)">Dec</text>
               </svg>
-            </div>
+            </div></a>
             <!-- KPI 3: ROI vs benchmark -->
-            <div class="dash-card">
+            <a href="pricing.html" class="dash-card-link"><div class="dash-card">
               <div class="dash-card__lbl">Avg ROI</div>
               <div class="dash-card__val" style="color:#34d399;">+23.7%</div>
               <div class="dash-card__change" style="color:rgba(255,255,255,0.5);font-size:9px;margin-top:2px;">vs 8.2% industry avg</div>
@@ -472,7 +488,7 @@
                 <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-bottom:3px;">Portfolio Value</div>
                 <div style="font-size:16px;font-weight:800;color:#fff;">$2.4M</div>
               </div>
-            </div>
+            </div></a>
           </div>
           <div class="dash-bottom">
             <!-- Sector Exposure -->
