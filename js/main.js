@@ -1,32 +1,113 @@
 /* ============================================
    PROSPERA — main.js
-   Core: nav, fade-in, FAQ accordion,
-   forms, modal, smooth scroll
+   Core: nav, reveal animations, counters,
+   chart animations, FAQ accordion, forms
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* --- 1. Fade-In on Scroll --- */
-  const fades = document.querySelectorAll('.fade-in');
-  if (fades.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    fades.forEach(el => obs.observe(el));
+  /* ─── 0. Scroll Progress Bar ─────────────────── */
+  const progressBar = document.createElement('div');
+  progressBar.id = 'scroll-progress';
+  document.body.prepend(progressBar);
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+  }, { passive: true });
+
+  /* ─── 1. Reveal on scroll (slide-up + fade) ──── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const delay = parseInt(e.target.dataset.delay || 0);
+        setTimeout(() => e.target.classList.add('visible', 'revealed'), delay);
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .fade-in').forEach(el => revealObs.observe(el));
+
+  /* ─── 2. Staggered children ──────────────────── */
+  document.querySelectorAll('[data-stagger]').forEach(container => {
+    Array.from(container.children).forEach((child, i) => {
+      child.dataset.delay = i * 90;
+      if (!child.classList.contains('reveal') && !child.classList.contains('fade-in')) {
+        child.classList.add('reveal');
+        revealObs.observe(child);
+      }
+    });
+  });
+
+  /* ─── 3. Number counters ─────────────────────── */
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
+
+  function animateCounter(el) {
+    const target  = parseFloat(el.dataset.target || '0');
+    const prefix  = el.dataset.prefix  || '';
+    const suffix  = el.dataset.suffix  || '';
+    const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
+    const duration = 1800;
+    const start = performance.now();
+    function update(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const val = eased * target;
+      el.textContent = prefix + (decimals ? val.toFixed(decimals) : Math.floor(val).toLocaleString()) + suffix;
+      if (t < 1) requestAnimationFrame(update);
+      else el.textContent = prefix + (decimals ? target.toFixed(decimals) : target.toLocaleString()) + suffix;
+    }
+    requestAnimationFrame(update);
   }
 
-  /* --- 2. Nav scroll shadow --- */
+  /* ─── 4. Chart bar animation (hero dashboard) ── */
+  const chartBars = document.querySelectorAll('.hero-v2__chart-bars div');
+  if (chartBars.length) {
+    const heights = Array.from(chartBars).map(b => b.style.height || '50%');
+    chartBars.forEach(b => { b.style.height = '2px'; b.style.transition = 'none'; });
+    setTimeout(() => {
+      chartBars.forEach((bar, i) => {
+        bar.style.transition = `height 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 55}ms`;
+        bar.style.height = heights[i];
+      });
+    }, 350);
+  }
+
+  /* ─── 5. Sector fill animation ───────────────── */
+  const fills = document.querySelectorAll('.hero-v2__sector-fill');
+  if (fills.length) {
+    const widths = Array.from(fills).map(f => f.style.width || '0%');
+    fills.forEach(f => { f.style.width = '0%'; f.style.transition = 'none'; });
+    setTimeout(() => {
+      fills.forEach((fill, i) => {
+        fill.style.transition = `width 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${i * 130}ms`;
+        fill.style.width = widths[i];
+      });
+    }, 600);
+  }
+
+  /* ─── 6. Card hover micro-lift ───────────────── */
+  document.querySelectorAll('.insights-card, .how-v3__card, .pc, .f-card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.style.willChange = 'transform');
+    card.addEventListener('mouseleave', () => card.style.willChange = '');
+  });
+
+  /* ─── 7. Nav scroll shadow ───────────────────── */
   const nav = document.querySelector('.nav');
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 10
-        ? '0 2px 12px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.08)';
+        ? '0 2px 20px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.08)';
     }, { passive: true });
   }
 
-  /* --- 3. Mobile hamburger --- */
+  /* ─── 8. Mobile hamburger ────────────────────── */
   const hamburger = document.querySelector('.nav__hamburger');
   const mobileNav = document.querySelector('.nav__mobile');
   if (hamburger && mobileNav) {
@@ -46,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- 4. FAQ Accordion --- */
+  /* ─── 9. FAQ Accordion ───────────────────────── */
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
     const a = item.querySelector('.faq-a');
@@ -62,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- 5. Sign Up Form Validation --- */
+  /* ─── 10. Sign Up Form ───────────────────────── */
   const signupForm = document.getElementById('signupForm');
   if (signupForm) {
     const success = document.getElementById('signupSuccess');
@@ -94,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- 6. Waitlist Form --- */
+  /* ─── 11. Waitlist Form ──────────────────────── */
   const wlForm = document.getElementById('waitlistForm');
   if (wlForm) {
     const wlSuccess = document.getElementById('waitlistSuccess');
@@ -108,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- 7. Login Modal --- */
+  /* ─── 12. Login Modal ────────────────────────── */
   const loginModal = document.getElementById('loginModal');
   if (loginModal) {
     document.querySelectorAll('[data-open-login]').forEach(b => {
@@ -119,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginModal.addEventListener('click', (e) => { if (e.target === loginModal) loginModal.classList.remove('modal-overlay--show'); });
   }
 
-  /* --- 8. Smooth scroll for hash anchors --- */
+  /* ─── 13. Smooth scroll for hash anchors ─────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
       const t = document.querySelector(a.getAttribute('href'));
@@ -136,4 +217,5 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e) e.textContent = msg;
     }
   }
+
 });
