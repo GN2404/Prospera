@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up — Create Your Free Prospera Account</title>
+  <title>Sign Up — Create Your Free Prospera Analytics Account</title>
   <meta name="description" content="Create your free Prospera account and start tracking your SME portfolio with institutional-grade financial intelligence tools built for Singapore.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Prospera">
@@ -30,17 +30,26 @@
   }
 }
 </script>
+  <link rel="stylesheet" href="glass.css">
 </head>
 <body>
   <!-- NAVBAR -->
   <nav class="nav" aria-label="Main navigation"><div class="nav__inner">
-    <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:32px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--color-on-surface);">Prospera</span></a>
-    <div class="nav__links">
+    <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:32px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--color-on-surface);">Prospera Analytics</span></a>
+        <div class="nav__links">
       <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About Us</a>
-      <a href="pricing.html" class="nav__link">Pricing</a>
+      <a href="features.html" class="nav__link">Features</a>
       <a href="waitlist.html" class="nav__link">Waitlist</a>
-      <a href="faq.html" class="nav__link">FAQ</a>
+      <a href="pricing.html" class="nav__link">Pricing</a>
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link nav__link--dropdown-toggle">About Us</a>
+        <div class="nav__dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="waitlist.html">Contact</a>
+        </div>
+      </div>
+      <a href="faq.html" class="nav__link">FAQs</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
     <a href="signup.html" class="nav__login">Create Account</a>
@@ -48,12 +57,14 @@
   </div>
     <button class="nav__hamburger" type="button" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav__mobile">
+    <div class="nav__mobile">
     <a href="index.html" class="nav__link">Home</a>
-    <a href="about.html" class="nav__link">About Us</a>
-    <a href="pricing.html" class="nav__link">Pricing</a>
+    <a href="features.html" class="nav__link">Features</a>
     <a href="waitlist.html" class="nav__link">Waitlist</a>
-    <a href="faq.html" class="nav__link">FAQ</a>
+    <a href="pricing.html" class="nav__link">Pricing</a>
+    <a href="about.html" class="nav__link">About Us</a>
+    <a href="careers.html" class="nav__link">Careers</a>
+    <a href="faq.html" class="nav__link">FAQs</a>
     <a href="signup.html" class="nav__link">Create Account</a>
     <a href="waitlist.html" class="nav__cta shiny-cta">Join Waitlist</a>
   </div></nav>
@@ -66,7 +77,7 @@
       <div class="signup-header fade-in" style="margin-bottom:32px;">
         <a href="index.html" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;margin-bottom:20px;">
           <picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera" style="height:36px;width:auto;object-fit:contain;" loading="eager" decoding="async"></picture>
-          <span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera</span>
+          <span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera Analytics</span>
         </a>
         <h1 style="font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--color-on-surface);margin-bottom:10px;">Create Your Account</h1>
         <p style="font-size:1rem;color:var(--color-on-surface-variant);">Join Prospera and start making smarter decisions</p>
@@ -161,7 +172,7 @@
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:40px;width:auto;object-fit:contain;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera</span></a>
+        <a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;"><picture><source srcset="prospera-icon-transparent.png" type="image/png"><img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:40px;width:auto;object-fit:contain;" loading="lazy" decoding="async"></picture><span style="font-family:Poppins,sans-serif;font-size:22px;font-weight:800;color:var(--color-on-surface);">Prospera Analytics</span></a>
         <p>Empowering SMEs with affordable, data-driven financial insights for forecasting, risk assessment, and growth strategy.</p>
       </div>
       <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="mailto:hello@prospera.io">Contact</a></div>
