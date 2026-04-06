@@ -218,4 +218,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ─── 14. Inline email validation on blur ────── */
+  document.querySelectorAll('input[type="email"]').forEach(input => {
+    input.addEventListener('blur', () => {
+      const val = input.value.trim();
+      const g = input.closest('.form-group');
+      if (!g) return;
+      if (!val) {
+        formErr(input, 'Please enter your email address.');
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        formErr(input, 'Please enter a valid email address.');
+      } else {
+        g.classList.remove('form-group--error');
+        input.classList.remove('form-input--error');
+      }
+    });
+    input.addEventListener('input', () => {
+      const g = input.closest('.form-group');
+      if (g && g.classList.contains('form-group--error')) {
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+          g.classList.remove('form-group--error');
+          input.classList.remove('form-input--error');
+        }
+      }
+    });
+  });
+
+  /* ─── 15. Password strength hint on blur ─────── */
+  document.querySelectorAll('input[type="password"]').forEach(input => {
+    input.addEventListener('blur', () => {
+      const val = input.value;
+      const g = input.closest('.form-group');
+      if (!g) return;
+      if (val && val.length < 8) {
+        formErr(input, 'Password must be at least 8 characters.');
+      } else if (val && !/[A-Z]/.test(val)) {
+        formErr(input, 'Include at least one uppercase letter.');
+      } else if (val && !/[0-9]/.test(val)) {
+        formErr(input, 'Include at least one number.');
+      } else if (val) {
+        g.classList.remove('form-group--error');
+        input.classList.remove('form-input--error');
+      }
+    });
+  });
+
 });
+
+// Back-to-top button
+(function() {
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>';
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
