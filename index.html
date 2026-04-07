@@ -12,7 +12,7 @@
   <meta property="og:description" content="Portfolio tracking, risk analysis, and forecasting built for SMEs. Free to start, $39/month for Pro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -32,7 +32,7 @@
     content: ''; position: absolute; pointer-events: none; border-radius: 50%;
     width: 65vw; height: 65vw; max-width: 760px; max-height: 760px;
     top: -20%; left: -12%;
-    background: radial-gradient(ellipse, rgba(26,86,219,0.09) 0%, transparent 68%);
+    background: radial-gradient(ellipse, rgba(26,86,219,0.18) 0%, transparent 65%);
     animation: fluidWave 15s ease-in-out infinite;
     z-index: 0;
   }
@@ -40,7 +40,7 @@
     content: ''; position: absolute; pointer-events: none; border-radius: 50%;
     width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
     bottom: -15%; right: -8%;
-    background: radial-gradient(ellipse, rgba(13,148,136,0.08) 0%, transparent 68%);
+    background: radial-gradient(ellipse, rgba(13,148,136,0.14) 0%, transparent 65%);
     animation: fluidWave 19s ease-in-out infinite reverse;
     z-index: 0;
   }
@@ -63,6 +63,11 @@
     position: relative;
     z-index: 1;
   }
+  .hero-v2__inner > * {
+    animation: hwReveal 0.7s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .hero-v2__inner > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-v2__inner > *:nth-child(2) { animation-delay: 0.18s; }
 
   /* ── Left: text column ── */
   .hero-v2__text {
@@ -84,9 +89,9 @@
   }
 
   .hero-v2__title {
-    font-size: clamp(2.1rem, 3.8vw, 3.25rem);
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
     color: var(--color-on-surface);
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -185,6 +190,7 @@
     padding: 20px 20px 16px;
     position: relative;
     z-index: 1;
+    animation: floatBob 5s ease-in-out infinite;
   }
 
   /* Top bar */
@@ -242,6 +248,8 @@
     flex: 1; min-height: 4px;
     background: linear-gradient(180deg, #1a56db 0%, #6d99fe 100%);
     border-radius: 2px 2px 0 0; opacity: 0.75;
+    animation: barFill 1.2s cubic-bezier(0.16,1,0.3,1) both;
+    animation-delay: calc(var(--i, 0) * 0.06s);
   }
   .hero-v2__chart-bars > div:last-child {
     background: linear-gradient(180deg, #059669 0%, #34d399 100%);
@@ -285,8 +293,8 @@
   }
   /* glass-module from styles.css provides backdrop-filter + white bg */
 
-  .hero-v2__float--tl { top: 10px;  left: -8px; }
-  .hero-v2__float--br { bottom: 28px; right: -4px; }
+  .hero-v2__float--tl { top: 10px;  left: -8px; animation: floatBob 6s ease-in-out infinite; animation-delay: -2s; }
+  .hero-v2__float--br { bottom: 28px; right: -4px; animation: floatBob 6s ease-in-out infinite; animation-delay: -4s; }
 
   .hero-v2__float-lbl {
     font-size: 9.5px; font-weight: 700;
@@ -688,7 +696,7 @@
 
           <h1 class="hero-v2__title">
             <span class="hw" style="--d:2">Make Smarter</span><br>
-            <span class="hero-v2__gradient-word hw" style="--d:3">Financial Decisions</span><br>
+            <em class="hero-v2__gradient-word hw" style="--d:3;font-style:italic;">Financial Decisions</em><br>
             <span class="hw" style="--d:4">for Your Business.</span>
           </h1>
 
@@ -745,18 +753,18 @@
                 <span>Last 12 months</span>
               </div>
               <div class="hero-v2__chart-bars">
-                <div style="height:35%"></div>
-                <div style="height:42%"></div>
-                <div style="height:38%"></div>
-                <div style="height:55%"></div>
-                <div style="height:48%"></div>
-                <div style="height:65%"></div>
-                <div style="height:72%"></div>
-                <div style="height:68%"></div>
-                <div style="height:82%"></div>
-                <div style="height:78%"></div>
-                <div style="height:90%"></div>
-                <div style="height:95%"></div>
+                <div style="height:35%;--i:0"></div>
+                <div style="height:42%;--i:1"></div>
+                <div style="height:38%;--i:2"></div>
+                <div style="height:55%;--i:3"></div>
+                <div style="height:48%;--i:4"></div>
+                <div style="height:65%;--i:5"></div>
+                <div style="height:72%;--i:6"></div>
+                <div style="height:68%;--i:7"></div>
+                <div style="height:82%;--i:8"></div>
+                <div style="height:78%;--i:9"></div>
+                <div style="height:90%;--i:10"></div>
+                <div style="height:95%;--i:11"></div>
               </div>
               <div class="hero-v2__chart-x">
                 <span>Jan</span><span>Mar</span><span>Jun</span><span>Sep</span><span>Dec</span>
@@ -929,74 +937,67 @@
 
   
 
-  <!-- SINGAPORE SME FACTS — Digital Map Visual -->
-  <section style="width:100%;position:relative;overflow:hidden;background:#071830;" class="reveal">
-    <!-- Grid dot pattern -->
-    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id="dotgrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect x="11" y="11" width="6" height="6" rx="1.5" fill="#4a9fd4"/></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
-    </svg>
-    <!-- Radial glow centred on map -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(20,80,200,0.6) 0%,rgba(8,30,100,0.35) 50%,transparent 75%);pointer-events:none;"></div>
-    <!-- Outer ring -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:660px;height:440px;border-radius:50%;border:1px solid rgba(96,192,248,0.10);pointer-events:none;"></div>
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:880px;height:580px;border-radius:50%;border:1px solid rgba(96,192,248,0.06);pointer-events:none;"></div>
+  <!-- WHY WE BUILT THIS -->
+  <section style="background:#f8f9fc;padding:80px 0;position:relative;overflow:hidden;" class="reveal">
+    <!-- Subtle background tint -->
+    <div style="position:absolute;top:-40%;right:-10%;width:55vw;height:55vw;max-width:640px;border-radius:50%;background:radial-gradient(ellipse,rgba(26,86,219,0.07) 0%,transparent 65%);pointer-events:none;"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
 
-    <!-- Content: Left text | Centre map | Right stats -->
-    <div style="max-width:1280px;margin:0 auto;padding:72px 48px;position:relative;z-index:1;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;">
-
-      <!-- LEFT: heading + description -->
-      <div style="flex:1;min-width:220px;max-width:280px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60c0f8;margin-bottom:14px;">Singapore SME Landscape</div>
-        <h2 style="font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:800;color:#fff;line-height:1.3;margin-bottom:16px;">The Gap No One<br>Talks About</h2>
-        <p style="font-size:13.5px;color:rgba(255,255,255,0.58);line-height:1.78;margin-bottom:24px;">Singapore's SMEs generate over 45% of GDP — yet only a limited few have access to the financial intelligence tools that large corporations use every day.</p>
-        <a href="waitlist.html" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#60c0f8;text-decoration:none;">Join the waitlist <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-
-      <!-- CENTER: Singapore 3D map image -->
-      <div style="flex:0 0 auto;position:relative;">
-        <!-- Glow halo behind map -->
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:480px;height:320px;background:radial-gradient(ellipse,rgba(96,192,248,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-        <img
-          src="—Pngtree—singapore map with flag inside_9827100.png"
-          alt="Singapore map"
-          style="width:clamp(300px,38vw,480px);height:auto;display:block;filter:drop-shadow(0 12px 40px rgba(0,10,50,0.7)) drop-shadow(0 0 30px rgba(96,192,248,0.4));"
-        />
-      </div>
-
-      <!-- RIGHT: 3 stat items -->
-      <div style="flex:1;min-width:200px;max-width:270px;display:flex;flex-direction:column;gap:28px;">
-
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:8px;height:8px;border-radius:50%;background:#60c0f8;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(96,192,248,0.8);"></div>
+      <!-- LEFT: founder pull-quote -->
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--color-primary);margin-bottom:20px;">Why We Built This</div>
+        <blockquote style="border-left:3px solid var(--color-primary);padding-left:24px;margin:0 0 24px;">
+          <p style="font-size:clamp(1.1rem,1.8vw,1.35rem);font-weight:600;color:var(--color-on-surface);line-height:1.6;font-style:italic;">"We watched brilliant business owners get blindsided by cash flow problems that a simple dashboard could have flagged three months earlier. That gap isn't a tech problem — it's an access problem."</p>
+        </blockquote>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a56db,#0d9488);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;">PA</div>
           <div>
-            <div style="font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="350000" data-suffix="+">350,000+</span></div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">SMEs in Singapore</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:5px;line-height:1.65;">The backbone of Singapore's economy, employing 70% of the workforce.</div>
+            <div style="font-size:13px;font-weight:700;color:var(--color-on-surface);">Prospera Analytics Team</div>
+            <div style="font-size:12px;color:var(--color-on-surface-variant);">Singapore, 2026</div>
           </div>
         </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:8px;height:8px;border-radius:50%;background:#0d9488;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(13,148,136,0.8);"></div>
-          <div>
-            <div style="font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="3" data-suffix="%" data-prefix="ONLY ">ONLY 3%</span></div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">Have Institutional Tools</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:5px;line-height:1.65;">Fewer than 1 in 30 SMEs access the analytics tools large firms rely on.</div>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:8px;height:8px;border-radius:50%;background:#059669;margin-top:9px;flex-shrink:0;box-shadow:0 0 10px rgba(5,150,105,0.8);"></div>
-          <div>
-            <div style="font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="97" data-suffix="% Underserved">97% Underserved</span></div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;">Until Now</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:5px;line-height:1.65;">Prospera brings institutional-grade intelligence to the other 97%.</div>
-          </div>
-        </div>
-
+        <p style="font-size:14px;color:var(--color-on-surface-variant);line-height:1.75;">Singapore's SMEs generate over 45% of GDP and employ 70% of the workforce — yet most operate without the financial visibility that large firms take for granted. We built Prospera to change that.</p>
+        <a href="about.html" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--color-primary);text-decoration:none;margin-top:20px;">Our story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
+
+      <!-- RIGHT: 3 stat boxes -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#fff;border:1px solid var(--color-outline-variant);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:20px;" class="reveal">
+          <div style="width:4px;align-self:stretch;border-radius:4px;background:linear-gradient(180deg,#1a56db,#0d9488);flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:800;color:var(--color-on-surface);line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="350000" data-suffix="+">350,000+</span></div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-on-surface-variant);margin-top:4px;">SMEs in Singapore</div>
+            <div style="font-size:12.5px;color:var(--color-on-surface-variant);margin-top:5px;line-height:1.6;">The backbone of Singapore's economy, employing 70% of the workforce.</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--color-outline-variant);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:20px;" class="reveal">
+          <div style="width:4px;align-self:stretch;border-radius:4px;background:linear-gradient(180deg,#0d9488,#059669);flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:800;color:var(--color-on-surface);line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="3" data-suffix="%" data-prefix="Only ">Only 3%</span></div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-on-surface-variant);margin-top:4px;">Have Institutional Tools</div>
+            <div style="font-size:12.5px;color:var(--color-on-surface-variant);margin-top:5px;line-height:1.6;">Fewer than 1 in 30 SMEs access the analytics large firms rely on daily.</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--color-outline-variant);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:20px;" class="reveal">
+          <div style="width:4px;align-self:stretch;border-radius:4px;background:linear-gradient(180deg,#059669,#34d399);flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:800;color:var(--color-on-surface);line-height:1;letter-spacing:-0.02em;"><span data-counter data-target="97" data-suffix="% Underserved">97% Underserved</span></div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-on-surface-variant);margin-top:4px;">Until Now</div>
+            <div style="font-size:12.5px;color:var(--color-on-surface-variant);margin-top:5px;line-height:1.6;">Prospera brings institutional-grade intelligence to the other 97%.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- FOUNDER STRIP -->
+  <div style="background:linear-gradient(90deg,#fef3c7,#fff7e6,#fef3c7);border-top:1px solid #fde68a;border-bottom:1px solid #fde68a;padding:20px 48px;">
+    <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span style="font-size:16px;">✍️</span>
+      <p style="font-size:13.5px;color:#92400e;line-height:1.6;flex:1;min-width:240px;"><em style="font-style:italic;font-weight:500;">"We're a small team building something we genuinely believe Singapore needs. We read every piece of feedback and reply to every email personally. If you have thoughts — please reach out."</em> — <strong style="font-weight:700;">The Prospera Team</strong> &nbsp;<a href="mailto:hello@prospera.io" style="color:#b45309;font-weight:600;">hello@prospera.io</a></p>
+    </div>
+  </div>
 
   <!-- CTA -->
   <section class="cta-v2">
@@ -1045,5 +1046,47 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/optional.js" defer></script>
+  <script>
+    /* ── Stat counter animation ── */
+    (function() {
+      function animateCounter(el) {
+        var target = parseFloat(el.getAttribute('data-target')) || 0;
+        var suffix = el.getAttribute('data-suffix') || '';
+        var prefix = el.getAttribute('data-prefix') || '';
+        var duration = 1600;
+        var start = null;
+        var isLarge = target >= 1000;
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var val = target * easeOut(progress);
+          var display;
+          if (isLarge) {
+            display = Math.round(val).toLocaleString();
+          } else {
+            display = Math.round(val * 10) / 10;
+          }
+          el.textContent = prefix + display + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var counters = document.querySelectorAll('[data-counter]');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        counters.forEach(function(c) { io.observe(c); });
+      } else {
+        counters.forEach(animateCounter);
+      }
+    })();
+  </script>
 </body>
 </html>
