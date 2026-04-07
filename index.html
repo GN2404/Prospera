@@ -12,7 +12,7 @@
   <meta property="og:description" content="Portfolio tracking, risk analysis, and forecasting built for SMEs. Free to start, $39/month for Pro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -27,6 +27,22 @@
     padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
+  }
+  .hero-v2::before {
+    content: ''; position: absolute; pointer-events: none; border-radius: 50%;
+    width: 65vw; height: 65vw; max-width: 760px; max-height: 760px;
+    top: -20%; left: -12%;
+    background: radial-gradient(ellipse, rgba(26,86,219,0.09) 0%, transparent 68%);
+    animation: fluidWave 15s ease-in-out infinite;
+    z-index: 0;
+  }
+  .hero-v2::after {
+    content: ''; position: absolute; pointer-events: none; border-radius: 50%;
+    width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
+    bottom: -15%; right: -8%;
+    background: radial-gradient(ellipse, rgba(13,148,136,0.08) 0%, transparent 68%);
+    animation: fluidWave 19s ease-in-out infinite reverse;
+    z-index: 0;
   }
 
   /* Decorative wave — top-right, very low opacity */
@@ -68,8 +84,9 @@
   }
 
   .hero-v2__title {
-    font-size: clamp(2.1rem, 3.8vw, 3rem);
-    font-weight: 700;
+    font-size: clamp(2.1rem, 3.8vw, 3.25rem);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
     color: var(--color-on-surface);
     letter-spacing: -0.02em;
     line-height: 1.1;

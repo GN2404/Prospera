@@ -55,3 +55,8 @@
 /* ---- REVEAL FIX: ensure revealed items are always visible ---- */
 .reveal.revealed { opacity: 1 !important; transform: translateY(0) !important; }
 .fade-in.visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* ---- CTA BANNER: restore gradient on white background ---- */
+.cta-banner { background: linear-gradient(135deg, #1a56db 0%, #0d9488 100%) !important; box-shadow: 0 20px 60px rgba(26,86,219,0.25) !important; backdrop-filter: none !important; }
+.cta-banner h2 { color: #fff !important; }
+.cta-banner p  { color: rgba(255,255,255,0.88) !important; }
