@@ -12,7 +12,7 @@
   <meta property="og:description" content="Explore every Prospera feature: portfolio tracking, risk analysis, cash flow forecasting, and comparison to Bloomberg Terminal.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -140,14 +140,15 @@
 
   .dash-mock {
     display: flex;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, #06101f 0%, #0b1828 60%, #081420 100%);
+    border: 1px solid rgba(26,86,219,0.25);
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 48px 96px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    box-shadow: 0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,86,219,0.15);
     max-width: 960px;
     margin: 48px auto 0;
-    height: 460px;
+    min-height: 580px;
+    height: auto;
     position: relative;
     z-index: 1;
   }
@@ -224,8 +225,12 @@
     gap: 10px; flex: 1; min-height: 0;
   }
   .dash-card {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px; padding: 14px; overflow: hidden; position: relative;
+  }
+  .dash-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+    background: linear-gradient(90deg, #1a56db, #0d9488);
   }
   .dash-card__lbl {
     font-size: 9.5px; font-weight: 600; color: rgba(255,255,255,0.45);
@@ -233,11 +238,16 @@
   }
   .dash-card__val { font-size: 21px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
   .dash-card__change { font-size: 10px; font-weight: 600; color: #34d399; }
-  .dash-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; height: 90px; }
+  .dash-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; height: auto; min-height: 140px; padding-bottom: 2px; }
   .dash-stat {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px; padding: 12px 14px;
     display: flex; align-items: center; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .dash-stat::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #1a56db, #0d9488);
   }
   .dash-stat__name { font-size: 9.5px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
   .dash-stat__val { font-size: 16px; font-weight: 800; color: #fff; }

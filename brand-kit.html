@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Kit — Prospera Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:    #1a56db;
+      --teal:    #0d9488;
+      --green:   #059669;
+      --surface: #f8f9fc;
+      --border:  #e2e8f0;
+      --text:    #101c2e;
+      --muted:   #4a5568;
+      --faint:   #94a3b8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ── Layout ── */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 32px 80px; }
+
+    /* ── Cover ── */
+    .cover {
+      background: linear-gradient(135deg, #06101f 0%, #0b1828 60%, #0d9488 100%);
+      padding: 80px 32px;
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(26,86,219,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover__logo {
+      width: 64px; height: 64px;
+      margin: 0 auto 24px;
+    }
+    .cover__title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .cover__sub {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      position: relative;
+    }
+    .cover__meta {
+      margin-top: 40px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      position: relative;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 64px; }
+    .section__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .section__num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section__title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section__desc {
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 0.9375rem;
+    }
+
+    /* ── Color Palette ── */
+    .palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch__color { height: 80px; }
+    .swatch__info { padding: 10px 12px; background: #fff; }
+    .swatch__name { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .swatch__hex  { font-size: 11px; font-family: 'Courier New', monospace; color: var(--muted); }
+
+    .gradient-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      grid-column: span 2;
+    }
+    .gradient-swatch .swatch__color { height: 80px; }
+
+    /* ── Typography Specimens ── */
+    .type-specimen {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+    .type-specimen__label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 12px;
+    }
+    .type-specimen__sample { margin-bottom: 12px; }
+    .type-specimen__meta {
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .type-specimen__meta span { display: flex; align-items: center; gap: 4px; }
+
+    .scale-row { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+    .scale-item { display: flex; align-items: baseline; gap: 16px; }
+    .scale-item__size { font-size: 10px; color: var(--faint); width: 36px; flex-shrink: 0; font-family: monospace; }
+
+    /* ── Logo Usage ── */
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .logo-example {
+      border-radius: 12px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      border: 1px solid var(--border);
+    }
+    .logo-example--light { background: #fff; }
+    .logo-example--dark  { background: #06101f; }
+    .logo-example__label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); }
+    .logo-example--dark .logo-example__label { color: rgba(255,255,255,0.3); }
+    .logo-inline { display: flex; align-items: center; gap: 10px; }
+    .logo-inline img { height: 34px; width: auto; }
+    .logo-inline span { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 800; }
+    .logo-example--dark .logo-inline span { color: #fff; }
+
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .do-box, .dont-box {
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .do-box   { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+    .dont-box { background: #fff1f2; border: 1px solid #fca5a5; color: #991b1b; }
+    .do-box strong, .dont-box strong { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .do-box strong   { color: #15803d; }
+    .dont-box strong { color: #b91c1c; }
+    ul.rule-list { padding-left: 16px; }
+    ul.rule-list li { margin-bottom: 4px; }
+
+    /* ── Spacing System ── */
+    .spacing-grid { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+    .spacing-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .spacing-item__bar { background: linear-gradient(135deg, var(--blue), var(--teal)); border-radius: 3px; width: 32px; }
+    .spacing-item__label { font-size: 10px; font-family: monospace; color: var(--muted); }
+
+    /* ── Components ── */
+    .component-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-size: 14px; font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 8px; border: none; cursor: pointer;
+      text-decoration: none; white-space: nowrap;
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px;
+      background: transparent;
+      color: var(--blue); font-size: 14px; font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 8px; border: 1.5px solid var(--blue);
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px;
+      background: var(--surface);
+      color: var(--text); font-size: 14px; font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 8px; border: 1px solid var(--border);
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; border-radius: 20px;
+      padding: 4px 12px;
+    }
+    .badge-primary  { background: #e8eeff; color: var(--blue); }
+    .badge-accent   { background: #ccfbf1; color: #0f766e; }
+    .badge-success  { background: #d1fae5; color: #065f46; }
+    .badge-warning  { background: #fff3cd; color: #92400e; }
+
+    .card-example {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(16,28,46,0.05);
+      max-width: 280px;
+    }
+    .card-example__label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+    .card-example__value { font-size: 28px; font-weight: 800; color: var(--text); line-height: 1; }
+    .card-example__change { font-size: 11px; font-weight: 600; color: #059669; margin-top: 4px; }
+    .card-example__sub { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+    /* ── Voice ── */
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .voice-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .voice-card h4 { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .voice-card p  { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .voice-card ul { font-size: 13px; color: var(--muted); padding-left: 16px; line-height: 1.7; }
+
+    /* ── Footer ── */
+    .doc-footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;
+      font-size: 11px; color: var(--faint);
+    }
+
+    @media print {
+      .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .swatch__color { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .btn-primary, .btn-secondary, .btn-ghost { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    @media (max-width: 600px) {
+      .logo-grid, .do-dont, .voice-grid { grid-template-columns: 1fr; }
+      .palette { grid-template-columns: repeat(3, 1fr); }
+      .gradient-swatch { grid-column: span 3; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── COVER ── -->
+<div class="cover">
+  <picture class="cover__logo">
+    <img src="prospera-icon-transparent.png" alt="Prospera Logo" style="height:64px;width:auto;filter:brightness(10);">
+  </picture>
+  <h1 class="cover__title">Prospera Analytics<br><em>Brand Identity</em></h1>
+  <p class="cover__sub">Design System &amp; Brand Guidelines</p>
+  <p class="cover__meta">Version 1.0 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Confidential</p>
+</div>
+
+<div class="page">
+
+  <!-- ── 1. COLOR PALETTE ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">1</div>
+      <h2 class="section__title">Colour Palette</h2>
+    </div>
+    <p class="section__desc">The Prospera palette is built on two core brand colours — Primary Blue and Accent Teal — with a supporting gradient and neutral surfaces for clean, trustworthy interfaces.</p>
+    <div class="palette">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#1a56db;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Primary Blue</div>
+          <div class="swatch__hex">#1A56DB</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#0d9488;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Accent Teal</div>
+          <div class="swatch__hex">#0D9488</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#059669;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Growth Green</div>
+          <div class="swatch__hex">#059669</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#e8eeff;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Blue Container</div>
+          <div class="swatch__hex">#E8EEFF</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#101c2e;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Text Dark</div>
+          <div class="swatch__hex">#101C2E</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#4a5568;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Text Variant</div>
+          <div class="swatch__hex">#4A5568</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#f8f9fc;border:1px solid #e2e8f0;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Surface</div>
+          <div class="swatch__hex">#F8F9FC</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#ffffff;border:1px solid #e2e8f0;"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">White</div>
+          <div class="swatch__hex">#FFFFFF</div>
+        </div>
+      </div>
+      <div class="gradient-swatch">
+        <div class="swatch__color" style="background:linear-gradient(135deg,#1a56db,#0d9488,#059669);"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Brand Gradient</div>
+          <div class="swatch__hex">135deg · #1A56DB → #0D9488 → #059669</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. TYPOGRAPHY ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">2</div>
+      <h2 class="section__title">Typography</h2>
+    </div>
+    <p class="section__desc">Three typefaces form a cohesive hierarchy: Instrument Serif for expressive display headlines, Poppins for structured UI labels and headings, and Inter for readable body copy.</p>
+
+    <div class="type-specimen">
+      <div class="type-specimen__label">Display — Instrument Serif</div>
+      <div class="type-specimen__sample">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-0.02em;line-height:1.1;color:#101c2e;">Financial Intelligence<br><em>for Singapore's SMEs</em></div>
+      </div>
+      <div class="type-specimen__meta">
+        <span>Use for: Hero headlines, feature titles, large pull quotes</span>
+        <span>Weights: Regular (400), Italic</span>
+        <span>Source: Google Fonts</span>
+      </div>
+      <div class="scale-row" style="margin-top:20px;">
+        <div class="scale-item"><span class="scale-item__size">52px</span><span style="font-family:'Instrument Serif',serif;font-size:52px;letter-spacing:-0.02em;line-height:1;">Hero Heading</span></div>
+        <div class="scale-item"><span class="scale-item__size">40px</span><span style="font-family:'Instrument Serif',serif;font-size:40px;letter-spacing:-0.02em;line-height:1.1;">Section Title</span></div>
+        <div class="scale-item"><span class="scale-item__size">28px</span><span style="font-family:'Instrument Serif',serif;font-size:28px;letter-spacing:-0.01em;line-height:1.2;">Card Headline</span></div>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__label">Heading — Poppins</div>
+      <div class="type-specimen__sample">
+        <h2 style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:700;color:#101c2e;letter-spacing:-0.01em;">Smarter Decisions, Faster.</h2>
+      </div>
+      <div class="type-specimen__meta">
+        <span>Use for: Section headings, UI labels, navigation, badges, CTAs</span>
+        <span>Weights: SemiBold (600), Bold (700), ExtraBold (800)</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__label">Body — Inter</div>
+      <div class="type-specimen__sample">
+        <p style="font-family:'Inter',sans-serif;font-size:16px;font-weight:400;color:#4a5568;line-height:1.7;max-width:600px;">Prospera Analytics gives Singapore's small and medium enterprises access to the same level of financial intelligence once reserved for large institutions — at a fraction of the cost. Track cash flow, assess risk, and forecast growth with AI-powered insights tailored to your business.</p>
+      </div>
+      <div class="type-specimen__meta">
+        <span>Use for: Body copy, descriptions, footnotes, data labels</span>
+        <span>Weights: Light (300), Regular (400), Medium (500), SemiBold (600), Bold (700)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. LOGO USAGE ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">3</div>
+      <h2 class="section__title">Logo &amp; Wordmark</h2>
+    </div>
+    <p class="section__desc">The Prospera mark uses the P‑icon alongside the wordmark set in Poppins ExtraBold. Both elements should always appear together unless space is critically constrained.</p>
+    <div class="logo-grid">
+      <div class="logo-example logo-example--light">
+        <div class="logo-example__label">On White / Light</div>
+        <div class="logo-inline">
+          <img src="prospera-icon-transparent.png" alt="Prospera icon">
+          <span style="color:#101c2e;">Prospera Analytics</span>
+        </div>
+      </div>
+      <div class="logo-example logo-example--dark">
+        <div class="logo-example__label">On Dark</div>
+        <div class="logo-inline">
+          <img src="prospera-icon-transparent.png" alt="Prospera icon" style="filter:brightness(10);">
+          <span>Prospera Analytics</span>
+        </div>
+      </div>
+    </div>
+    <div class="do-dont">
+      <div class="do-box">
+        <strong>Do</strong>
+        <ul class="rule-list">
+          <li>Maintain clear space equal to the icon height on all sides</li>
+          <li>Use on high-contrast backgrounds (white, dark navy)</li>
+          <li>Minimum size: 24px icon height</li>
+          <li>Use the full wordmark "Prospera Analytics" on first use</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <strong>Don't</strong>
+        <ul class="rule-list">
+          <li>Recolour, rotate, or distort the logo</li>
+          <li>Place on low-contrast or patterned backgrounds</li>
+          <li>Use the icon alone as a standalone brand mark in marketing</li>
+          <li>Modify the Poppins wordmark font</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. SPACING SYSTEM ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">4</div>
+      <h2 class="section__title">Spacing System</h2>
+    </div>
+    <p class="section__desc">An 8px base grid with named tokens. Always use these values — never arbitrary pixel amounts.</p>
+    <div class="spacing-grid">
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:4px;"></div><div class="spacing-item__label">4px</div><div class="spacing-item__label" style="color:#94a3b8;">xxs</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:8px;"></div><div class="spacing-item__label">8px</div><div class="spacing-item__label" style="color:#94a3b8;">xs</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:12px;"></div><div class="spacing-item__label">12px</div><div class="spacing-item__label" style="color:#94a3b8;">sm-</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:16px;"></div><div class="spacing-item__label">16px</div><div class="spacing-item__label" style="color:#94a3b8;">sm</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:24px;"></div><div class="spacing-item__label">24px</div><div class="spacing-item__label" style="color:#94a3b8;">md-</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:32px;"></div><div class="spacing-item__label">32px</div><div class="spacing-item__label" style="color:#94a3b8;">md</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:48px;"></div><div class="spacing-item__label">48px</div><div class="spacing-item__label" style="color:#94a3b8;">lg-</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:64px;"></div><div class="spacing-item__label">64px</div><div class="spacing-item__label" style="color:#94a3b8;">lg</div></div>
+      <div class="spacing-item"><div class="spacing-item__bar" style="height:80px;"></div><div class="spacing-item__label">80px</div><div class="spacing-item__label" style="color:#94a3b8;">xl</div></div>
+    </div>
+
+    <div style="margin-top:28px;">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;"><strong style="color:var(--text);">Border Radius</strong></p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <div style="text-align:center;">
+          <div style="width:40px;height:40px;background:var(--surface);border:1.5px solid var(--border);border-radius:4px;margin:0 auto 6px;"></div>
+          <div style="font-size:10px;font-family:monospace;color:var(--muted);">4px · sm</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:40px;height:40px;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;margin:0 auto 6px;"></div>
+          <div style="font-size:10px;font-family:monospace;color:var(--muted);">8px · md</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:40px;height:40px;background:var(--surface);border:1.5px solid var(--border);border-radius:16px;margin:0 auto 6px;"></div>
+          <div style="font-size:10px;font-family:monospace;color:var(--muted);">16px · lg</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:40px;height:40px;background:var(--surface);border:1.5px solid var(--border);border-radius:24px;margin:0 auto 6px;"></div>
+          <div style="font-size:10px;font-family:monospace;color:var(--muted);">24px · xl</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:40px;height:40px;background:var(--surface);border:1.5px solid var(--border);border-radius:9999px;margin:0 auto 6px;"></div>
+          <div style="font-size:10px;font-family:monospace;color:var(--muted);">full · pill</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. COMPONENTS ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">5</div>
+      <h2 class="section__title">Core Components</h2>
+    </div>
+
+    <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px;">Buttons</p>
+    <div class="component-row">
+      <a href="#" class="btn-primary">Get Started Free</a>
+      <a href="#" class="btn-secondary">Learn More</a>
+      <a href="#" class="btn-ghost">View Pricing</a>
+    </div>
+
+    <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px;margin-top:24px;">Badges</p>
+    <div class="component-row">
+      <span class="badge badge-primary">Beta</span>
+      <span class="badge badge-accent">Pro</span>
+      <span class="badge badge-success">Verified</span>
+      <span class="badge badge-warning">Coming Soon</span>
+    </div>
+
+    <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px;margin-top:24px;">Metric Card</p>
+    <div class="card-example">
+      <div class="card-example__label">Monthly Cash Runway</div>
+      <div class="card-example__value">8.2 mo</div>
+      <div class="card-example__change">↑ +1.4 mo vs last quarter</div>
+      <div class="card-example__sub">Based on current burn rate of S$38,400/mo</div>
+    </div>
+  </section>
+
+  <!-- ── 6. BRAND VOICE ── -->
+  <section class="section">
+    <div class="section__header">
+      <div class="section__num">6</div>
+      <h2 class="section__title">Brand Voice &amp; Tone</h2>
+    </div>
+    <p class="section__desc">Prospera speaks with clarity and authority, but never condescension. We are institutional in precision, human in warmth, and grounded in Singapore's business reality.</p>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h4>Confident, Not Arrogant</h4>
+        <p>State facts and insights plainly. Let the data speak. Avoid superlatives, hype, or vague claims like "world-class" or "revolutionary".</p>
+      </div>
+      <div class="voice-card">
+        <h4>Clear, Not Simple</h4>
+        <p>We respect the intelligence of our users. Explain financial concepts accessibly without dumbing them down. Jargon is fine when it's the most precise word.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Reassuring, Not Alarmist</h4>
+        <p>Risk language should be informative, not fear-inducing. Frame risk as something to understand and manage — not something to dread.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Singapore-First</h4>
+        <p>Reference local context: SGD, MAS regulations, local market conditions, and Singapore's business landscape wherever relevant. We are built for here.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:20px 24px;background:#f0fdf4;border-radius:10px;border:1px solid #86efac;">
+      <p style="font-size:13px;font-weight:700;color:#166534;margin-bottom:8px;">Legal Disclaimer (always include in financial contexts)</p>
+      <p style="font-size:12px;color:#166534;line-height:1.6;">Prospera provides financial analytics for informational purposes only. Nothing on this platform constitutes financial advice or investment recommendations. Prospera is not licensed by MAS to provide financial advisory services. All investment decisions remain solely with the user.</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <div class="doc-footer">
+    <span>Prospera Analytics &copy; 2026 — Confidential &amp; Proprietary</span>
+    <span>hello@prospera.io</span>
+  </div>
+
+</div>
+</body>
+</html>
