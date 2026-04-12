@@ -771,8 +771,8 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
   .btn--lg { min-height: 44px; }
   .cta-banner { padding: 48px 20px; }
 
-  /* Page hero — smaller padding on mobile */
-  .page-hero { padding: 40px 0 32px; }
+  /* Page hero — ensure h1 clears the fixed nav on mobile */
+  .page-hero { padding: calc(var(--nav-h) + 16px) 0 24px; }
   .page-hero h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
 
   /* Waitlist side-by-side → stack on mobile */
@@ -780,10 +780,6 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 
   /* About mission stats — 2 cols on mobile */
   .about-mission__stats { grid-template-columns: 1fr 1fr !important; }
-
-  /* Dashboard mock — hide on very small screens */
-  .dash-mock { height: 340px !important; font-size: 10px; }
-  .dash-sidebar { width: 110px !important; }
 
   /* Singapore map section — stack vertically */
   .sg-split { flex-direction: column !important; align-items: center !important; }
