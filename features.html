@@ -139,6 +139,14 @@
   .dash-section .section-header p { color: rgba(255,255,255,0.65); }
   .dash-section .section-label { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
 
+  .dash-mock-outer {
+    max-width: 960px;
+    margin: 48px auto 0;
+    overflow: hidden;
+    border-radius: 18px;
+    position: relative;
+    z-index: 1;
+  }
   .dash-mock {
     display: flex;
     background: linear-gradient(135deg, #06101f 0%, #0b1828 60%, #081420 100%);
@@ -146,12 +154,10 @@
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,86,219,0.15);
-    max-width: 960px;
-    margin: 48px auto 0;
+    width: 100%;
     min-height: 580px;
     height: auto;
     position: relative;
-    z-index: 1;
   }
   .dash-sidebar {
     width: 156px; flex-shrink: 0;
@@ -275,12 +281,22 @@
     .dash-cards > .dash-card:last-child { display: none; }
     .dash-bottom { height: auto; }
   }
+  /* Mobile: keep desktop layout, JS scales the whole mock to fit viewport */
   @media (max-width: 640px) {
-    .dash-mock { flex-direction: column; }
-    .dash-sidebar { width: 100%; flex-direction: row; padding: 10px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); overflow-x: auto; gap: 4px; }
-    .dash-sidebar__logo { border-bottom: none; margin-bottom: 0; padding-bottom: 0; padding-right: 12px; border-right: 1px solid rgba(255,255,255,0.06); }
-    .dash-cards { grid-template-columns: 1fr; }
-    .dash-bottom { grid-template-columns: 1fr; }
+    .dash-mock-outer { border-radius: 14px; }
+    .dash-mock {
+      width: 960px;
+      min-width: 960px;
+      min-height: 540px;
+      border-radius: 0;
+      flex-direction: row;
+      transform-origin: top left;
+    }
+    .dash-sidebar { width: 156px !important; flex-direction: column !important; padding: 16px 0 !important; border-right: 1px solid rgba(255,255,255,0.07) !important; border-bottom: none !important; overflow-x: visible !important; gap: 0 !important; }
+    .dash-sidebar__logo { border-bottom: 1px solid rgba(255,255,255,0.06) !important; margin-bottom: 10px !important; padding-bottom: 16px !important; border-right: none !important; }
+    .dash-cards { grid-template-columns: 200px 1fr 165px !important; }
+    .dash-cards > .dash-card:last-child { display: block !important; }
+    .dash-bottom { grid-template-columns: repeat(3, 1fr) !important; }
   }
 
   /* ============================================================
@@ -405,6 +421,7 @@
         <h2>Your Financial Command Centre</h2>
         <p>Real-time analytics, cash flow tracking, and investment intelligence — all in one place.</p>
       </div>
+      <div class="dash-mock-outer">
             <div class="dash-mock reveal">
         <aside class="dash-sidebar">
           <div class="dash-sidebar__logo">
@@ -558,6 +575,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.dash-mock-outer -->
     </div>
   </section>
 
@@ -679,5 +697,33 @@
   </div></footer>
 
   <script src="js/main.js" defer></script>
+  <script>
+  // Scale the dashboard mockup to fit the viewport on mobile
+  (function () {
+    var outer, mock;
+    function scaleDash() {
+      outer = outer || document.querySelector('.dash-mock-outer');
+      mock  = mock  || document.querySelector('.dash-mock');
+      if (!outer || !mock) return;
+      if (window.innerWidth <= 820) {
+        var naturalW = 960, naturalH = 540;
+        var scale = outer.clientWidth / naturalW;
+        mock.style.width          = naturalW + 'px';
+        mock.style.height         = naturalH + 'px';
+        mock.style.minHeight      = naturalH + 'px';
+        mock.style.transform      = 'scale(' + scale + ')';
+        mock.style.transformOrigin= 'top left';
+        outer.style.height        = Math.round(naturalH * scale) + 'px';
+        outer.style.borderRadius  = '14px';
+      } else {
+        mock.style.width = mock.style.height = mock.style.minHeight =
+        mock.style.transform = mock.style.transformOrigin = '';
+        outer.style.height = outer.style.borderRadius = '';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', scaleDash);
+    window.addEventListener('resize', scaleDash);
+  }());
+  </script>
 </body>
 </html>
