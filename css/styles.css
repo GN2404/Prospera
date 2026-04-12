@@ -787,6 +787,13 @@ p { color: var(--color-on-surface-variant); line-height: 1.7; }
 
   /* Singapore map section — stack vertically */
   .sg-split { flex-direction: column !important; align-items: center !important; }
+
+  /* Why We Built This — stack on mobile */
+  .why-section { padding: 48px 0 !important; }
+  .why-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding: 0 20px !important; }
+
+  /* Nav CTA button — hide on mobile (shiny-cta overrides display:none so needs !important) */
+  .nav__cta { display: none !important; }
 }
 
 @media (max-width: 480px) {
